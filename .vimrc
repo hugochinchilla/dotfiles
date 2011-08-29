@@ -42,16 +42,16 @@ autocmd FileType php noremap <C-L> :!/usr/bin/php -l %<CR>
 
 "Python improvement
 
-python << EOF
-import os
-import sys
-import vim
-for p in sys.path:
-    if os.path.isdir(p):
-        vim.command(r"set path+=%s" % (p.replace(" ", r"\ ")))
-EOF
-
-set tags+=$HOME/.vim/tags/python.ctags
+"python << EOF
+"import os
+"import sys
+"import vim
+"for p in sys.path:
+"    if os.path.isdir(p):
+"        vim.command(r"set path+=%s" % (p.replace(" ", r"\ ")))
+"EOF
+"
+"set tags+=$HOME/.vim/tags/python.ctags
 
 """" Key bindings
 
