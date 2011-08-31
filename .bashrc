@@ -81,7 +81,11 @@ alias proxyssh="ssh -f -N -D 0.0.0.0:12345 hugo@bulma.net"
 export PATH="$PATH:~/projects/git-achievements"
 export PATH="$PATH:~/local/node/bin"
 
-alias git="git-achievements"
+if ( type git-achievements &> /dev/null )
+then
+    alias git="git-achievements"
+fi
+
 
 export TERM=xterm
 
