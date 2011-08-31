@@ -2,6 +2,9 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+export EDITOR=vim
+export TERM=xterm
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -63,6 +66,8 @@ fi
 #alias ll='ls -l'
 #alias la='ls -A'
 #alias l='ls -CF'
+alias ll="ls -lh"
+alias lla="ls -lha"
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -71,25 +76,26 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
-export EDITOR=vim
-alias ls="ls --color=auto"
-alias ll="ls -lh"
-alias lla="ls -lha"
-alias sourcebash="source ~/.bashrc"
+export HISTSIZE=1000
+export HISTFILESIZE=1000
+
+# system command aliases
+alias mkdir='mkdir -p'
+alias grep='grep --color=tty'
+
+# custom aliases
 alias proxyssh="ssh -f -N -D 0.0.0.0:12345 hugo@bulma.net"
+alias habgrep="grep --exclude-dir=cache --exclude-dir=data --exclude-dir=log --exclude-dir=tools --exclude-dir=lib/vendor"
 
-export PATH="$PATH:~/projects/git-achievements"
-export PATH="$PATH:~/local/node/bin"
-
-if ( type git-achievements &> /dev/null )
-then
+# load git-achievemnts if available
+if [ -f ~/projects/git-achievements ]; then
+    export PATH="$PATH:~/projects/git-achievements"
+fi
+if ( type git-achievements &> /dev/null ); then
     alias git="git-achievements"
 fi
 
-
-export TERM=xterm
-
-alias codemod="python /home/hchinchilla/projects/codemod/src/codemod.py"
-
-alias habgrep="grep --exclude-dir=cache --exclude-dir=data --exclude-dir=log --exclude-dir=tools --exclude-dir=lib/vendor"
-
+# alias codemod if exists
+if [ -f ~/projects/codemod/src/codemod.py ]; then
+    alias codemod="python ~/projects/codemod/src/codemod.py"
+fi
