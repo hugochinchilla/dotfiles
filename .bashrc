@@ -99,3 +99,12 @@ fi
 if [ -f ~/projects/codemod/src/codemod.py ]; then
     alias codemod="python ~/projects/codemod/src/codemod.py"
 fi
+
+
+# shortcuts for dns editting
+if [ -f /etc/dnsmasq.conf ]; then
+    alias dnse="sudo vim /etc/dnsmasq.conf"
+    alias dnsr="sudo /etc/init.d/dnsmasq restart"
+fi
+
+alias prettylog="awk '{print \$2,\"\t\",\$5,\$7,\$8,\$10,\$11}'"
