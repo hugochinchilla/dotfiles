@@ -88,12 +88,12 @@ alias proxyssh="ssh -f -N -D 0.0.0.0:12345 hugo@bulma.net"
 alias habgrep="grep --exclude-dir=cache --exclude-dir=data --exclude-dir=log --exclude-dir=tools --exclude-dir=lib/vendor"
 
 # load git-achievemnts if available
-if [ -f ~/projects/git-achievements ]; then
-    export PATH="$PATH:~/projects/git-achievements"
-fi
-if ( type git-achievements &> /dev/null ); then
-    alias git="git-achievements"
-fi
+#if [ -f ~/projects/git-achievements ]; then
+#    export PATH="$PATH:~/projects/git-achievements"
+#fi
+#if ( type git-achievements &> /dev/null ); then
+#    alias git="git-achievements"
+#fi
 
 # alias codemod if exists
 if [ -f ~/projects/codemod/src/codemod.py ]; then
