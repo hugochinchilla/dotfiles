@@ -89,8 +89,8 @@ alias mkdir='mkdir -p'
 alias grep='grep --color=tty'
 
 # custom aliases
-alias proxyssh="ssh -f -N -D 0.0.0.0:12345 hugo@bulma.net"
 alias prettylog="awk '{print \$2,\"\t\",\$5,\$7,\$8,\$10,\$11}'"
+alias proxyssh="ssh -N -D 0.0.0.0:12345 $1"
 alias star_treck="play -c2 -n synth whitenoise band -n 100 24 band -n 300 100 gain +20"
 alias nap_noise="play -t sl -r48000 -c2 - synth -1 pinknoise tremolo .1 40 <  /dev/zero"
 
