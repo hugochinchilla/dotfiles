@@ -84,18 +84,29 @@ alias mkdir='mkdir -p'
 alias grep='grep --color=tty'
 
 # custom aliases
-alias proxyssh="ssh -f -N -D 0.0.0.0:12345 hugo@bulma.net"
+alias proxyssh="ssh -N -D 0.0.0.0:12345 $1"
 alias habgrep="grep --exclude-dir=cache --exclude-dir=data --exclude-dir=log --exclude-dir=tools --exclude-dir=lib/vendor"
+alias star_treck="play -c2 -n synth whitenoise band -n 100 24 band -n 300 100 gain +20"
+alias nap_noise="play -t sl -r48000 -c2 - synth -1 pinknoise tremolo .1 40 <  /dev/zero"
 
 # load git-achievemnts if available
-if [ -f ~/projects/git-achievements ]; then
-    export PATH="$PATH:~/projects/git-achievements"
-fi
-if ( type git-achievements &> /dev/null ); then
-    alias git="git-achievements"
-fi
+#if [ -f ~/projects/git-achievements ]; then
+#    export PATH="$PATH:~/projects/git-achievements"
+#fi
+#if ( type git-achievements &> /dev/null ); then
+#    alias git="git-achievements"
+#fi
 
 # alias codemod if exists
 if [ -f ~/projects/codemod/src/codemod.py ]; then
     alias codemod="python ~/projects/codemod/src/codemod.py"
 fi
+
+
+# shortcuts for dns editting
+if [ -f /etc/dnsmasq.conf ]; then
+    alias dnse="sudo vim /etc/dnsmasq.conf"
+    alias dnsr="sudo /etc/init.d/dnsmasq restart"
+fi
+
+alias prettylog="awk '{print \$2,\"\t\",\$5,\$7,\$8,\$10,\$11}'"
