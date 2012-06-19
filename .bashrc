@@ -117,6 +117,10 @@ if [ -f /etc/dnsmasq.conf ]; then
     alias dnsr="sudo /etc/init.d/dnsmasq restart"
 fi
 
+if [ -f $HOME/.private.rc ]; then
+    source $HOME/.private.rc
+fi
+
 
         RED="\[\033[00;31m\]"
      YELLOW="\[\033[00;33m\]"
