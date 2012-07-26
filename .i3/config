@@ -16,15 +16,13 @@ workspace 3 output HDMI2
 workspace 4 output HDMI2
 
 workspace_auto_back_and_forth yes
-#binsym $mod+Control+Up workspace prev
-#binsym $mod+Control+Down workspace next
 
+bindsym $mod+Control+Left workspace prev
+bindsym $mod+Control+Right workspace next
+bindsym $mod+z move workspace to output left
+bindsym $mod+x move workspace to output right
 bindsym Control+Mod1+Up exec amixer -q set Master 2dB+ unmute
 bindsym Control+Mod1+Down exec amixer -q set Master 2dB- unmute
-
-
-#bindsym mod+z move workspace to output left
-#bindsym mod+x move workspace to output right
 
 # i3 config file (v4)
 #
@@ -97,28 +95,28 @@ bindsym $mod+a focus parent
 #bindcode $mod+d focus child
 
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
 
 # move focused container to workspace
-bindsym $mod+Shift+exclam move workspace 1
-bindsym $mod+Shift+quotedbl move workspace 2
-bindsym $mod+Shift+periodcentered move workspace 3
-bindsym $mod+Shift+dollar move workspace 4
-bindsym $mod+Shift+percent move workspace 5
-bindsym $mod+Shift+ampersand move workspace 6
-bindsym $mod+Shift+slash move workspace 7
-bindsym $mod+Shift+parenleft move workspace 8
-bindsym $mod+Shift+parenright move workspace 9
-bindsym $mod+Shift+equal move workspace 10
+bindsym $mod+Shift+exclam          move workspace number 1
+bindsym $mod+Shift+quotedbl        move workspace number 2
+bindsym $mod+Shift+periodcentered  move workspace number 3
+bindsym $mod+Shift+dollar          move workspace number 4
+bindsym $mod+Shift+percent         move workspace number 5
+bindsym $mod+Shift+ampersand       move workspace number 6
+bindsym $mod+Shift+slash           move workspace number 7
+bindsym $mod+Shift+parenleft       move workspace number 8
+bindsym $mod+Shift+parenright      move workspace number 9
+bindsym $mod+Shift+equal           move workspace number 10
 
 # reload the configuration file
 bindsym $mod+Shift+C reload
