@@ -93,6 +93,7 @@ alias prettylog="awk '{print \$2,\"\t\",\$5,\$7,\$8,\$10,\$11}'"
 alias proxyssh="ssh -N -D 0.0.0.0:12345 $1"
 alias star_treck="play -c2 -n synth whitenoise band -n 100 24 band -n 300 100 gain +20"
 alias nap_noise="play -t sl -r48000 -c2 - synth -1 pinknoise tremolo .1 40 <  /dev/zero"
+alias ssh="( ssh-add -l > /dev/null || ssh-add ) && ssh"
 
 # Add an "alert" alias for long running commands. Use like so:
 # sleep 10; alert
@@ -115,6 +116,10 @@ fi
 if [ -f /etc/dnsmasq.conf ]; then
     alias dnse="sudo vim /etc/dnsmasq.conf"
     alias dnsr="sudo /etc/init.d/dnsmasq restart"
+fi
+
+if [ -f $HOME/.private.rc ]; then
+    source $HOME/.private.rc
 fi
 
 
