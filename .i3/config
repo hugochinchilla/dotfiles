@@ -17,6 +17,7 @@ workspace 4 output HDMI2
 
 workspace_auto_back_and_forth yes
 
+bindsym $mod+q workspace back_and_forth
 bindsym $mod+Control+Left workspace prev
 bindsym $mod+Control+Right workspace next
 bindsym $mod+z move workspace to output left
@@ -105,6 +106,17 @@ bindsym $mod+7 workspace number 7
 bindsym $mod+8 workspace number 8
 bindsym $mod+9 workspace number 9
 bindsym $mod+0 workspace number 10
+
+bindsym $mod+Mod1+1 workspace 1
+bindsym $mod+Mod1+2 workspace 2
+bindsym $mod+Mod1+3 workspace 3
+bindsym $mod+Mod1+4 workspace 4
+bindsym $mod+Mod1+5 workspace 5
+bindsym $mod+Mod1+6 workspace 6
+bindsym $mod+Mod1+7 workspace 7
+bindsym $mod+Mod1+8 workspace 8
+bindsym $mod+Mod1+9 workspace 9
+bindsym $mod+Mod1+0 workspace 10
 
 # move focused container to workspace
 bindsym $mod+Shift+exclam          move workspace number 1
