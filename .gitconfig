@@ -1,6 +1,6 @@
 [user]
 	name = Hugo Chinchilla Carbonell
-	email = hugo@bulma.net
+	email = hchinchilla@habitissimo.com
 
 [branch "develop"]
     remote = origin
@@ -51,6 +51,5 @@
 [color "diff"]
   whitespace = red reverse
 [core]
-  whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
-
+  whitespace = fix,-indent-with-non-tab,trailing-space,-cr-at-eol
 
