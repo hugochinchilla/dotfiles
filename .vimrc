@@ -33,12 +33,17 @@ set wildmode=longest,list
 set wildignore=*.o,*.obj,*.bak,*.exe,*.py[co],*.swp,*~
 
 
+"Arduino
+au BufRead,BufNewFile *.pde set filetype=arduino
+au BufRead,BufNewFile *.ino set filetype=arduino
+au BufRead,BufNewFile *.ino set tabstop=2 shiftwidth=2 softtabstop=2
+
+map <f3> :!scons<cr>
+map <f5> :!scons upload<cr>
+
 "PHP
 
 autocmd FileType php noremap <C-L> :!/usr/bin/php -l %<CR>
-
-
-
 
 "Python improvement
 
@@ -66,3 +71,4 @@ inoremap <Nul> <C-x><C-o>
 
 autocmd BufRead *.py set makeprg=python\ -c\ \"import\ py_compile,sys;\ sys.stderr=sys.stdout;\ py_compile.compile(r'%')\"
 autocmd BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
+
