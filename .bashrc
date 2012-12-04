@@ -2,18 +2,22 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-export EDITOR=vim
-export TERM=xterm
-
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
 # don't put duplicate lines in the history. See bash(1) for more options
 export HISTCONTROL=ignoredups
 
+# append to the history file, don't overwrite it
+shopt -s histappend
+
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
+
+export HISTSIZE=10000
+export HISTFILESIZE=20000
+
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
@@ -50,9 +54,9 @@ esac
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-#if [ -f ~/.bash_aliases ]; then
-#    . ~/.bash_aliases
-#fi
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
 
 # enable color support of ls and also add handy aliases
 if [ "$TERM" != "dumb" ]; then
@@ -60,12 +64,13 @@ if [ "$TERM" != "dumb" ]; then
     alias ls='ls --color=auto'
     #alias dir='ls --color=auto --format=vertical'
     #alias vdir='ls --color=auto --format=long'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
 fi
 
 # some more ls aliases
-#alias ll='ls -l'
-#alias la='ls -A'
-#alias l='ls -CF'
 alias ll="ls -lh"
 alias lla="ls -lha"
 
@@ -76,35 +81,38 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
-export HISTSIZE=1000
-export HISTFILESIZE=1000
+export EDITOR=vim
+export TERM=xterm
 
 # system command aliases
 alias mkdir='mkdir -p'
 alias grep='grep --color=tty'
 
 # custom aliases
-alias proxyssh="ssh -f -N -D 0.0.0.0:12345 hugo@bulma.net"
-alias habgrep="grep --exclude-dir=cache --exclude-dir=data --exclude-dir=log --exclude-dir=tools --exclude-dir=lib/vendor"
+alias prettylog="awk '{print \$2,\"\t\",\$5\"]\",\$7,\$10,\$8,\$11}'"
+alias proxyssh="ssh -N -D 0.0.0.0:12345 $1"
+alias star_treck="play -c2 -n synth whitenoise band -n 100 24 band -n 300 100 gain +20"
+alias nap_noise="play -t sl -r48000 -c2 - synth -1 pinknoise tremolo .1 40 <  /dev/zero"
+alias ssh="( ssh-add -l > /dev/null || ssh-add ) && ssh"
+
+# Add an "alert" alias for long running commands. Use like so:
+# sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # load git-achievemnts if available
-if [ -f ~/projects/git-achievements ]; then
-    export PATH="$PATH:~/projects/git-achievements"
-fi
-if ( type git-achievements &> /dev/null ); then
-    alias git="git-achievements"
-fi
+#if [ -f ~/projects/git-achievements ]; then
+#    export PATH="$PATH:~/projects/git-achievements"
+#fi
+#if ( type git-achievements &> /dev/null ); then
+#    alias git="git-achievements"
+#fi
 
 # alias codemod if exists
 if [ -f ~/projects/codemod/src/codemod.py ]; then
     alias codemod="python ~/projects/codemod/src/codemod.py"
 fi
 
-
-# shortcuts for dns editting
-if [ -f /etc/dnsmasq.conf ]; then
-    alias dnse="sudo vim /etc/dnsmasq.conf"
-    alias dnsr="sudo /etc/init.d/dnsmasq restart"
+if [ -f $HOME/.private.rc ]; then
+    source $HOME/.private.rc
 fi
 
-alias prettylog="awk '{print \$2,\"\t\",\$5\"]\",\$7,\$10,\$8,\$11}'"

@@ -17,10 +17,6 @@ set hlsearch            " highlight matches
 """" Display
 set scrolloff=3         " keep 3 lines below and above the cursor
 
-"if has("gui_runnig")
-"    colorscheme wombat
-"endif
-
 " tab labels show the filename without path(tail)
 set guitablabel=%N/\ %t\ %M
 
@@ -33,36 +29,24 @@ set wildmode=longest,list
 set wildignore=*.o,*.obj,*.bak,*.exe,*.py[co],*.swp,*~
 
 
-"PHP
+"Arduino
+au BufRead,BufNewFile *.pde set filetype=arduino
+au BufRead,BufNewFile *.ino set filetype=arduino
+au BufRead,BufNewFile *.ino set tabstop=2 shiftwidth=2 softtabstop=2
+map <f3> :!scons<cr>
+map <f5> :!scons upload<cr>
 
+"PHP
 autocmd FileType php noremap <C-L> :!/usr/bin/php -l %<CR>
 
-
-
-
-"Python improvement
-
-"python << EOF
-"import os
-"import sys
-"import vim
-"for p in sys.path:
-"    if os.path.isdir(p):
-"        vim.command(r"set path+=%s" % (p.replace(" ", r"\ ")))
-"EOF
-"
-"set tags+=$HOME/.vim/tags/python.ctags
-
-"""" Key bindings
-
-"map <silent><C-Left> <C-T>
-"map <silent><C-Right> <C-]>
-
-nnoremap <silent><C-left>   :tabprevious
-nnoremap <silent><C-right>  :tabnext
-
+"Python
 autocmd FileType python set omnifunc=pythoncomplete#Complete "autocompplete
-inoremap <Nul> <C-x><C-o>
-
 autocmd BufRead *.py set makeprg=python\ -c\ \"import\ py_compile,sys;\ sys.stderr=sys.stdout;\ py_compile.compile(r'%')\"
 autocmd BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
+
+
+"Key bindings
+nnoremap <silent><C-left>   :tabprevious
+nnoremap <silent><C-right>  :tabnext
+inoremap <Nul> <C-x><C-o>
+
