@@ -107,4 +107,4 @@ if [ -f /etc/dnsmasq.conf ]; then
     alias dnsr="sudo /etc/init.d/dnsmasq restart"
 fi
 
-alias prettylog="awk '{print \$2,\"\t\",\$5,\$7,\$8,\$10,\$11}'"
+alias prettylog="awk '{print \$2,\"\t\",\$5\"]\",\$7,\$10,\$8,\$11}'"
