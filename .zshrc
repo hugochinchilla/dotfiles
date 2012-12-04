@@ -42,34 +42,3 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=30000
 #setopt appendhistory
-
-#custom
-export EDITOR=vim
-export TERM=xterm
-
-alias sl="ls"
-alias ll="ls -lh"
-alias lla="ls -lha"
-alias mkdir="mkdir -p"
-alias grep="grep --color=tty"
-# custom aliases
-alias prettylog="awk '{print \$2,\"\t\",\$5,\$7,\$8,\$10,\$11}'"
-alias proxyssh="ssh -N -D 0.0.0.0:12345 $1"
-alias star_treck="play -c2 -n synth whitenoise band -n 100 24 band -n 300 100 gain +20"
-alias nap_noise="play -t sl -r48000 -c2 - synth -1 pinknoise tremolo .1 40 <  /dev/zero"
-alias ssh="( ssh-add -l > /dev/null || ssh-add ) && ssh"
-
-# Add an "alert" alias for long running commands. Use like so:
-# sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
-# alias codemod if exists
-if [ -f ~/projects/codemod/src/codemod.py ]; then
-    alias codemod="python ~/projects/codemod/src/codemod.py"
-fi
-
-# per machine conf
-if [ -f $HOME/.private.rc ]; then
-    source $HOME/.private.rc
-fi
-
