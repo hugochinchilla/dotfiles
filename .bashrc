@@ -37,8 +37,6 @@ xterm-color)
     ;;
 esac
 
-# Comment in the above and uncomment this below for a color prompt
-PS1='${debian_chroot:+($debian_chroot)}\[\033[00;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -53,7 +51,6 @@ esac
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
@@ -62,17 +59,10 @@ fi
 if [ "$TERM" != "dumb" ]; then
     eval "`dircolors -b`"
     alias ls='ls --color=auto'
-    #alias dir='ls --color=auto --format=vertical'
-    #alias vdir='ls --color=auto --format=long'
-
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
-
-# some more ls aliases
-alias ll="ls -lh"
-alias lla="ls -lha"
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -81,38 +71,5 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
-export EDITOR=vim
-export TERM=xterm
 
-# system command aliases
-alias mkdir='mkdir -p'
-alias grep='grep --color=tty'
-
-# custom aliases
-alias prettylog="awk '{print \$2,\"\t\",\$5\"]\",\$7,\$10,\$8,\$11}'"
-alias proxyssh="ssh -N -D 0.0.0.0:12345 $1"
-alias star_treck="play -c2 -n synth whitenoise band -n 100 24 band -n 300 100 gain +20"
-alias nap_noise="play -t sl -r48000 -c2 - synth -1 pinknoise tremolo .1 40 <  /dev/zero"
-alias ssh="( ssh-add -l > /dev/null || ssh-add ) && ssh"
-
-# Add an "alert" alias for long running commands. Use like so:
-# sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
-# load git-achievemnts if available
-#if [ -f ~/projects/git-achievements ]; then
-#    export PATH="$PATH:~/projects/git-achievements"
-#fi
-#if ( type git-achievements &> /dev/null ); then
-#    alias git="git-achievements"
-#fi
-
-# alias codemod if exists
-if [ -f ~/projects/codemod/src/codemod.py ]; then
-    alias codemod="python ~/projects/codemod/src/codemod.py"
-fi
-
-if [ -f $HOME/.private.rc ]; then
-    source $HOME/.private.rc
-fi
-
+PS1='${debian_chroot:+($debian_chroot)}\[\033[00;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '

@@ -41,4 +41,7 @@ source $ZSH/oh-my-zsh.sh
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=30000
-#setopt appendhistory
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
