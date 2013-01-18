@@ -10,6 +10,7 @@ alias mkdir='mkdir -p'
 alias grep='grep --color=tty'
 
 # custom aliases
+alias sudo="sudo -E" # preserve environment by default
 alias prettylog="awk '{print \$2,\"\t\",\$5\"]\",\$7,\$10,\$8,\$11}'"
 alias proxyssh="ssh -N -D 0.0.0.0:12345 $1"
 alias star_treck="play -c2 -n synth whitenoise band -n 100 24 band -n 300 100 gain +20"
