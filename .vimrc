@@ -2,7 +2,9 @@ set encoding=utf-8
 
 syntax on
 set smartindent
-set nu
+set nu                  " show line numbers
+set hls                 " highlight search results
+set smartcase           " searchs are CI by default
 set background=dark
 set tabstop=4           " number of space characters inserted by a tab key
 set shiftwidth=4        " number of space inserted by indentation

@@ -42,6 +42,10 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=30000
 
+unsetopt correct_all
+setopt correct
+setopt rmstarsilent
+
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi

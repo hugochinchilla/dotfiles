@@ -34,3 +34,8 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 if [ -f ~/projects/codemod/src/codemod.py ]; then
     alias codemod="python ~/projects/codemod/src/codemod.py"
 fi
+
+if [ -f ~/.local_aliases ]; then
+    . ~/.local_aliases
+fi
+
