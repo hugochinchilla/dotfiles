@@ -223,10 +223,10 @@ bar {
 ##---------
 #colourclass               border    bckgrnd    text
 #client.focused             #434D53   #434D53    #E9D558
-client.focused             #52404B   #52404B    #FFFFFF
+client.focused             #8C978E   #8C978E    #222222
 client.focused_inactive    #2A2C31   #2A2C31    #FFFFFF
 client.unfocused           #2A2C31   #2A2C31    #FFFFFF
-client.urgent              #F11C39   #F11C39    #FFFFFF
+client.urgent              #FF0000   #FF0000    #FFFFFF
 
 
 assign [class="Komodo"] 1
