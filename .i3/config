@@ -121,27 +121,6 @@ bindsym $mod+KP_8 workspace number 8
 bindsym $mod+KP_9 workspace number 9
 bindsym $mod+KP_0 workspace number 10
 
-bindsym $mod+Mod1+1 workspace 1
-bindsym $mod+Mod1+2 workspace 2
-bindsym $mod+Mod1+3 workspace 3
-bindsym $mod+Mod1+4 workspace 4
-bindsym $mod+Mod1+5 workspace 5
-bindsym $mod+Mod1+6 workspace 6
-bindsym $mod+Mod1+7 workspace 7
-bindsym $mod+Mod1+8 workspace 8
-bindsym $mod+Mod1+9 workspace 9
-bindsym $mod+Mod1+0 workspace 10
-
-bindsym $mod+Mod1+KP_1 workspace 1
-bindsym $mod+Mod1+KP_2 workspace 2
-bindsym $mod+Mod1+KP_3 workspace 3
-bindsym $mod+Mod1+KP_4 workspace 4
-bindsym $mod+Mod1+KP_5 workspace 5
-bindsym $mod+Mod1+KP_6 workspace 6
-bindsym $mod+Mod1+KP_7 workspace 7
-bindsym $mod+Mod1+KP_8 workspace 8
-bindsym $mod+Mod1+KP_9 workspace 9
-bindsym $mod+Mod1+KP_0 workspace 10
 
 # move focused container to workspace
 bindsym $mod+Shift+exclam          move workspace number 1
