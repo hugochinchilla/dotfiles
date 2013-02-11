@@ -2341,16 +2341,16 @@
 #atmo-device=1
 
 # Serial Port/Device (string)
-#atmo-serialdev=/dev/ttyUSB0
+atmo-serialdev=/dev/ttyACM0
 
 # Color when paused (boolean)
-#atmo-usepausecolor=0
+atmo-usepausecolor=1
 
 # Pause-Red (integer)
-#atmo-pcolor-red=0
+atmo-pcolor-red=20
 
 # Pause-Green (integer)
-#atmo-pcolor-green=0
+atmo-pcolor-green=60
 
 # Pause-Blue (integer)
 #atmo-pcolor-blue=192
@@ -2359,13 +2359,13 @@
 #atmo-fadesteps=50
 
 # End-Red (integer)
-#atmo-ecolor-red=192
+atmo-ecolor-red=0
 
 # End-Green (integer)
-#atmo-ecolor-green=192
+atmo-ecolor-green=0
 
 # End-Blue (integer)
-#atmo-ecolor-blue=192
+atmo-ecolor-blue=0
 
 # End-Fadesteps (integer)
 #atmo-efadesteps=50
@@ -2392,13 +2392,13 @@
 #atmo-zones-lr=1
 
 # Calculate a average zone (boolean)
-#atmo-zone-summary=0
+atmo-zone-summary=1
 
 # Edge Weightning (integer)
-#atmo-edgeweightning=3
+atmo-edgeweightning=7
 
 # Brightness (integer)
-#atmo-brightness=100
+atmo-brightness=160
 
 # Darkness Limit (integer)
 #atmo-darknesslimit=3
@@ -2416,28 +2416,28 @@
 #atmo-meanlength=300
 
 # Filter threshold (integer)
-#atmo-meanthreshold=40
+atmo-meanthreshold=70
 
 # Filter Smoothness (in %) (integer)
-#atmo-percentnew=50
+atmo-percentnew=70
 
 # Frame delay (ms) (integer)
-#atmo-framedelay=18
+atmo-framedelay=16
 
 # Channel 0: summary (integer)
 #atmo-channel_0=4
 
 # Channel 1: left (integer)
-#atmo-channel_1=3
+atmo-channel_1=-1
 
 # Channel 2: right (integer)
-#atmo-channel_2=1
+atmo-channel_2=-1
 
 # Channel 3: top (integer)
-#atmo-channel_3=0
+atmo-channel_3=-1
 
 # Channel 4: bottom (integer)
-#atmo-channel_4=2
+atmo-channel_4=-1
 
 # Channel / Zone Assignment (string)
 #atmo-channels=
@@ -2449,10 +2449,10 @@
 #atmo-white-red=255
 
 # White Green (integer)
-#atmo-white-green=255
+atmo-white-green=200
 
 # White Blue (integer)
-#atmo-white-blue=255
+atmo-white-blue=155
 
 # Zone 0: Top gradient (string)
 #atmo-gradient_zone_0=
@@ -3492,7 +3492,7 @@ qt-privacy-ask=0
 #audio=1
 
 # Default audio volume (integer)
-volume=258
+volume=401
 
 # Audio output volume step (integer)
 #volume-step=32
@@ -3666,7 +3666,7 @@ volume=258
 #vout=
 
 # Video filter module (string)
-#video-filter=
+video-filter=atmo
 
 # Video splitter module (string)
 #video-splitter=
@@ -4140,13 +4140,13 @@ global-key-stop=Media Stop
 #key-jump+extrashort=Shift+Right
 
 # Short backwards jump (string)
-#global-key-jump-short=
+global-key-jump-short=Ctrl+Shift+b
 
 # Short backwards jump (string)
 #key-jump-short=Alt+Left
 
 # Short forward jump (string)
-#global-key-jump+short=
+global-key-jump+short=Ctrl+Shift+f
 
 # Short forward jump (string)
 #key-jump+short=Alt+Right
