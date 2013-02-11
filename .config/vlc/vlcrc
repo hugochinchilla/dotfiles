@@ -2747,7 +2747,7 @@
 #qt-slider-colours=153;210;153;20;210;20;255;199;15;245;39;29
 
 # Ask for network policy at start (boolean)
-#qt-privacy-ask=1
+qt-privacy-ask=0
 
 # Define which screen fullscreen goes (integer)
 #qt-fullscreen-screennumber=-1
@@ -4056,7 +4056,7 @@ volume=258
 #key-leave-fullscreen=Esc
 
 # Play/Pause (string)
-#global-key-play-pause=
+global-key-play-pause=Media Play Pause
 
 # Play/Pause (string)
 #key-play-pause=Space
@@ -4104,19 +4104,19 @@ volume=258
 #key-rate-slower-fine=[
 
 # Next (string)
-#global-key-next=
+global-key-next=Media Next Track
 
 # Next (string)
 #key-next=n
 
 # Previous (string)
-#global-key-prev=
+global-key-prev=Media Prev Track
 
 # Previous (string)
 #key-prev=p
 
 # Stop (string)
-#global-key-stop=
+global-key-stop=Media Stop
 
 # Stop (string)
 #key-stop=s
