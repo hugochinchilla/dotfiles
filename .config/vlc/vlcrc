@@ -1246,7 +1246,7 @@
 [schroedinger] # Dirac video decoder using libschroedinger
 
 # Rate control method (string)
-#sout-schro-rate-control=
+sout-schro-rate-control=constant_noise_threshold
 
 # Constant quality factor (float)
 #sout-schro-quality=-1.000000
@@ -1264,7 +1264,7 @@
 #sout-schro-min-bitrate=-1
 
 # GOP structure (string)
-#sout-schro-gop-structure=
+sout-schro-gop-structure=adaptive
 
 # GOP length (integer)
 #sout-schro-gop-length=-1
@@ -1276,13 +1276,13 @@
 #sout-schro-coding-mode=auto
 
 # Motion Vector precision (string)
-#sout-schro-mv-precision=
+sout-schro-mv-precision=1
 
 # Size of motion compensation blocks (string)
-#sout-schro-motion-block-size=
+sout-schro-motion-block-size=automatic
 
 # Overlap of motion compensation blocks (string)
-#sout-schro-motion-block-overlap=
+sout-schro-motion-block-overlap=automatic
 
 # Three component motion estimation (integer)
 #sout-schro-me-combined=-1
@@ -1300,10 +1300,10 @@
 #sout-schro-enable-phasecorr-me=-1
 
 # Intra picture DWT filter (string)
-#sout-schro-intra-wavelet=
+sout-schro-intra-wavelet=desl_dubuc_9_7
 
 # Inter picture DWT filter (string)
-#sout-schro-inter-wavelet=
+sout-schro-inter-wavelet=desl_dubuc_9_7
 
 # Number of DWT iterations (integer)
 #sout-schro-transform-depth=-1
@@ -1312,10 +1312,10 @@
 #sout-schro-enable-multiquant=-1
 
 # Size of code blocks in each subband (string)
-#sout-schro-codeblock-size=
+sout-schro-codeblock-size=automatic
 
 # Prefilter (string)
-#sout-schro-filtering=
+sout-schro-filtering=none
 
 # Amount of prefiltering (float)
 #sout-schro-filter-value=-1.000000
@@ -1324,7 +1324,7 @@
 #sout-schro-enable-scd=-1
 
 # perceptual weighting method (string)
-#sout-schro-perceptual-weighting=
+sout-schro-perceptual-weighting=none
 
 # perceptual distance (float)
 #sout-schro-perceptual-distance=-1.000000
@@ -1339,7 +1339,7 @@
 #sout-schro-vert-slices=-1
 
 # Force Profile (string)
-#sout-schro-force-profile=
+sout-schro-force-profile=auto
 
 [avcodec] # FFmpeg audio/video decoder
 
@@ -3297,7 +3297,7 @@ qt-privacy-ask=0
 #norm-buff-size=20
 
 # Maximal volume level (float)
-#norm-max-level=2.000000
+norm-max-level=1.000000
 
 [a52tofloat32] # ATSC A/52 (AC-3) audio decoder
 
@@ -3492,7 +3492,7 @@ qt-privacy-ask=0
 #audio=1
 
 # Default audio volume (integer)
-volume=401
+volume=128
 
 # Audio output volume step (integer)
 #volume-step=32
@@ -3528,7 +3528,7 @@ volume=401
 #aout=
 
 # Audio filters (string)
-#audio-filter=
+audio-filter=normvol
 
 # Audio visualizations  (string)
 #audio-visual=
@@ -3726,7 +3726,7 @@ video-filter=atmo
 #sub-track-id=-1
 
 # Preferred video resolution (integer)
-#preferred-resolution=-1
+preferred-resolution=1080
 
 # Input repetitions (integer)
 #input-repeat=0
