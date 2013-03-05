@@ -5,7 +5,8 @@
 # this file and re-run i3-config-wizard(1).
 #
 
-exec xrandr --output VGA1 --auto --left-of HDMI2
+exec gnome-settings-daemon
+exec xrandr --output VGA1 --auto --output HDMI2 --auto --right-of VGA1
 exec --no-startup-id nm-applet
 
 set $mod Mod4
@@ -26,7 +27,7 @@ bindsym $mod+z move workspace to output left
 bindsym $mod+x move workspace to output right
 bindsym Control+Mod1+Up exec amixer -q set Master 2dB+ unmute
 bindsym Control+Mod1+Down exec amixer -q set Master 2dB- unmute
-bindsym $mod+Shift+s exec xfce4-screenshooter
+bindsym Print exec xfce4-screenshooter
 
 # i3 config file (v4)
 #
