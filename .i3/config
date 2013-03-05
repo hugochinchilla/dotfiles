@@ -5,18 +5,25 @@
 # this file and re-run i3-config-wizard(1).
 #
 
-exec gnome-settings-daemon
-exec xrandr --output VGA1 --auto --output HDMI2 --auto --right-of VGA1
-exec --no-startup-id nm-applet
+#exec gnome-settings-daemon
+#exec xrandr --output VGA1 --auto --output HDMI2 --auto --right-of VGA1
+#exec --no-startup-id nm-applet
+
+# run this command to start nautilus without desktop window
+# $ gsettings set org.gnome.desktop.background show-desktop-icons false
+
 
 set $mod Mod4
 
 workspace 1 output VGA1
 workspace 2 output VGA1
+workspace 5 output VGA1
 workspace 3 output HDMI2
 workspace 4 output HDMI2
-workspace 5 output VGA1
 workspace 6 output HDMI2
+workspace 7 output HDMI2
+workspace 8 output HDMI2
+workspace 9 output HDMI2
 
 workspace_auto_back_and_forth yes
 
@@ -186,7 +193,8 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
     status_command i3status
-    position top
+    position bottom
+    tray_output none
     colors {
         background #000000
         statusline #C2C092
@@ -216,6 +224,12 @@ assign [class="Spotify"] 4
 assign [class="SQLyog.exe"] 5
 assign [class="empathy"] 6
 assign [class="Empathy"] 6
+assign [class="Nautilus"] 9
+
+for_window [class="Gtkdialog"] floating enable
+for_window [class="Gnome-control-center"] floating enable
+for_window [class="Firefox" window_role="Preferences"] floating enable
+for_window [class="X-terminal-emulator" title="Terminator Preferences"] floating enable
 
 
 # set background
