@@ -1,0 +1,34 @@
+[global_config]
+  geometry_hinting = False
+  title_hide_sizetext = True
+  window_state = maximise
+  handle_size = 0
+  borderless = True
+[keybindings]
+[profiles]
+  [[default]]
+    palette = "#000000:#e52222:#a6e32d:#fc951e:#c48dff:#fa2573:#06989a:#f2f2f2:#424242:#f66363:#d7efa7:#ffb968:#d6b2fd:#ff5b97:#6fc5c6:#eeeeec"
+    visible_bell = True
+    background_image = /home/hchinchilla/Imágenes/wallpapers/shell/chioula.jpg
+    background_darkness = 0.69
+    scrollback_lines = 2000
+    background_type = transparent
+    use_system_font = False
+    scroll_background = False
+    use_custom_command = True
+    icon_bell = False
+    show_titlebar = False
+    custom_command = zsh
+    cursor_shape = ibeam
+    font = Ubuntu Mono 11
+    foreground_color = "#ffffff"
+[layouts]
+  [[default]]
+    [[[child1]]]
+      profile = default
+      type = Terminal
+      parent = window0
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]
