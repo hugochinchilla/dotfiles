@@ -216,6 +216,24 @@ client.focused_inactive    #2A2C31   #2A2C31    #FFFFFF
 client.unfocused           #2A2C31   #2A2C31    #FFFFFF
 client.urgent              #FF0000   #FF0000    #FFFFFF
 
+# Criterias available
+#
+# class
+#   Compares the window class (the second part of WM_CLASS)
+# instance
+#   Compares the window instance (the first part of WM_CLASS)
+# window_role
+#   Compares the window role (WM_WINDOW_ROLE).
+# id
+#   Compares the X11 window ID, which you can get via xwininfo for example.
+# title
+#   Compares the X11 window title (_NET_WM_NAME or WM_NAME as fallback).
+# urgent
+#   Compares the urgent state of the window. Can be "latest" or "oldest". Matches the latest or oldest urgent window, respectively. (The following aliases are also available: newest, last, recent, first)
+# con_mark
+#   Compares the mark set for this container, see [vim_like_marks].
+# con_id
+#   Compares the i3-internal container ID, which you can get via the IPC interface. Handy for scripting.
 
 assign [class="Komodo"] 1
 assign [class="chromium-browser"] 3
@@ -229,6 +247,7 @@ assign [class="Nautilus"] 9
 for_window [class="Gtkdialog"] floating enable
 for_window [class="Gnome-control-center"] floating enable
 for_window [class="Firefox" window_role="Preferences"] floating enable
+for_window [class="Firefox" instance="Download"] floating enable
 for_window [class="X-terminal-emulator" title="Terminator Preferences"] floating enable
 
 
