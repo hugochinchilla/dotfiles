@@ -230,6 +230,7 @@ for_window [class="Firefox" window_role="Preferences"] floating enable
 for_window [class="Firefox" instance="Download"] floating enable
 for_window [class="X-terminal-emulator" title="Terminator Preferences"] floating enable
 for_window [class="Update-manager"] floating enable
+for_window [class="Gcr-prompter"] floating enable
 
 
 # set background
