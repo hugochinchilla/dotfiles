@@ -1,0 +1,7 @@
+tree#NST,
+tree#NST treechildren,
+tree#nst treechildren::-moz-tree-row
+{
+    font-size: 10px !important;
+}
+
