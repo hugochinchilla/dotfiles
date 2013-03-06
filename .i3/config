@@ -152,35 +152,16 @@ bindsym $mod+Shift+E exit
 # resize window (you can also use the mouse for that)
 mode "resize" {
     # These bindings trigger as soon as you enter the resize mode
-
-    # They resize the border in the direction you pressed, e.g.
-    # when pressing left, the window is resized so that it has
-    # more space on its left
-
-    bindsym j resize shrink left 10 px or 10 ppt
-    bindsym Shift+J resize grow   left 10 px or 10 ppt
-
-    bindsym k resize shrink down 10 px or 10 ppt
-    bindsym Shift+K resize grow   down 10 px or 10 ppt
-
-    bindsym l resize shrink up 10 px or 10 ppt
-    bindsym Shift+L resize grow   up 10 px or 10 ppt
-
-    bindsym ntilde resize shrink right 10 px or 10 ppt
-    bindsym Shift+Ntilde resize grow   right 10 px or 10 ppt
+    bindsym j           resize shrink width 2 px or 2 ppt
+    bindsym k           resize grow height 2 px or 2 ppt
+    bindsym l           resize shrink height 2 px or 2 ppt
+    bindsym semicolon   resize grow width 2 px or 2 ppt
 
     # same bindings, but for the arrow keys
-    bindsym Left resize shrink left 10 px or 10 ppt
-    bindsym Shift+Left resize grow   left 10 px or 10 ppt
-
-    bindsym Down resize shrink down 10 px or 10 ppt
-    bindsym Shift+Down resize grow   down 10 px or 10 ppt
-
-    bindsym Up resize shrink up 10 px or 10 ppt
-    bindsym Shift+Up resize grow   up 10 px or 10 ppt
-
-    bindsym Right resize shrink right 10 px or 10 ppt
-    bindsym Shift+Right resize grow   right 10 px or 10 ppt
+    bindsym Left        resize shrink width 2 px or 2 ppt
+    bindsym Down        resize grow height 2 px or 2 ppt
+    bindsym Up          resize shrink height 2 px or 2 ppt
+    bindsym Right       resize grow width 2 px or 2 ppt
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -239,16 +220,16 @@ assign [class="Komodo"] 1
 assign [class="chromium-browser"] 3
 assign [class="Firefox"] 3
 assign [class="Spotify"] 4
-assign [class="SQLyog.exe"] 5
+assign [class="Wine" instance="SQLyog.exe"] 5
 assign [class="empathy"] 6
 assign [class="Empathy"] 6
-assign [class="Nautilus"] 9
 
 for_window [class="Gtkdialog"] floating enable
 for_window [class="Gnome-control-center"] floating enable
 for_window [class="Firefox" window_role="Preferences"] floating enable
 for_window [class="Firefox" instance="Download"] floating enable
 for_window [class="X-terminal-emulator" title="Terminator Preferences"] floating enable
+for_window [class="Update-manager"] floating enable
 
 
 # set background
@@ -260,3 +241,5 @@ exec komodo
 exec firefox
 exec spotify
 exec empathy
+exec sqlyog
+
