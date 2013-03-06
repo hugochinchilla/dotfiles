@@ -231,6 +231,10 @@ for_window [class="Firefox" instance="Download"] floating enable
 for_window [class="X-terminal-emulator" title="Terminator Preferences"] floating enable
 for_window [class="Update-manager"] floating enable
 for_window [class="Gcr-prompter"] floating enable
+for_window [class="Gnome-keyring-prompt-3"] floating enable
+for_window [class="Gnome-system-monitor"] floating enable
+for_window [title="Preferencias"] floating enable
+for_window [title="Preferences"] floating enable
 
 
 # set background
