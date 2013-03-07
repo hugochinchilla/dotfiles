@@ -7,6 +7,7 @@
 [keybindings]
 [profiles]
   [[default]]
+    scrollbar_position = hidden
     palette = "#000000:#e52222:#a6e32d:#fc951e:#c48dff:#fa2573:#06989a:#f2f2f2:#424242:#f66363:#d7efa7:#ffb968:#d6b2fd:#ff5b97:#6fc5c6:#eeeeec"
     visible_bell = True
     background_image = /home/hchinchilla/Imágenes/wallpapers/shell/chioula.jpg
