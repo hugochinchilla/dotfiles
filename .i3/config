@@ -235,6 +235,7 @@ for_window [class="Gnome-keyring-prompt-3"] floating enable
 for_window [class="Gnome-system-monitor"] floating enable
 for_window [title="Preferencias"] floating enable
 for_window [title="Preferences"] floating enable
+for_window [class="Apport-gtk"] floating enable
 
 
 # set background
