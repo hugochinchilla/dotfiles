@@ -35,6 +35,7 @@ bindsym $mod+x move workspace to output right
 bindsym Control+Mod1+Up exec amixer -q set Master 2dB+ unmute
 bindsym Control+Mod1+Down exec amixer -q set Master 2dB- unmute
 bindsym Print exec xfce4-screenshooter
+bindsym $mod+c exec gcalctool
 
 # i3 config file (v4)
 #
@@ -231,6 +232,9 @@ for_window [class="Firefox" instance="Download"] floating enable
 for_window [class="X-terminal-emulator" title="Terminator Preferences"] floating enable
 for_window [class="Update-manager"] floating enable
 for_window [class="Gcr-prompter"] floating enable
+for_window [class="Agave"] floating enable
+for_window [class="Gcalctool"] floating enable
+for_window [class="Komodo edit" instance="Update"] floating enable
 
 
 # set background
