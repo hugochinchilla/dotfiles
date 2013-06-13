@@ -240,6 +240,7 @@ for_window [class="Apport-gtk"] floating enable
 for_window [class="Agave"] floating enable
 for_window [class="Gcalctool"] floating enable
 for_window [class="Komodo edit" instance="Update"] floating enable
+for_window [class="Komodo edit" instance="Komodo_gotofile"] floating enable
 
 
 # set background
