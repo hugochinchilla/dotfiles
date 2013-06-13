@@ -17,6 +17,7 @@ alias star_treck="play -c2 -n synth whitenoise band -n 100 24 band -n 300 100 ga
 alias nap_noise="play -t sl -r48000 -c2 - synth -1 pinknoise tremolo .1 40 <  /dev/zero"
 alias ssh="( ssh-add -l > /dev/null || ssh-add ) && ssh"
 alias updick='/usr/bin/uptime | perl -ne "/(\d+) d/;print 8,q(=)x\$1,\"D\n\""'
+alias brightness="xrandr --output DVI-I-1 --brightness $1"
 
 
 # Add an "alert" alias for long running commands. Use like so:
