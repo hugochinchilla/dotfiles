@@ -1,23 +1,20 @@
 {
-  // code style
-  "font_size": 9,
-  "rulers": [80,100],
-  "tab_size": 2,
-  "trailing_spaces_include_current_line": false,
-  "translate_tabs_to_spaces": true,
-  "trim_trailing_white_space_on_save": true,
-  "ensure_newline_at_eof_on_save": true,
-
-  // code completion
-  "tab_completion": false,
-
-  // packages
-  "ignored_packages":
-  [
-    "Vintage"
-  ],
-
-  // themes
-  "soda_classic_tabs": true,
-  "theme": "Soda Dark.sublime-theme"
+	"ensure_newline_at_eof_on_save": true,
+	"font_size": 9,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"rulers":
+	[
+		80,
+		100
+	],
+	"soda_classic_tabs": true,
+	"tab_completion": false,
+	"tab_size": 2,
+	"theme": "Soda Dark.sublime-theme",
+	"trailing_spaces_include_current_line": false,
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true
 }
