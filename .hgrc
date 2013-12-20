@@ -1,0 +1,10 @@
+[ui]
+username = Hugo Chinchilla <hugoasecas@gmail.com>
+
+[extensions]
+color =
+pager =
+
+[pager]
+pager = LESS='FRX' less
+
