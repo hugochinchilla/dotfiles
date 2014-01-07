@@ -1,0 +1,20 @@
+{
+	"installed_packages":
+	[
+		"DocBlockr",
+		"GitGutter",
+		"INI",
+		"Jinja2",
+		"LESS",
+		"LiveReload",
+		"Markdown Preview",
+		"Modelines",
+		"nginx",
+		"Package Control",
+		"PHPUnit",
+		"PHPUnit Completions",
+		"SublimeCodeIntel",
+		"SublimeGit",
+		"Theme - Spacegray"
+	]
+}
