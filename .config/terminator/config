@@ -23,6 +23,7 @@
     cursor_shape = ibeam
     font = Ubuntu Mono 11
     foreground_color = "#ffffff"
+    scrollback_infinite = True
 [layouts]
   [[default]]
     [[[child1]]]

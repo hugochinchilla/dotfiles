@@ -220,6 +220,7 @@ client.urgent              #FF0000   #FF0000    #FFFFFF
 assign [class="Komodo"] 1
 assign [class="Sublime_text"] 1
 assign [class="chromium-browser"] 3
+assign [class="Google-chrome"] 3
 assign [class="Firefox"] 3
 assign [class="Spotify"] 4
 assign [class="Wine" instance="SQLyog.exe"] 5
@@ -252,7 +253,7 @@ exec --no-startup-id nitrogen --restore
 
 # launch applications
 exec subl
-exec firefox
+exec google-chrome
 exec spotify
 exec empathy
 exec sqlyog
