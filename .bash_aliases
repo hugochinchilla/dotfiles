@@ -22,6 +22,7 @@ alias nap_noise="play -t sl -r48000 -c2 - synth -1 pinknoise tremolo .1 40 <  /d
 alias updick='/usr/bin/uptime | perl -ne "/(\d+) d/;print 8,q(=)x\$1,\"D\n\""'
 alias brightness="xrandr --output DVI-I-1 --brightness $1"
 alias vi="vim"
+alias resource="source ~/.zshrc"
 
 # Vagrant
 alias vssh="vagrant ssh"
@@ -35,6 +36,10 @@ alias gps="git push"
 alias gs="git status"
 alias gg="git grep -in"
 alias gd="git diff"
+alias grc="git rebase --continue"
+alias grs="git rebase --skip"
+alias gra="git rebase --abort"
+alias ga="git commit --amend"
 
 # Add an "alert" alias for long running commands. Use like so:
 # sleep 10; alert
