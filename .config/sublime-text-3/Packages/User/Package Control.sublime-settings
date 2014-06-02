@@ -1,6 +1,7 @@
 {
 	"installed_packages":
 	[
+		"Alignment",
 		"DocBlockr",
 		"GitGutter",
 		"INI",
@@ -13,6 +14,7 @@
 		"Package Control",
 		"PHPUnit",
 		"PHPUnit Completions",
+		"QuickPrint",
 		"SaltStack-related syntax highlighting and snippets",
 		"SublimeCodeIntel",
 		"SublimeGit",

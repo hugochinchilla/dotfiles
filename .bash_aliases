@@ -4,6 +4,8 @@ fi
 
 export EDITOR=vim
 export TERM=xterm
+export PATH="$PATH:$HOME/.bin"
+
 
 alias ll="ls -lh"
 alias lla="ls -lha"
