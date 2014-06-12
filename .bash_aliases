@@ -61,6 +61,11 @@ if [ -f ~/projects/codemod/src/codemod.py ]; then
     alias codemod="python ~/projects/codemod/src/codemod.py"
 fi
 
+# Work aliases
+alias hab="cd $HOME/projects/habitissimo"
+alias cc="hab && php symfony cc && notify-send -i edit-clear \"symfony cache cleared\""
+alias vag="cd $HOME/projects/vagrantfiles"
+
 if [ -f ~/.local_aliases ]; then
     . ~/.local_aliases
 fi
