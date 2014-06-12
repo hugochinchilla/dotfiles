@@ -1,20 +1,6 @@
 [user]
-	name = Hugo Chinchilla Carbonell
-	email = hchinchilla@habitissimo.com
-
-[branch "develop"]
-    remote = origin
-    merge = develop
-
-[branch "master"]
-    remote = origin
-    merge = master
-
-[branch "home"]
-    remote = origin
-    merge = home
-
-
+  name = Hugo Chinchilla Carbonell
+  email = hchinchilla@habitissimo.com
 [color]
   ui = auto
 [color "branch"]
@@ -30,9 +16,6 @@
   added = yellow
   changed = green
   untracked = cyan
-
-
-
 [alias]
   st = status
   ci = commit
@@ -46,7 +29,6 @@
   ls = ls-files
   todo = !"git grep --heading --break --ignore-case -I --color=always -e ' FIX: *' -e ' TODO: *' | sed 's/\\s\\{3,\\}/  /g' | less -R"
   addmodel = add lib/model/om lib/model/map lib/form/base/ lib/filter/base/
-
 [color]
   ui = true
 [color "diff"]
@@ -54,4 +36,11 @@
 [core]
   whitespace = fix,-indent-with-non-tab,trailing-space,-cr-at-eol
   symlinks = true
-
+[push]
+  default = simple
+[branch]
+  # set rebase=true for every new branch
+  autosetuprebase = always
+[pull]
+  # always rebase when pulling from a repo
+  rebase = true
