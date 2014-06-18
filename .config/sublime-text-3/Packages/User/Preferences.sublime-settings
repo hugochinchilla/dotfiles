@@ -20,8 +20,13 @@
 	"font_size": 11,
 	"ignored_packages":
 	[
-		"Vintage",
-		"SublimeCodeIntel"
+		"PHPUnit",
+		"Vintage"
+	],
+	"php_namespace.stop_folders":
+	[
+		"src",
+		"workspace"
 	],
 	"rulers":
 	[
