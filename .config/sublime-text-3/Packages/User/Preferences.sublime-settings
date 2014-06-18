@@ -20,8 +20,8 @@
 	"font_size": 11,
 	"ignored_packages":
 	[
-		"PHPUnit",
-		"Vintage"
+		"Vintage",
+		"PHPUnit"
 	],
 	"php_namespace.stop_folders":
 	[
