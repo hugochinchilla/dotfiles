@@ -52,3 +52,5 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 alias bower='noglob bower'
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

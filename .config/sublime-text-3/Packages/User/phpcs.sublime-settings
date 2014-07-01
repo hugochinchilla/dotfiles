@@ -9,13 +9,13 @@
     "phpcs_show_gutter_marks": true,
 
     // Show outline for errors
-    "phpcs_outline_for_errors": true,
+    "phpcs_outline_for_errors": false,
 
     // Show the errors in the status bar
     "phpcs_show_errors_in_status": true,
 
     // Show the errors in the quick panel so you can then goto line
-    "phpcs_show_quick_panel": true,
+    "phpcs_show_quick_panel": false,
 
     // Do you want to run the phpcs checker?
     "phpcs_sniffer_run": true,

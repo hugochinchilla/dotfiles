@@ -65,6 +65,13 @@ fi
 alias hab="cd $HOME/projects/habitissimo"
 alias cc="hab && php symfony cc && notify-send -i edit-clear \"symfony cache cleared\""
 alias vag="cd $HOME/projects/vagrantfiles"
+alias habshell="hab && phpsh symfony-interactive.php"
+alias runworker="hab && php symfony worker:run"
+alias runworker-email="hab && php symfony worker:run SendMailWorkerThread"
+alias sqlyog="wine .wine/drive_c/Program\ Files\ \(x86\)/SQLyog/SQLyog.exe"
+alias mytop="watch -n 0,2 'mysql -uroot -px2kh5424 -e \"show processlist\"'"
+alias adsl="sudo ip ro del default && sudo ip ro add default via 192.168.1.8 dev eth0 && ip ro"
+alias fibber="sudo ip ro del default && sudo ip ro add default via 192.168.1.4 dev eth0 && ip ro"
 
 if [ -f ~/.local_aliases ]; then
     . ~/.local_aliases
