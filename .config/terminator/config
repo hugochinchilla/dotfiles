@@ -1,23 +1,26 @@
 [global_config]
-  title_hide_sizetext = True
-  window_state = maximise
 [keybindings]
 [profiles]
   [[default]]
-    palette = "#000000:#e52222:#a6e32d:#fc951e:#c48dff:#fa2573:#06989a:#fafafa:#424242:#f66363:#d7efa7:#ffb968:#d6b2fd:#ff5b97:#6fc5c6:#fafafa"
-    visible_bell = True
-    background_darkness = 0.72
-    background_type = transparent
-    background_image = None
-    foreground_color = "#ffffff"
-    use_custom_command = True
-    icon_bell = False
     show_titlebar = False
-    custom_command = zsh
-    scrollback_infinite = True
+  [[solarized-dark]]
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    background_image = None
+    cursor_color = "#eee8d5"
+    foreground_color = "#eee8d5"
+    show_titlebar = False
+    background_color = "#002b36"
+  [[solarized-light]]
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    background_image = None
+    cursor_color = "#002b36"
+    foreground_color = "#002b36"
+    show_titlebar = False
+    background_color = "#eee8d5"
 [layouts]
   [[default]]
     [[[child1]]]
+      profile = solarized-dark
       type = Terminal
       parent = window0
     [[[window0]]]
