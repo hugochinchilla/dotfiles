@@ -1,15 +1,5 @@
-if [ -d $HOME/.composer/vendor/bin ]; then
-    export PATH=$PATH:$HOME/.composer/vendor/bin
-fi
-
-export EDITOR=vim
-export TERM=xterm
-export PATH="$PATH:$HOME/.bin"
-
-
 alias ll="ls -lh"
 alias lla="ls -lha"
-
 
 # system command aliases
 alias mkdir='mkdir -p'
@@ -25,6 +15,7 @@ alias updick='/usr/bin/uptime | perl -ne "/(\d+) d/;print 8,q(=)x\$1,\"D\n\""'
 alias brightness="xrandr --output DVI-I-1 --brightness $1"
 alias vi="vim"
 alias resource="source ~/.zshrc"
+alias todo="vim ~/TODO"
 
 # Vagrant
 alias vssh="vagrant ssh"
@@ -47,15 +38,6 @@ alias ga="git commit --amend"
 # sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-
-# load git-achievemnts if available
-#if [ -f ~/projects/git-achievements ]; then
-#    export PATH="$PATH:~/projects/git-achievements"
-#fi
-#if ( type git-achievements &> /dev/null ); then
-#    alias git="git-achievements"
-#fi
-
 # alias codemod if exists
 if [ -f ~/projects/codemod/src/codemod.py ]; then
     alias codemod="python ~/projects/codemod/src/codemod.py"
@@ -67,13 +49,10 @@ alias cc="hab && php symfony cc && notify-send -i edit-clear \"symfony cache cle
 alias vag="cd $HOME/projects/vagrantfiles"
 alias habshell="hab && phpsh symfony-interactive.php"
 alias runworker="hab && php symfony worker:run"
-alias runworker-email="hab && php symfony worker:run SendMailWorkerThread"
+alias runworker-email="hab && php symfony worker:run SendMailWorkerThread --env=dev"
+alias runworker-function="hab && php symfony worker:run FunctionWorkerThread --env=dev"
 alias sqlyog="wine .wine/drive_c/Program\ Files\ \(x86\)/SQLyog/SQLyog.exe"
 alias mytop="watch -n 0,2 'mysql -uroot -px2kh5424 -e \"show processlist\"'"
 alias adsl="sudo ip ro del default && sudo ip ro add default via 192.168.1.8 dev eth0 && ip ro"
 alias fibber="sudo ip ro del default && sudo ip ro add default via 192.168.1.4 dev eth0 && ip ro"
-
-if [ -f ~/.local_aliases ]; then
-    . ~/.local_aliases
-fi
 
