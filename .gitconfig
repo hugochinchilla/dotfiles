@@ -44,3 +44,10 @@
 [pull]
   # always rebase when pulling from a repo
   rebase = true
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red
+    new = green
+    whitespace = red reverse
