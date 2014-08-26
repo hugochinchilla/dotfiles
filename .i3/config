@@ -219,6 +219,7 @@ client.urgent              #FF0000   #FF0000    #FFFFFF
 
 assign [class="Komodo"] 1
 assign [class="Sublime_text"] 1
+assign [class="Google-chrome" instance="^crx_"] 6
 assign [class="chromium-browser"] 3
 assign [class="Google-chrome"] 3
 assign [class="Firefox"] 3
