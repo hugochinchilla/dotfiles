@@ -15,7 +15,7 @@ _fab()
     local cur commands
     COMPREPLY=()
     cur="${COMP_WORDS[COMP_CWORD]}"
-    commands=$(for x in `fab --list |grep -v commands`; do echo ${x} ; done)
+    commands=`fab --list | grep -A 9999 'Available commands' | tail -n +3 | cut -d' ' -f 5`
     COMPREPLY=( $(compgen -W "${commands}" -- ${cur}) )
  
     return 0
