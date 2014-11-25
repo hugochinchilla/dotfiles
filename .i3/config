@@ -13,7 +13,7 @@
 # $ gsettings set org.gnome.desktop.background show-desktop-icons false
 
 
-set $mod Mod4
+set $mod Mod3
 
 workspace 1 output HDMI2
 workspace 2 output HDMI2
