@@ -18,11 +18,12 @@
 		".deb",
 		".box"
 	],
-	"font_size": 11,
+	"font_size": 12,
 	"ignored_packages":
 	[
+		"PHPUnit",
 		"Vintage",
-		"PHPUnit"
+		"PhpNamespace"
 	],
 	"php_namespace.stop_folders":
 	[
@@ -36,9 +37,10 @@
 		100
 	],
 	"soda_classic_tabs": true,
+	"soda_folder_icons": true,
 	"tab_completion": false,
 	"tab_size": 2,
-	"theme": "Soda Dark.sublime-theme",
+	"theme": "Soda Dark 3.sublime-theme",
 	"trailing_spaces_include_current_line": false,
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true

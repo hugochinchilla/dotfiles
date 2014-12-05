@@ -51,3 +51,5 @@
     old = red
     new = green
     whitespace = red reverse
+[diff]
+	algorithm = patience

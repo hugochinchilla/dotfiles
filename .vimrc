@@ -46,6 +46,9 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete "autocompplete
 autocmd BufRead *.py set makeprg=python\ -c\ \"import\ py_compile,sys;\ sys.stderr=sys.stdout;\ py_compile.compile(r'%')\"
 autocmd BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
 
+"Nginx
+autocmd BufRead,BufNewFile /etc/nginx/* set filetype=nginx syntax=nginx
+
 
 "Key bindings
 nnoremap <silent><C-left>   :tabprevious

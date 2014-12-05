@@ -3,6 +3,7 @@
 [profiles]
   [[default]]
     background_image = None
+    scrollback_infinite = True
     allow_bold = False
     show_titlebar = False
   [[solarized-dark]]

@@ -16,6 +16,7 @@ alias brightness="xrandr --output DVI-I-1 --brightness $1"
 alias vi="vim"
 alias resource="source ~/.zshrc"
 alias todo="vim ~/TODO"
+alias htop="TERM=screen htop"
 
 # Vagrant
 alias vssh="vagrant ssh"
@@ -24,6 +25,7 @@ alias vup="vagrant up"
 alias vst="vagrant status"
 
 # Git
+alias git="LANGUAGE=C git"
 alias gp="git pull --rebase"
 alias gps="git push"
 alias gs="git status"
