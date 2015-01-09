@@ -17,6 +17,7 @@ alias vi="vim"
 alias resource="source ~/.zshrc"
 alias todo="vim ~/TODO"
 alias htop="TERM=screen htop"
+alias mysqlps="watch -n0,2 \"mysql -e 'show processlist'\""
 
 # Vagrant
 alias vssh="vagrant ssh"
@@ -25,7 +26,8 @@ alias vup="vagrant up"
 alias vst="vagrant status"
 
 # Git
-alias git="LANGUAGE=C git"
+alias git="LANGUAGE=C LC_ALL=en_US.utf-8 git"
+alias got="git "
 alias gp="git pull --rebase"
 alias gps="git push"
 alias gs="git status"

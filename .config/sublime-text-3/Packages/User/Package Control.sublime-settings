@@ -3,16 +3,18 @@
 	[
 		"Alignment",
 		"DocBlockr",
+		"Dockerfile Syntax Highlighting",
 		"GitGutter",
-		"GitHub Flavored Markdown Preview",
 		"Gutter Color",
 		"INI",
 		"Jinja2",
 		"LESS",
 		"LiveReload",
 		"Markdown Preview",
+		"MarkdownEditing",
 		"Modelines",
 		"nginx",
+		"Numix Theme",
 		"Package Control",
 		"PHP Companion",
 		"PHP Modern",
@@ -20,12 +22,16 @@
 		"PhpNamespace",
 		"PHPUnit",
 		"PHPUnit Completions",
+		"Python Improved",
 		"QuickPrint",
 		"SaltStack-related syntax highlighting and snippets",
 		"SideBarEnhancements",
 		"SublimeCodeIntel",
 		"SublimeGit",
+		"Theme - Asphalt",
+		"Theme - Orchis",
 		"Theme - Soda",
-		"Theme - Spacegray"
+		"Theme - Spacegray",
+		"Theme - Tech49"
 	]
 }

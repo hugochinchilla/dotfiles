@@ -4,6 +4,7 @@ export EDITOR=vim
 export TERM=xterm
 
 export HABITISSIMO_SITE_ID="habitissimo_es"
+export CHURROSITES_SITE_ID="reformabarcelona"
 
 # Pure prompt options
 PURE_GIT_UNTRACKED_DIRTY=0

@@ -18,12 +18,13 @@
 		".deb",
 		".box"
 	],
-	"font_size": 12,
+	"font_size": 10,
 	"ignored_packages":
 	[
-		"PHPUnit",
+		"Markdown",
+		"PhpNamespace",
 		"Vintage",
-		"PhpNamespace"
+		"PHPUnit"
 	],
 	"php_namespace.stop_folders":
 	[
