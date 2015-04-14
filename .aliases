@@ -7,7 +7,7 @@ alias grep='grep --color=tty'
 
 # custom aliases
 alias sudo="sudo -E" # preserve environment by default
-alias prettylog="awk '{print \$2,\"\t\",\$5\"]\",\$7,\$10,\$8,\$11}'"
+alias prettylog="awk '{ gsub(/\\\"/,\"\",\$7); printf \"%-16s %s]  %-4s  %s  %-8s  %s\n\", \$2,\$5,\$7,\$10,\$11,\$8}'"
 alias proxyssh="ssh -N -D 0.0.0.0:12345 $1"
 alias star_treck="play -c2 -n synth whitenoise band -n 100 24 band -n 300 100 gain +20"
 alias nap_noise="play -t sl -r48000 -c2 - synth -1 pinknoise tremolo .1 40 <  /dev/zero"
@@ -49,7 +49,7 @@ fi
 
 # Work aliases
 alias hab="cd $HOME/projects/habitissimo"
-alias cc="hab && php symfony cc && notify-send -i edit-clear \"symfony cache cleared\""
+alias cc="hab && rm -rf cache/* && notify-send -i edit-clear \"symfony cache cleared\""
 alias vag="cd $HOME/projects/vagrantfiles"
 alias habshell="hab && phpsh symfony-interactive.php"
 alias runworker="hab && php symfony worker:run"
@@ -60,3 +60,19 @@ alias mytop="watch -n 0,2 'mysql -uroot -px2kh5424 -e \"show processlist\"'"
 alias adsl="sudo ip ro del default && sudo ip ro add default via 192.168.1.8 dev eth0 && ip ro"
 alias fibber="sudo ip ro del default && sudo ip ro add default via 192.168.1.4 dev eth0 && ip ro"
 
+function ban_ip() {
+    iptables -A INPUT -s $1 -j DROP
+}
+
+# Docker compose
+
+alias dkill="docker-compose kill"
+alias dps="docker-compose ps"
+alias dlogs="docker-compose logs"
+alias dl="dlogs"
+alias drun="docker-compose run --rm"
+alias blowup="docker-compose kill && docker-compose rm -f && docker-compose up -d web"
+
+function dbash() {
+    docker exec -it $1 bash
+}

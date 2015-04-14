@@ -49,6 +49,8 @@ autocmd BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^
 "Nginx
 autocmd BufRead,BufNewFile /etc/nginx/* set filetype=nginx syntax=nginx
 
+"Makefile
+autocmd FileType make setlocal noexpandtab
 
 "Key bindings
 nnoremap <silent><C-left>   :tabprevious

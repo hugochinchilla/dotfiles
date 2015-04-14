@@ -30,6 +30,9 @@
   logbranch = for-each-ref --count=40 --sort=-committerdate refs/heads/ --format='%(committerdate:short) %(color:green)%(refname:short)'
   todo = !"git grep --heading --break --ignore-case -I --color=always -e ' FIX: *' -e ' TODO: *' | sed 's/\\s\\{3,\\}/  /g' | less -R"
   addmodel = add lib/model/om lib/model/map lib/form/base/ lib/filter/base/
+  pulls = !"git stash save 'gonna pull' && git pull && git stash pop"
+  omg = !"git diff --name-only | uniq | xargs subl"
+  resolved = !"git diff --name-only | uniq | xargs git add"
 [color]
   ui = true
 [color "diff"]

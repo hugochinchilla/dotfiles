@@ -193,10 +193,15 @@ bar {
 ##---------
 #colourclass               border    bckgrnd    text
 #client.focused             #434D53   #434D53    #E9D558
-client.focused             #8C978E   #8C978E    #222222
-client.focused_inactive    #2A2C31   #2A2C31    #FFFFFF
-client.unfocused           #2A2C31   #2A2C31    #FFFFFF
-client.urgent              #FF0000   #FF0000    #FFFFFF
+#client.focused             #8C978E   #8C978E    #222222
+#client.focused_inactive    #2A2C31   #2A2C31    #FFFFFF
+#client.unfocused           #2A2C31   #2A2C31    #FFFFFF
+#client.urgent              #FF0000   #FF0000    #FFFFFF
+client.focused #0088CC #0088CC #ffffff #dddddd
+client.focused_inactive #333333 #333333 #888888 #292d2e
+client.unfocused #333333 #333333 #888888 #292d2e
+client.urgent #2f343a #900000 #ffffff #900000
+
 
 # Criterias available
 #
