@@ -23,9 +23,8 @@
 	[
 		"Markdown",
 		"PhpNamespace",
-		"Vintage",
-		"SublimeCodeIntel",
-		"PHPUnit"
+		"PHPUnit",
+		"Vintage"
 	],
 	"php_namespace.stop_folders":
 	[
