@@ -71,7 +71,10 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
+for file in $HOME/.{exports,aliases,functions,extra}; do
+  [ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
 
-PS1='${debian_chroot:+($debian_chroot)}\[\033[00;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+for completion in $HOME/.completions/*; do
+  source "$completion";
+done;
