@@ -1,5 +1,5 @@
 {
-	"color_scheme": "Packages/Gutter Color/Monokai.gcfix.tmTheme",
+	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
 	"draw_white_space": "selection",
 	"ensure_newline_at_eof_on_save": true,
 	"file_exclude_patterns":
@@ -24,6 +24,7 @@
 		"Markdown",
 		"PhpNamespace",
 		"Vintage",
+		"SublimeCodeIntel",
 		"PHPUnit"
 	],
 	"php_namespace.stop_folders":

@@ -1,23 +1,31 @@
 {
+	"in_process_packages":
+	[
+		"SublimeCodeIntel"
+	],
 	"installed_packages":
 	[
 		"Alignment",
+		"CoffeeAngular Syntax",
 		"DocBlockr",
 		"Dockerfile Syntax Highlighting",
 		"GitGutter",
+		"GitGutter-Edge",
+		"GitHub Flavored Markdown Preview",
 		"Gutter Color",
 		"INI",
+		"Jekyll",
 		"Jinja2",
 		"LESS",
 		"LiveReload",
+		"Markdown Extended",
 		"Markdown Preview",
 		"MarkdownEditing",
 		"Modelines",
+		"Monokai Blueberry Color Scheme",
+		"Monokai Gray",
 		"nginx",
 		"Numix Theme",
-		"Markdown Extended",
-		"Markdown Preview",
-		"Monokai Blueberry Color Scheme",
 		"Oblivion Color Scheme",
 		"Package Control",
 		"PHP Companion",

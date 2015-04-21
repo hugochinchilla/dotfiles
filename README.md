@@ -3,9 +3,15 @@ dotfiles
 
 Config files on my ~
 
-
 Quick setup
 -----------
+
+Install zsh with oh-my-zsh first
+
+```
+sudo apt-get install -y zsh
+curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+```
 
 ```
 cd ~ && \
@@ -15,8 +21,3 @@ cd ~ && \
   git reset --hard HEAD
 ```
 
-Install oh-my-zsh
-
-```
-curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
-```
