@@ -9,13 +9,13 @@
     "phpcs_show_gutter_marks": true,
 
     // Show outline for errors
-    "phpcs_outline_for_errors": false,
+    "phpcs_outline_for_errors": true,
 
     // Show the errors in the status bar
     "phpcs_show_errors_in_status": true,
 
     // Show the errors in the quick panel so you can then goto line
-    "phpcs_show_quick_panel": false,
+    "phpcs_show_quick_panel": true,
 
     // Do you want to run the phpcs checker?
     "phpcs_sniffer_run": true,
@@ -42,7 +42,7 @@
     "phpmd_run": true,
 
     // Execute the phpmd on file save
-    "phpmd_command_on_save": true,
+    "phpmd_command_on_save": false,
 
     // It seems python/sublime cannot always find the phpmd application
     // If empty, then use PATH version of phpmd, else use the set value

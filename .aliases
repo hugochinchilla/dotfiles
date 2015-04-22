@@ -71,7 +71,9 @@ alias dps="docker-compose ps"
 alias dlogs="docker-compose logs"
 alias dl="dlogs"
 alias drun="docker-compose run --rm"
-alias blowup="docker-compose kill && docker-compose rm -f && docker-compose up -d web"
+alias drestart="docker-compose kill && docker-compose rm -f && docker-compose up -d web"
+alias blowup="drestart"
+alias drestart-workers="docker ps -a | grep worker | awk '{print \$1}' | xargs docker restart"
 
 function dbash() {
     docker exec -it $1 bash

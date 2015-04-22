@@ -18,6 +18,7 @@
     cursor_shape = ibeam
     font = Ubuntu Mono 11
     foreground_color = "#ffffff"
+    scroll_on_output = False
     scrollback_infinite = True
     allow_bold = False
   [[solarized-dark]]

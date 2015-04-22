@@ -18,7 +18,7 @@
 		".deb",
 		".box"
 	],
-	"font_size": 10,
+	"font_size": 11,
 	"ignored_packages":
 	[
 		"Markdown",
@@ -41,7 +41,7 @@
 	"soda_folder_icons": true,
 	"tab_completion": false,
 	"tab_size": 2,
-	"theme": "Soda Dark 3.sublime-theme",
+	"theme": "Phoenix Dark.sublime-theme",
 	"trailing_spaces_include_current_line": false,
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true
