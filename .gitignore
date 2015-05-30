@@ -148,3 +148,9 @@
 .zprofile
 .zsh.prompts/
 .zshenv
+.Prismatik/Logs/
+.cpan
+.cpanm
+.mplayer
+.openvr
+.cura
