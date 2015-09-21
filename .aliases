@@ -60,21 +60,39 @@ alias mytop="watch -n 0,2 'mysql -uroot -px2kh5424 -e \"show processlist\"'"
 alias adsl="sudo ip ro del default && sudo ip ro add default via 192.168.1.8 dev eth0 && ip ro"
 alias fibber="sudo ip ro del default && sudo ip ro add default via 192.168.1.4 dev eth0 && ip ro"
 
+function gateway(){
+  if [ -z "$1" ]; then
+    echo "Missing parameter"
+    return 1
+  fi
+  sudo ip ro del default
+  sudo ip ro add default via 192.168.1.$1 dev eth0
+  ip ro
+}
+
 function ban_ip() {
     iptables -A INPUT -s $1 -j DROP
 }
 
 # Docker compose
 
+alias dnotify="notify-send -i /home/hchinchilla/Imágenes/logos/docker.png"
 alias dkill="docker-compose kill"
 alias dps="docker-compose ps"
 alias dlogs="docker-compose logs"
 alias dl="dlogs"
 alias drun="docker-compose run --rm"
-alias drestart="docker-compose kill && docker-compose rm -f && docker-compose up -d web"
+alias drestart="docker-compose kill && docker-compose rm -f && docker-compose up -d web && dps && dnotify 'project restarted'"
 alias blowup="drestart"
-alias drestart-workers="docker ps -a | grep worker | awk '{print \$1}' | xargs docker restart"
+alias drestart-workers="docker ps -a | grep worker | awk '{print \$1}' | xargs docker restart && dnotify 'workers restarted'"
 
 function dbash() {
     docker exec -it $1 bash
 }
+
+function migrate() {
+    hab
+    drun --no-deps symfony propel:migrate
+    mpg123 web/audio/migration.mp3 &> /dev/null
+}
+alias http='docker run -it --rm --net=host clue/httpie'
