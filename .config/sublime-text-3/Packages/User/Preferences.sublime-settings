@@ -2,14 +2,14 @@
 	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
 	"draw_white_space": "selection",
 	"ensure_newline_at_eof_on_save": true,
-	"file_exclude_patterns":
+	"extra_file_exclude_patterns":
 	[
 		"*.deb",
 		"*.box",
 		"*.pyc",
 		"*.sublime-*"
 	],
-	"folder_exclude_patterns":
+	"extra_folder_exclude_patterns":
 	[
 		".svn",
 		".git",
@@ -18,13 +18,32 @@
 		".deb",
 		".box"
 	],
+	"file_exclude_patterns":
+	[
+		"*.deb",
+		"*.box",
+		"*.pyc",
+		"*.sublime-*",
+	],
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		".vagrant",
+		".deb",
+		".box",
+		".cache",
+		".config",
+		".psysh_history",
+	],
 	"font_size": 11,
 	"ignored_packages":
 	[
-		"Markdown",
-		"PhpNamespace",
 		"PHPUnit",
-		"Vintage"
+		"PhpNamespace",
+		"Vintage",
+		"Markdown"
 	],
 	"php_namespace.stop_folders":
 	[
