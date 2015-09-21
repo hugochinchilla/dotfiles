@@ -15,15 +15,15 @@
 
 set $mod Mod4
 
-workspace 1 output HDMI2
-workspace 2 output HDMI2
-workspace 5 output HDMI2
-workspace 3 output VGA1
-workspace 4 output VGA1
-workspace 6 output VGA1
-workspace 7 output VGA1
-workspace 8 output VGA1
-workspace 9 output VGA1
+workspace 1 output VGA1
+workspace 2 output VGA1
+workspace 5 output VGA1
+workspace 3 output HDMI2
+workspace 4 output HDMI2
+workspace 6 output HDMI2
+workspace 7 output HDMI2
+workspace 8 output HDMI2
+workspace 9 output HDMI2
 
 workspace_auto_back_and_forth yes
 
@@ -262,6 +262,5 @@ exec --no-startup-id nitrogen --restore
 exec subl
 exec google-chrome
 exec spotify
-exec empathy
-exec sqlyog
+exec xmodmap ~/.Xmodmap
 
