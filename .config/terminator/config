@@ -1,32 +1,26 @@
 [global_config]
 [keybindings]
+  go_left = None
+  go_down = None
+  go_right = None
+  go_up = None
 [profiles]
   [[default]]
-    background_image = None
-    scrollbar_position = hidden
-    palette = "#000000:#e52222:#a6e32d:#fc951e:#c48dff:#fa2573:#06989a:#f2f2f2:#424242:#f66363:#d7efa7:#ffb968:#d6b2fd:#ff5b97:#6fc5c6:#eeeeec"
-    visible_bell = True
-    background_darkness = 0.96
-    scrollback_lines = 2000
-    background_type = transparent
     use_system_font = False
-    scroll_background = False
-    use_custom_command = True
-    icon_bell = False
-    show_titlebar = False
-    custom_command = zsh
-    cursor_shape = ibeam
-    font = Ubuntu Mono 11
-    foreground_color = "#ffffff"
-    scroll_on_output = False
-    scrollback_infinite = True
-    allow_bold = False
-  [[solarized-dark]]
     background_image = None
+    scroll_on_output = False
+    show_titlebar = False
+    font = Anonymous Pro for Powerline 10
+    allow_bold = False
+    scrollback_infinite = True
+  [[solarized-dark]]
     palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    background_image = None
+    use_system_font = False
     cursor_color = "#eee8d5"
     foreground_color = "#eee8d5"
     show_titlebar = False
+    font = Droid Sans Mono for Powerline 11
     background_color = "#002b36"
     allow_bold = False
   [[solarized-light]]
