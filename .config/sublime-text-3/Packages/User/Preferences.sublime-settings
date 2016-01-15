@@ -23,7 +23,7 @@
 		"*.deb",
 		"*.box",
 		"*.pyc",
-		"*.sublime-*",
+		"*.sublime-*"
 	],
 	"folder_exclude_patterns":
 	[
@@ -35,15 +35,18 @@
 		".box",
 		".cache",
 		".config",
-		".psysh_history",
+		".psysh_history"
 	],
-	"font_size": 11,
+	"font_size": 15,
 	"ignored_packages":
 	[
-		"PHPUnit",
+		"Markdown",
+		"Modelines",
 		"PhpNamespace",
-		"Vintage",
-		"Markdown"
+		"PHPUnit",
+		"QuickPrint",
+		"SublimeCodeIntel",
+		"Vintage"
 	],
 	"php_namespace.stop_folders":
 	[
@@ -60,7 +63,7 @@
 	"soda_folder_icons": true,
 	"tab_completion": false,
 	"tab_size": 2,
-	"theme": "Phoenix Dark.sublime-theme",
+	"theme": "Default.sublime-theme",
 	"trailing_spaces_include_current_line": false,
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true

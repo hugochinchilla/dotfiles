@@ -1,26 +1,19 @@
 {
-	"in_process_packages":
-	[
-	],
+	"bootstrapped": true,
 	"installed_packages":
 	[
 		"Alignment",
-		"CoffeeAngular Syntax",
 		"DocBlockr",
 		"Dockerfile Syntax Highlighting",
 		"GitGutter",
-		"GitGutter-Edge",
-		"GitHub Flavored Markdown Preview",
 		"Gutter Color",
 		"INI",
 		"Jekyll",
 		"Jinja2",
 		"LESS",
-		"LiveReload",
 		"Markdown Extended",
 		"Markdown Preview",
 		"MarkdownEditing",
-		"Modelines",
 		"Monokai Blueberry Color Scheme",
 		"Monokai Gray",
 		"nginx",
@@ -33,8 +26,6 @@
 		"PHPUnit",
 		"PHPUnit Completions",
 		"Python Improved",
-		"QuickPrint",
-		"SaltStack-related syntax highlighting and snippets",
 		"SideBarEnhancements",
 		"SublimeCodeIntel",
 		"SublimeGit",
