@@ -21,6 +21,7 @@
 .:101-fakexinerama
 .AfterShotPro/
 .android/
+.ansible_galaxy
 .arduino/
 .arduino15/
 .atom/
@@ -30,6 +31,7 @@
 .bash_profile
 .bin/
 .btsyncrc
+.byobu/
 .cache/
 .calibre_calibre GUI.lock
 .clamtk/
@@ -44,6 +46,7 @@
 .docker/
 .dockercfg
 .editrc
+.ecs/
 .fakexinerama
 .flowblade/
 .fonts/
@@ -79,6 +82,7 @@
 .mongorc.js
 .mono/
 .mozilla/
+.mplayer/
 .my.cnf
 .mysql/
 .node-gyp/
@@ -120,6 +124,7 @@
 .telegram/
 .thumbnails/
 .thunderbird/
+.tutum
 .vagrant.d/
 .vim/
 .viminfo
