@@ -7,6 +7,11 @@ export TERM=xterm-256color
 export HABITISSIMO_SITE_ID="habitissimo_es"
 export CHURROSITES_SITE_ID="reformabarcelona"
 
+export GOROOT="$HOME/gocode"
+export GOPATH="$GOROOT"
+export PATH="$PATH:$GOROOT/bin"
+export GO15VENDOREXPERIMENT=1
+
 # Pure prompt options
 PURE_GIT_UNTRACKED_DIRTY=0
 
@@ -38,3 +43,6 @@ if [[ -d "$HOME/.composer/vendor/bin" ]] ; then
   export PATH="$PATH:$HOME/.composer/vendor/bin"
 fi
 
+if [[ -f "$HOME/projects/stderred/build/libstderred.so" ]] ; then
+  export LD_PRELOAD="$HOME/projects/stderred/build/libstderred.so${LD_PRELOAD:+:$LD_PRELOAD}"
+fi
