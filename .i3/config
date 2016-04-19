@@ -15,11 +15,11 @@
 
 set $mod Mod4
 
-workspace 1 output VGA1
-workspace 2 output VGA1
-workspace 5 output VGA1
+workspace 1 output HDMI1
+workspace 2 output HDMI1
+workspace 5 output HDMI1
+workspace 4 output HDMI1
 workspace 3 output HDMI2
-workspace 4 output HDMI2
 workspace 6 output HDMI2
 workspace 7 output HDMI2
 workspace 8 output HDMI2
@@ -147,8 +147,6 @@ bindsym $mod+Shift+equal           move workspace number 10
 bindsym $mod+Shift+C reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+R restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+E exit
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -224,14 +222,16 @@ client.urgent #2f343a #900000 #ffffff #900000
 
 assign [class="Komodo"] 1
 assign [class="Sublime_text"] 1
-assign [class="Google-chrome" instance="^crx_"] 6
-assign [class="chromium-browser"] 3
-assign [class="Google-chrome"] 3
+assign [class="google-chrome"] 3
 assign [class="Firefox"] 3
-assign [class="Spotify"] 4
 assign [class="Wine" instance="SQLyog.exe"] 5
 assign [class="empathy"] 6
 assign [class="Empathy"] 6
+assign [class="Slack"] 4
+
+# Spotify needs special case (https://github.com/i3/i3/issues/2060)
+assign [class="spotify"] workspace 4
+for_window [class="Spotify"] move to workspace 4
 
 for_window [class="Gtkdialog"] floating enable
 for_window [class="Gnome-control-center"] floating enable
@@ -255,12 +255,13 @@ for_window [class="Qpaeq"] floating enable
 
 
 # set background
-exec --no-startup-id xsetroot -solid "#191919"
-exec --no-startup-id nitrogen --restore
+#exec --no-startup-id xsetroot -solid "#191919"
+#exec --no-startup-id nitrogen --restore
 
 # launch applications
-exec subl
-exec google-chrome
-exec spotify
-exec xmodmap ~/.Xmodmap
-
+exec --no-startup-id subl
+exec --no-startup-id google-chrome
+exec --no-startup-id spotify
+exec --no-startup-id slack
+exec --no-startup-id i3-msg 'workspace 2; exec i3-sensible-terminal'
+exec --no-startup-id sleep 2 && /usr/bin/xmodmap ~/.Xmodmap
