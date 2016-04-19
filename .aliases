@@ -41,7 +41,7 @@ alias gra="git rebase --abort"
 alias ga="git commit --amend"
 
 function gg() {
-    git grep -in $1 -- './*' ':!./web/components/*' ':!./tools/wordpress/*' ':!./lib/model/migration/data' ':!./lib/vendor/packages'
+    git grep -in $1 -- './*' ':!./web/components/*' ':!./tools/wordpress/*' ':!./lib/model/migration/data' ':!./lib/vendor/packages' ':!*.map' ':!*.min.js' ':!*.min.css'
 }
 alias ggg="git grep -in"
 
@@ -100,15 +100,17 @@ alias drun="docker-compose run --rm"
 function dup() {
     docker-compose up -d $@
 }
+
 function drestart() {
-    dkill && drm
+    dstop $@
+    drm $@
     dup $@
     dnotify "Docker-compose restarted"
 }
 
 function dbash() {
     local CONTAINER_NAME=$1
-    local COMPOSE_CONTAINER=`dps 2> /dev/null | grep $1 | awk '{print $1}'`
+    local COMPOSE_CONTAINER=`dps 2> /dev/null | awk '{print $1}' | grep $1`
 
     if [ -n "$COMPOSE_CONTAINER" ]; then
         local CONTAINER_NAME=$COMPOSE_CONTAINER
