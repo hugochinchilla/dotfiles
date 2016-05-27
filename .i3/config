@@ -34,9 +34,15 @@ bindsym $mod+z move workspace to output left
 bindsym $mod+x move workspace to output right
 bindsym Control+Mod1+Up exec amixer -q set Master 2dB+ unmute
 bindsym Control+Mod1+Down exec amixer -q set Master 2dB- unmute
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 7dB+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q set Master 7dB- unmute
+bindsym XF86AudioMute exec amixer -q set Master mute
+
 bindsym Print exec xfce4-screenshooter
 bindsym $mod+c exec gnome-calculator
 
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 # i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
@@ -44,6 +50,8 @@ bindsym $mod+c exec gnome-calculator
 
 # font for window titles. ISO 10646 = Unicode
 font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+font pango:DejaVu Sans Mono 20
+
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -174,7 +182,7 @@ bindsym $mod+r mode "resize"
 bar {
     status_command i3status
     position bottom
-    tray_output none
+    tray_output primary
     colors {
         background #000000
         statusline #C2C092
@@ -265,3 +273,4 @@ exec --no-startup-id spotify
 exec --no-startup-id slack
 exec --no-startup-id i3-msg 'workspace 2; exec i3-sensible-terminal'
 exec --no-startup-id sleep 2 && /usr/bin/xmodmap ~/.Xmodmap
+exec --no-startup-id sleep 4 && /usr/bin/nm-applet
