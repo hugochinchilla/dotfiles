@@ -15,9 +15,11 @@ curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | 
 
 ```
 cd ~ && \
-  git clone --no-checkout git@github.com:hugochinchilla/dotfiles.git && \
+  git clone --no-checkout https://github.com/hugochinchilla/dotfiles.git && \
   mv dotfiles/.git . && \
   rm -r dotfiles && \
-  git reset --hard HEAD
+  git reset --hard HEAD \
+  rm README.md \
+  git update-index --assume-unchanged README.md
 ```
 
