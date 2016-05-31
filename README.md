@@ -18,8 +18,9 @@ cd ~ && \
   git clone --no-checkout https://github.com/hugochinchilla/dotfiles.git && \
   mv dotfiles/.git . && \
   rm -r dotfiles && \
-  git reset --hard HEAD \
-  rm README.md \
+  git reset --hard HEAD && \
+  git submodule init && git submodule update && ~/projects/fonts/install.sh && \
+  rm README.md && \
   git update-index --assume-unchanged README.md
 ```
 
