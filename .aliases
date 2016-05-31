@@ -7,6 +7,7 @@ alias ssh-password='ssh -o PreferredAuthentications=password -o PubkeyAuthentica
 # system command aliases
 alias mkdir='mkdir -p'
 alias grep='grep --color=tty'
+alias egrep='egrep --color=tty'
 
 # custom aliases
 alias sudo="sudo -E" # preserve environment by default
@@ -48,6 +49,10 @@ alias ggg="git grep -in"
 # parses output from git grep and opens files on sublime
 function gosub(){ 
       awk '{print $1}' | sed 's/:$//' | xargs subl
+}
+
+function gitfiles(){
+    awk '{print $1}' | cut -d':' -f1 | sort | uniq
 }
 
 # Add an "alert" alias for long running commands. Use like so:
