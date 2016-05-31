@@ -1,5 +1,6 @@
 {
 	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+	"dpi_scale": 2,
 	"draw_white_space": "selection",
 	"ensure_newline_at_eof_on_save": true,
 	"extra_file_exclude_patterns":
