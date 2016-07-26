@@ -32,18 +32,6 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(virtualenvwrapper)
 
-unsetopt correct_all
-setopt correct
-setopt rmstarsilent
-
-# Load custom config
-autoload bashcompinit
-bashcompinit
-
-
-for completion in $HOME/.completions/*; do
-  source "$completion";
-done;
 
 source $ZSH/oh-my-zsh.sh
 
@@ -51,6 +39,18 @@ for file in $HOME/.{exports,aliases,functions,extra}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 
+for completion in $HOME/.completions/*; do
+  source "$completion";
+done;
+
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=30000
+
+# Load custom config
+autoload bashcompinit
+bashcompinit
+
+unsetopt correct_all
+setopt correct
+setopt rmstarsilent

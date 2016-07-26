@@ -23,6 +23,7 @@ alias todo="vim ~/TODO"
 alias htop="TERM=screen htop"
 alias mysqlps="watch -n0,2 \"mysql -e 'show processlist'\""
 alias xclip="xclip -selection clipboard"
+alias cal='ncal -Mb'
 
 # Vagrant
 alias vssh="vagrant ssh"
