@@ -1,11 +1,9 @@
 # vim: filetype=sh
 
 export EDITOR=vim
-#export TERM=xterm
 export TERM=xterm-256color
 
-export HABITISSIMO_SITE_ID="habitissimo_es"
-export CHURROSITES_SITE_ID="reformabarcelona"
+export WORKON_HOME="$HOME/.virtualenvs"
 
 # Pure prompt options
 PURE_GIT_UNTRACKED_DIRTY=0
@@ -18,6 +16,9 @@ SAVEHIST=30000
 # set PATH so it includes user's private bin if it exists
 if [[ -d "$HOME/.bin" ]] ; then
   export PATH="$HOME/.bin:$PATH"
+fi
+if [[ -d "$HOME/.local/bin" ]] ; then
+  export PATH="$HOME/.local/bin:$PATH"
 fi
 
 # RVM setup

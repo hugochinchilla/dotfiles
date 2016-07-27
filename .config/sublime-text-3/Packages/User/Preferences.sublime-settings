@@ -37,7 +37,7 @@
 		".config",
 		".psysh_history"
 	],
-	"font_size": 11,
+	"font_size": 13,
 	"highlight_line": true,
 	"ignored_packages":
 	[

@@ -59,6 +59,7 @@
 .gnupg/
 .gns3/
 .gstreamer-0.10/
+.gtkrc-2.0
 .hhvm.hhbc
 .ICEauthority
 .icons/

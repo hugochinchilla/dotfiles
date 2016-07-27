@@ -5,13 +5,12 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-#ZSH_THEME="robbyrussell"
-#ZSH_THEME="alanpeabody"
-ZSH_THEME="idisagree"
-
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+#ZSH_THEME="random"
+#ZSH_THEME="idisagree"
+#ZSH_THEME="amuse"
+#ZSH_THEME="xiong-chiamiov-plus"
+#ZSH_THEME="philips"
+ZSH_THEME="re5et"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -21,9 +20,6 @@ DISABLE_AUTO_UPDATE="true"
 
 # Uncomment to change how many often would you like to wait before auto-updates occur? (in days)
 # export UPDATE_ZSH_DAYS=13
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
 
 # Uncomment following line if you want to disable autosetting terminal title.
 # DISABLE_AUTO_TITLE="true"
@@ -35,13 +31,6 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(virtualenvwrapper)
-#plugins=()
-
-source $ZSH/oh-my-zsh.sh
-
-HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=30000
 
 unsetopt correct_all
 setopt correct
@@ -51,11 +40,17 @@ setopt rmstarsilent
 autoload bashcompinit
 bashcompinit
 
-for file in $HOME/.{exports,aliases,functions,extra}; do
-  [ -r "$file" ] && [ -f "$file" ] && source "$file";
-done;
 
 for completion in $HOME/.completions/*; do
   source "$completion";
 done;
 
+source $ZSH/oh-my-zsh.sh
+
+for file in $HOME/.{exports,aliases,functions,extra}; do
+  [ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=30000

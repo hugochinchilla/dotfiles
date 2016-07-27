@@ -8,6 +8,7 @@
 		"Alignment",
 		"DocBlockr",
 		"Dockerfile Syntax Highlighting",
+		"Emoji",
 		"GitGutter",
 		"Gutter Color",
 		"INI",
@@ -30,7 +31,9 @@
 		"PhpNamespace",
 		"PHPUnit",
 		"PHPUnit Completions",
+		"phpunitkit",
 		"Pretty JSON",
+		"Pretty YAML",
 		"Python Improved",
 		"SideBarEnhancements",
 		"SqlBeautifier",
@@ -42,6 +45,7 @@
 		"Theme - Soda",
 		"Theme - Soda SolarizedDark",
 		"Theme - Spacegray",
-		"Theme - Tech49"
+		"Theme - Tech49",
+		"Xdebug Client"
 	]
 }
