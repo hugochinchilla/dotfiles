@@ -41,10 +41,7 @@ alias grs="git rebase --skip"
 alias gra="git rebase --abort"
 alias ga="git commit --amend"
 
-function gg() {
-    git grep -in $1 -- './*' ':!./web/components/*' ':!./tools/wordpress/*' ':!./lib/model/migration/data' ':!./lib/vendor/packages' ':!*.map' ':!*.min.js' ':!*.min.css'
-}
-alias ggg="git grep -in"
+alias gg="git gg || git grep -in"
 
 # parses output from git grep and opens files on sublime
 function gosub(){ 
