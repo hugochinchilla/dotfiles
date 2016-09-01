@@ -41,7 +41,7 @@
   whitespace = fix,-indent-with-non-tab,trailing-space,-cr-at-eol
   symlinks = true
 [push]
-  default = simple
+  default = current
 [branch]
   # set rebase=true for every new branch
   autosetuprebase = always
