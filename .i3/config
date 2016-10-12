@@ -43,10 +43,10 @@ bindsym $mod+Control+Left workspace prev
 bindsym $mod+Control+Right workspace next
 bindsym $mod+z move workspace to output left
 bindsym $mod+x move workspace to output right
-bindsym Control+Mod1+Up exec amixer -q set Master 2dB+ unmute
-bindsym Control+Mod1+Down exec amixer -q set Master 2dB- unmute
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 7dB+ unmute
-bindsym XF86AudioLowerVolume exec amixer -q set Master 7dB- unmute
+bindsym Control+Mod1+Up exec amixer -q set Master 1dB+ unmute
+bindsym Control+Mod1+Down exec amixer -q set Master 1dB- unmute
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
 bindsym XF86AudioMute exec amixer -q set Master mute
 
 bindsym Print exec xfce4-screenshooter
