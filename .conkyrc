@@ -23,7 +23,7 @@ double_buffer no
 background no
 
 ## Update interval in seconds
-update_interval 2.0
+update_interval 0.5
 
 ## This is the number of times Conky will update before quitting.
 ## Set to zero to run forever.
@@ -50,8 +50,6 @@ override_utf8_locale no
 cpu_avg_samples 2
 
 default_color FF0000
-
-update_interval 1
 
 ## Sensors examples
 # Top Process: ${top name 1}
@@ -88,9 +86,15 @@ update_interval 1
 #V ${exec exec amixer get Headphone -M | grep -oEm 1 "[[:digit:]]*%"}
 
 TEXT
- [{ "full_text" : "     ${fs_used /} /${fs_size} " , "color" : "\#d6a676" },
- { "full_text": "    ${exec docker ps | tail -n +2 | wc -l} ", "color" : "\#2690d6" },
- { "full_text" : "     ${if_up wlan0} ${exec curl -s icanhazip.com} ${else} NOT CONNECTED ${endif}", "color" : "\#5cd637" },
- { "full_text" : "     ${battery_percent}% ", "color" : "\#7690d6" },
- { "full_text" : "     ${exec pactl list sinks | grep -i volume | head -n1 | egrep -o '[0-9]+%' | head -n1} ", "color" : "\#aa71ce" },
- { "full_text" : "     ${time %a %Y-%m-%d}   ${time %H:%M:%S %p}"}],
+ [
+ { "full_text" : "${execi 10 curl -s canihazip.com/s | sponge ~/.cache/public_ip || rm ~/.cache/public_ip}"},
+ { "full_text" : "${execi 2 docker ps  | tail -n +2 | wc -l | sponge ~/.cache/runing_containers}"},
+ { "full_text" : "   ${fs_used /} /${fs_size} " , "color" : "\#d6a676" },
+ { "full_text" : "   ${loadavg 1} ", "color" : "\#EA3126" },
+ { "full_text" : "${if_existing .cache/running_containers}   ${exec cat ~/.cache/running_containers} ${endif}", "color" : "\#2690d6" },
+ { "full_text" : "${if_up wlan0}   ${addr wlan0} @ ${gw_iface} ${endif}", "color" : "\#5cd637" },
+ { "full_text" : "${if_up eth0}   ${addr eth0} @ ${gw_iface} ${endif}", "color" : "\#5cd637" },
+ { "full_text" : "${if_existing .cache/public_ip}   ${exec cat ~/.cache/public_ip} ${endif}", "color" : "\#5cd637" },
+ { "full_text" : "   ${battery_percent}%  ${battery_time} ", "color" : "\#7690d6" },
+ { "full_text" : "   ${exec amixer get Master | egrep -o '[0-9]+%'} ", "color" : "\#aa71ce" },
+ { "full_text" : "   ${time %a %Y-%m-%d}    ${time %H:%M:%S %p}"}],
