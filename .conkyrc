@@ -87,12 +87,12 @@ default_color FF0000
 
 TEXT
  [
- { "full_text" : "${execi 10 curl -s canihazip.com/s | sponge ~/.cache/public_ip || rm ~/.cache/public_ip}"},
+ { "full_text" : "${execi 10 ~/.i3/public_ip.sh | sponge ~/.cache/public_ip}"},
  { "full_text" : "${execi 2 docker ps  | tail -n +2 | wc -l | sponge ~/.cache/runing_containers}"},
  { "full_text" : "   ${fs_used /} /${fs_size} " , "color" : "\#d6a676" },
  { "full_text" : "   ${loadavg 1} ", "color" : "\#EA3126" },
  { "full_text" : "${if_existing .cache/running_containers}   ${exec cat ~/.cache/running_containers} ${endif}", "color" : "\#2690d6" },
- { "full_text" : "${if_up wlan0}   ${addr wlan0} @ ${gw_iface} ${endif}", "color" : "\#5cd637" },
+ { "full_text" : "${if_up wlan0}   ${addr wlan0} ${endif}", "color" : "\#5cd637" },
  { "full_text" : "${if_up eth0}   ${addr eth0} @ ${gw_iface} ${endif}", "color" : "\#5cd637" },
  { "full_text" : "${if_existing .cache/public_ip}   ${exec cat ~/.cache/public_ip} ${endif}", "color" : "\#5cd637" },
  { "full_text" : "   ${battery_percent}%  ${battery_time} ", "color" : "\#7690d6" },
