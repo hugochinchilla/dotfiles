@@ -10,7 +10,7 @@
     background_image = None
     scroll_on_output = False
     show_titlebar = False
-    font = Anonymous Pro for Powerline 10
+    font = Droid Sans Mono for Powerline 11
     allow_bold = False
     scrollback_infinite = True
   [[solarized-dark]]
