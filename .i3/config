@@ -47,7 +47,7 @@ bindsym Control+Mod1+Up exec amixer -q set Master 1dB+ unmute
 bindsym Control+Mod1+Down exec amixer -q set Master 1dB- unmute
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
-bindsym XF86AudioMute exec amixer -q set Master mute
+bindsym XF86AudioMute exec amixer -D pulse set Master 1+ toggle
 
 bindsym Print exec xfce4-screenshooter
 bindsym $mod+c exec gnome-calculator
