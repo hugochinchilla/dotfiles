@@ -73,7 +73,7 @@ alias sqlyog="wine .wine/drive_c/Program\ Files\ \(x86\)/SQLyog/SQLyog.exe"
 alias mytop="watch -n 0,2 'mysql -uroot -px2kh5424 -e \"show processlist\"'"
 alias adsl="sudo ip ro del default && sudo ip ro add default via 192.168.1.8 dev eth0 && ip ro"
 alias fibber="sudo ip ro del default && sudo ip ro add default via 192.168.1.4 dev eth0 && ip ro"
-alias pu="docker-compose run --rm phpunit"
+alias pu="docker-compose run --no-deps --rm phpunit"
 alias habsql='`fab db.shell:es,hugo`'
 alias habdb='habsql'
 
@@ -98,7 +98,7 @@ alias dkill="docker-compose kill"
 alias dstop="docker-compose stop"
 alias drm="docker-compose rm -f"
 alias dps="docker-compose ps"
-alias dlogs="docker-compose logs"
+alias dlogs="docker-compose logs -f -t --tail=1000"
 alias dl="dlogs"
 alias drun="docker-compose run --rm"
 
