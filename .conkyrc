@@ -95,6 +95,5 @@ TEXT
  { "full_text" : "${if_up wlan0}   ${addr wlan0} ${endif}", "color" : "\#5cd637" },
  { "full_text" : "${if_up eth0}   ${addr eth0} @ ${gw_iface} ${endif}", "color" : "\#5cd637" },
  { "full_text" : "${if_existing .cache/public_ip}   ${exec cat ~/.cache/public_ip} ${endif}", "color" : "\#5cd637" },
- { "full_text" : "   ${battery_percent}%  ${battery_time} ", "color" : "\#7690d6" },
  { "full_text" : " ${exec ~/.i3/volume.sh} ", "color" : "\#aa71ce" },
  { "full_text" : "   ${time %a %Y-%m-%d}    ${time %H:%M:%S %p}"}],
