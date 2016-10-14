@@ -23,7 +23,7 @@ set $workspace6 "6"
 set $workspace7 "7"
 set $workspace8 "8"
 set $workspace9 "9"
-set $workspace0 "0"
+set $workspace0 "10"
 
 workspace $workspace1 output HDMI1
 workspace $workspace2 output HDMI1
