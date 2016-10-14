@@ -1,5 +1,8 @@
 #!/bin/bash
-echo '{"version":1}'
-echo '['
-echo '[],'
-exec conky
+
+while true; do
+    echo '{"version":1}'
+    echo '['
+    echo '[],'
+    exec conky
+done
