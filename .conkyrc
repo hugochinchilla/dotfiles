@@ -88,8 +88,8 @@ default_color FF0000
 TEXT
  [
  { "full_text" : "${execi 10 ~/.i3/public_ip.sh | sponge ~/.cache/public_ip}"},
- { "full_text" : "${execi 2 docker ps  | tail -n +2 | wc -l | sponge ~/.cache/runing_containers}"},
- { "full_text" : "   ${fs_used /} /${fs_size} " , "color" : "\#d6a676" },
+ { "full_text" : "${execi 2 docker ps  | tail -n +2 | wc -l | sponge ~/.cache/running_containers}"},
+ { "full_text" : "   ${fs_used /} /${fs_size} " , "color" : "\#d6a676" },
  { "full_text" : "   ${loadavg 1} ", "color" : "\#EA3126" },
  { "full_text" : "${if_existing .cache/running_containers}   ${exec cat ~/.cache/running_containers} ${endif}", "color" : "\#2690d6" },
  { "full_text" : "${if_up wlan0}   ${addr wlan0} ${endif}", "color" : "\#5cd637" },
