@@ -180,6 +180,24 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+set $locker ~/.i3/lock-screen/lock.sh && sleep 1
+
+set $mode_system (l) lock, (e) logout, (s) suspend, (h) halt, (r) reboot
+mode "$mode_system" {
+    bindsym l exec --no-startup-id $locker, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id $locker && systemctl suspend, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym h exec --no-startup-id systemctl poweroff -i, mode "default"  
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Delete mode "$mode_system"
+bindsym $mod+Escape mode "$mode_system"
+bindsym $mod+Control+l exec $locker
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
@@ -278,3 +296,4 @@ exec --no-startup-id sleep 2 && /usr/bin/xmodmap ~/.Xmodmap
 exec --no-startup-id sleep 4 && /usr/bin/nm-applet
 exec --no-startup-id compton -b --backend glx --vsync opengl -i 0.9 --inactive-dim 0.1 -e 0.5
 exec --no-startup-id nitrogen --restore
+exec --no-startup-id xautolock -time 5 -locker $locker
