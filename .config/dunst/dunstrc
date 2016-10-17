@@ -1,11 +1,11 @@
 [global]
-    font = DejaVu Sans 20
+    font = DejaVu Sans 10
 
     # Align icons left/right/off.
     icon_position = left
 
     # Paths to default icons. Make sure these exist on your system.
-    icon_folders = /usr/share/icons/gnome/32x32/status/:/usr/share/icons/gnome/32x32/devices/
+    icon_folders = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
 
     # allow a small subset of html markup:
     # <b>bold</b>
@@ -101,7 +101,7 @@
 
     # Draw a line of 'separatpr_height' pixel height between two notifications.
     # Set to 0 to disable
-    separator_height = 3
+    separator_height = 2
 
     # padding between text and separator
     padding = 20
@@ -129,7 +129,7 @@
     browser = /usr/bin/google-chrome
 
 [frame]
-    width = 3
+    width = 2
     color = "#8ec07c"
 
 [shortcuts]
