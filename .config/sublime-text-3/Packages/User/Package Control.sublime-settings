@@ -6,8 +6,10 @@
 	"installed_packages":
 	[
 		"Alignment",
+		"Babel",
 		"DocBlockr",
 		"Dockerfile Syntax Highlighting",
+		"Emacs-like Modelines",
 		"Emoji",
 		"GitGutter",
 		"Gutter Color",
@@ -35,6 +37,7 @@
 		"Pretty JSON",
 		"Pretty YAML",
 		"Python Improved",
+		"React Templates",
 		"SideBarEnhancements",
 		"SqlBeautifier",
 		"SublimeCodeIntel",
