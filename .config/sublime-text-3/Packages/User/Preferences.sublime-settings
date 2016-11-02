@@ -1,5 +1,5 @@
 {
-	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+	"color_scheme": "Packages/Boxy Theme/schemes/Boxy Solarized Light.tmTheme",
 	"dpi_scale": 2,
 	"draw_white_space": "selection",
 	"ensure_newline_at_eof_on_save": true,
@@ -66,7 +66,7 @@
 	],
 	"tab_completion": false,
 	"tab_size": 2,
-	"theme": "Material-Nil.sublime-theme",
+	"theme": "Boxy Solarized Light.sublime-theme",
 	"trailing_spaces_include_current_line": false,
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true
