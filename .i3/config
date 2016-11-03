@@ -168,10 +168,10 @@ mode "resize" {
     bindsym semicolon   resize grow width 2 px or 2 ppt
 
     # same bindings, but for the arrow keys
-    bindsym Left        resize shrink width 2 px or 2 ppt
-    bindsym Down        resize grow height 2 px or 2 ppt
-    bindsym Up          resize shrink height 2 px or 2 ppt
-    bindsym Right       resize grow width 2 px or 2 ppt
+    bindsym Left        resize shrink width 10 px or 10 ppt
+    bindsym Down        resize grow height 10 px or 10 ppt
+    bindsym Up          resize shrink height 10 px or 10 ppt
+    bindsym Right       resize grow width 10 px or 10 ppt
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -281,6 +281,7 @@ for_window [class="Komodo edit" instance="Komodo_gotofile"] floating enable
 for_window [class="Nautilus" instance="file_progress"] floating enable
 for_window [class="Gstm"] floating enable
 for_window [class="Qpaeq"] floating enable
+for_window [window_role="GtkFileChooserDialog"] floating enable
 
 
 # set background
