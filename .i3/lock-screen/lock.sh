@@ -1,5 +1,16 @@
 #!/usr/bin/env bash
 
+i3flags='-n '
+
+# Do fork if called from i3lock.service
+if [[ "$1" == '-f' ]]; then
+    i3flags=''
+fi
+
+if pgrep i3lock; then
+    exit 0 # an i3lock instance is already running
+fi
+
 revert() {
 	xset dpms 0 0 0
 }
@@ -15,9 +26,7 @@ if [ -f "$icon_alt" ]; then
     fi
 fi
 
-tmpbg='/tmp/screen.png'
-
-(( $# )) && { icon=$1; }
+tmpbg="$HOME/.lock-screen.png"
 
 scrot "$tmpbg"
 convert "$tmpbg" -scale 10% -scale 1000% "$tmpbg"
@@ -28,7 +37,9 @@ dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPl
 # Enable DPMS to stop displays on inactivity
 # xset +dpms dpms (standby time) (suspend time) (off time)
 xset +dpms dpms 0 60 60
-# Lock the screen
-i3lock -i "$tmpbg" -t -u -n
+
+
+i3lock -i "$tmpbg" -t -u $i3flags
+
 # Deactivate DPMS
 revert
