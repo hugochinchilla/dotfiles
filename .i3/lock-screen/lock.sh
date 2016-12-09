@@ -7,8 +7,9 @@ if [[ "$1" == '-f' ]]; then
     i3flags=''
 fi
 
-if pgrep i3lock; then
-    exit 0 # an i3lock instance is already running
+if pgrep i3lock > /dev/null; then
+    echo "An instance of i3lock is already running"
+    exit 0
 fi
 
 revert() {
