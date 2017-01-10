@@ -131,3 +131,13 @@ function migrate() {
     drun --no-deps symfony propel:migrate
     mpg123 web/audio/migration.mp3 &> /dev/null
 }
+
+
+# Arch aliases
+alias pkg-install="pacman -S"
+alias pkg-search="pacman -Ss"
+alias pkg-remove="pacman -Rs"
+alias pkg-purge="pacman -Rsn"
+alias pkg-update="pacman -Sy"
+alias pkg-upgrade="pacman -Syu"
+
