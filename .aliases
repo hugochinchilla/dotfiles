@@ -10,7 +10,7 @@ alias grep='grep --color=tty'
 alias egrep='egrep --color=tty'
 
 # custom aliases
-alias sudo="sudo -E" # preserve environment by default
+alias sudo="sudo -E " # preserve environment by default
 alias prettylog="awk '{ gsub(/\\\"/,\"\",\$7); printf \"%-16s %s]  %-4s  %s  %-8s  %s\n\", \$2,\$5,\$7,\$10,\$11,\$8}'"
 alias proxyssh="ssh -N -D 0.0.0.0:12345 $1"
 alias star_treck="play -c2 -n synth whitenoise band -n 100 24 band -n 300 100 gain +20"
