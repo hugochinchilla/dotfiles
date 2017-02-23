@@ -2,6 +2,7 @@
 
 export EDITOR=vim
 export TERM=xterm-256color
+export LESSCHARSET=utf-8
 
 export WORKON_HOME="$HOME/.virtualenvs"
 
@@ -44,3 +45,4 @@ if [[ -f "$HOME/projects/stderred/build/libstderred.so" ]] ; then
 fi
 
 export WORKON_HOME="$HOME/.virtualenvs"
+export PULSE_RUNTIME_PATH="/run/user/$UID/pulse/" 

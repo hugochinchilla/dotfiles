@@ -23,7 +23,11 @@ alias todo="vim ~/TODO"
 alias htop="TERM=screen htop"
 alias mysqlps="watch -n0,2 \"mysql -e 'show processlist'\""
 alias xclip="xclip -selection clipboard"
-alias cal='ncal -Mb'
+
+# alias cal to ncal if ncal exists
+if command -v ncal > /dev/null 2 >& 1; then
+    alias cal='ncal -Mb'
+fi
 
 # Vagrant
 alias vssh="vagrant ssh"
@@ -65,6 +69,7 @@ fi
 
 # Work aliases
 alias hab="cd $HOME/projects/habitissimo"
+alias arale="cd $HOME/projects/arale-ng"
 alias cc="hab && rm -rf cache/* && notify-send -i edit-clear \"symfony cache cleared\""
 alias vag="cd $HOME/projects/vagrantfiles"
 alias habshell="hab && phpsh symfony-interactive.php"
@@ -140,4 +145,5 @@ alias pkg-remove="pacman -Rs"
 alias pkg-purge="pacman -Rsn"
 alias pkg-update="pacman -Sy"
 alias pkg-upgrade="pacman -Syu"
+alias pkg-list="pacman -Q"
 

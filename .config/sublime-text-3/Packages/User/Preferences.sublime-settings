@@ -1,4 +1,23 @@
 {
+	"binary_file_patterns":
+	[
+		".jpg",
+		".jpeg",
+		".png",
+		".gif",
+		".ttf",
+		".tga",
+		".dds",
+		".ico",
+		".eot",
+		".pdf",
+		".swf",
+		".jar",
+		"*.zip",
+		"vendor/**",
+		"node_modules/**",
+		".certs/**"
+	],
 	"color_scheme": "Packages/Boxy Theme/schemes/Boxy Solarized Light.tmTheme",
 	"dpi_scale": 2,
 	"draw_white_space": "selection",
@@ -21,10 +40,28 @@
 	],
 	"file_exclude_patterns":
 	[
-		"*.deb",
-		"*.box",
-		"*.pyc",
-		"*.sublime-*"
+		"*.sublime-*",
+		".deb",
+		".box",
+		".pyc",
+		".pyo",
+		".exe",
+		".dll",
+		".obj",
+		".o",
+		".a",
+		".lib",
+		".so",
+		".dylib",
+		".ncb",
+		".sdf",
+		".suo",
+		".pdb",
+		".idb",
+		".DS_Store",
+		".class",
+		".psd",
+		".db"
 	],
 	"folder_exclude_patterns":
 	[
