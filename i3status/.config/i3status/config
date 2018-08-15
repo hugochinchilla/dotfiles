@@ -1,0 +1,63 @@
+general {
+  colors = true
+  interval = 1
+  color_good = "#1DC12D"
+  color_bad = "#DD4821"
+  color_degraded = "#EDC130"
+  color_separator = "#c5c5c5"
+  output_format = "i3bar"
+}
+
+order =  "battery 0"
+order += "volume master"
+order += "ethernet eth0"
+order += "wireless wlan0"
+order += "disk /"
+order += "load"
+order += "time"
+
+ethernet eth0 {
+  # if you use %speed, i3status requires root privileges
+  format_up = " E: %ip "
+  format_down = " E: down "
+}
+
+wireless wlan0 {
+  format_up = " W: (%quality at %essid, %bitrate) %ip "
+  format_down = " W: down "
+}
+
+battery 0 {
+  #format = " %status %percentage %remaining %emptytime "
+  format = " %status %percentage %remaining "
+  format_down = "No battery"
+  status_chr = "⚇ CHR"
+  status_bat = "⚡ BAT"
+  status_full = "☻ FULL"
+  hide_seconds=true
+  path = "/sys/class/power_supply/BAT%d/uevent"
+  low_threshold = 10
+}
+
+run_watch DHCP {
+  pidfile = "/var/run/dhcpcd*.pid"
+}
+
+time {
+  format = " %Y-%m-%d %H:%M:%S "
+}
+
+load {
+  format = " %1min "
+}
+
+disk "/" {
+  format = " %free "
+}
+
+volume master {
+    format = " ♪ %volume "
+    device = "default"
+    mixer = "Master"
+    mixer_idx = 0
+}

@@ -1,0 +1,108 @@
+{
+	"binary_file_patterns":
+	[
+		".jpg",
+		".jpeg",
+		".png",
+		".gif",
+		".ttf",
+		".tga",
+		".dds",
+		".ico",
+		".eot",
+		".pdf",
+		".swf",
+		".jar",
+		"*.zip",
+		"vendor/**",
+		"node_modules/**",
+		".certs/**"
+	],
+	"dpi_scale": 1,
+	"draw_white_space": "selection",
+	"ensure_newline_at_eof_on_save": true,
+	"extra_file_exclude_patterns":
+	[
+		"*.deb",
+		"*.box",
+		"*.pyc",
+		"*.sublime-*"
+	],
+	"extra_folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		".vagrant",
+		".deb",
+		".box"
+	],
+	"file_exclude_patterns":
+	[
+		"*.sublime-*",
+		".deb",
+		".box",
+		".pyc",
+		".pyo",
+		".exe",
+		".dll",
+		".obj",
+		".o",
+		".a",
+		".lib",
+		".so",
+		".dylib",
+		".ncb",
+		".sdf",
+		".suo",
+		".pdb",
+		".idb",
+		".DS_Store",
+		".class",
+		".psd",
+		".db"
+	],
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		".vagrant",
+		".deb",
+		".box",
+		".cache",
+		".psysh_history"
+	],
+	"font_size": 13,
+	"highlight_line": true,
+	"ignored_packages":
+	[
+		"Markdown",
+		"Modelines",
+		"PHP",
+		"PhpNamespace",
+		"PHPUnit",
+		"QuickPrint",
+		"SideBarEnhancements",
+		"Vintage"
+	],
+	"mouse_wheel_tabswitch": false,
+	"overlay_scroll_bars": "enabled",
+	"php_namespace.stop_folders":
+	[
+		"src",
+		"workspace"
+	],
+	"rulers":
+	[
+		0,
+		80,
+		100
+	],
+	"tab_completion": false,
+	"tab_size": 2,
+	"theme": "Adaptive.sublime-theme",
+	"trailing_spaces_include_current_line": false,
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true
+}

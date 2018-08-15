@@ -1,0 +1,58 @@
+[user]
+  name = Hugo Chinchilla
+  email = hugoasecas@gmail.com
+
+[alias]
+  st = status
+  ci = commit
+  br = branch
+  co = checkout
+  df = diff
+  lg = log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  lg = log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  ls = ls-files
+  logbranch = for-each-ref --count=40 --sort=-committerdate refs/heads/ --format='%(committerdate:short) %(color:green)%(refname:short)'
+  todo = !"git grep --heading --break --ignore-case -I --color=always -e ' FIX: *' -e ' TODO: *' | sed 's/\\s\\{3,\\}/  /g' | less -R"
+  addmodel = add lib/model/om lib/model/map lib/form/base/ lib/filter/base/
+  pulls = !"git stash save 'gonna pull' && git pull && git stash pop"
+  omg = !"git diff --name-only | uniq | xargs subl"
+  resolved = !"git diff --name-only | uniq | xargs git add"
+
+[core]
+  whitespace = fix,-indent-with-non-tab,trailing-space,-cr-at-eol
+  symlinks = true
+  pager = less --tabs=4 -RFX
+[push]
+  default = current
+[branch]
+  # set rebase=true for every new branch
+  autosetuprebase = always
+[pull]
+  # always rebase when pulling from a repo
+  rebase = true
+[diff]
+	algorithm = patience
+
+[color]
+  ui = true
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red
+  new = green
+  whitespace = red reverse
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan

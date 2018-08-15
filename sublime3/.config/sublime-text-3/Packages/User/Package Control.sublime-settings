@@ -1,0 +1,41 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"A File Icon",
+		"Alignment",
+		"Babel",
+		"Boxy Theme",
+		"DocBlockr",
+		"Dockerfile Syntax Highlighting",
+		"Emacs-like Modelines",
+		"Git",
+		"GitGutter",
+		"Gutter Color",
+		"i3 wm",
+		"INI",
+		"Jekyll",
+		"Jinja2",
+		"LESS",
+		"Local History",
+		"Markdown Extended",
+		"nginx",
+		"Package Control",
+		"PHP Companion",
+		"PHP Modern",
+		"PhpNamespace",
+		"PHPUnit",
+		"PHPUnit Completions",
+		"phpunitkit",
+		"Pretty JSON",
+		"Pretty YAML",
+		"Python Improved",
+		"SqlBeautifier",
+		"SublimeCodeIntel",
+		"SublimeGit",
+		"Themes Menu Switcher"
+	]
+}
