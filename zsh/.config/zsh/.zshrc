@@ -2,6 +2,11 @@ if [ "$DOTFILES_PROFILE_LOADED" != "1" ]; then
     source $HOME/.profile
 fi
 
+if [[ -n "$BYOBU_TTY" ]]; then
+    # if already on a byobu window prevent new SSH connections from launching byobu if enabled by default on remote server
+    export LC_BYOBU=0
+fi
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 ZSH_CUSTOM=$XDG_CONFIG_HOME/zsh
