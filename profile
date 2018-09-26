@@ -31,6 +31,11 @@ export WORKON_HOME="$HOME/.virtualenvs"
 # Pulseaudio
 export PULSE_RUNTIME_PATH="/run/user/$UID/pulse/"
 
+if [[ -n "$BYOBU_TTY" ]]; then
+    # if already on a byobu window prevent new SSH connections from launching byobu if enabled by default on remote server
+    export LC_BYOBU=0
+fi
+
 
 # set PATH so it includes user's private bin if it exists
 if [[ -d "$HOME/.bin" ]] ; then
