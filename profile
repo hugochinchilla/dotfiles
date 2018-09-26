@@ -22,7 +22,6 @@ export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
 ## END XDG_CONFIG_SUPPORT
 
 export EDITOR=vim
-export VISUAL=subl
 export LESSCHARSET=utf-8
 
 # Python virtualenv
