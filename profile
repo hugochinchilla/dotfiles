@@ -23,6 +23,7 @@ export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
 
 export EDITOR=vim
 export LESSCHARSET=utf-8
+export TERM=xterm-256color
 
 # Python virtualenv
 export WORKON_HOME="$HOME/.virtualenvs"
