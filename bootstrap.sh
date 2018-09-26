@@ -2,6 +2,9 @@
 
 dir=$(realpath $(dirname ${BASH_SOURCE}))
 
+git submodule init
+git submodule update
+
 if [ -f $HOME/.profile ]; then
   mv $HOME/.profile $HOME/.profile.bak
 fi
