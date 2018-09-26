@@ -1,4 +1,6 @@
-source $HOME/.profile
+if [ "$DOTFILES_PROFILE_LOADED" != "1" ]; then
+    source $HOME/.profile
+fi
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh

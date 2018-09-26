@@ -58,3 +58,5 @@ fi
 if [[ -f "$HOME/projects/stderred/build/libstderred.so" ]] ; then
   export LD_PRELOAD="$HOME/projects/stderred/build/libstderred.so${LD_PRELOAD:+:$LD_PRELOAD}"
 fi
+
+export DOTFILES_PROFILE_LOADED=1
