@@ -71,7 +71,6 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
-complete -C /usr/local/bin/vault vault
 if [[ -n "$BYOBU_TTY" ]]; then
     # if already on a byobu window prevent new SSH connections from launching byobu if enabled by default on remote server
     export LC_BYOBU=0
