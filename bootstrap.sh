@@ -13,7 +13,7 @@ ln -sf $dir/profile $HOME/.profile
 source $HOME/.profile
 
 mkdir -p $XDG_DATA_HOME
-mkdir -p $XDG_DATA_HOME/{zsh}
+mkdir -p $XDG_DATA_HOME/zsh
 mkdir -p $XDG_CACHE_HOME
 mkdir -p $XDG_CACHE_HOME/vim/{undo,swap,backup}
 mkdir -p $HOME/.npm-packages
