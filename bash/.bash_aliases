@@ -93,3 +93,7 @@ alias pkg-purge="pacman -Rsn"
 alias pkg-update="pacman -Sy"
 alias pkg-upgrade="pacman -Syu"
 alias pkg-list="pacman -Q"
+
+alias k=kubectl
+alias kns=kubens
+alias kctx=kubectx
