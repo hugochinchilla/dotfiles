@@ -1,20 +1,17 @@
 # vim: ft=dosini cms=#%s
+
 [options]
 #allow_bold = true
-#audible_bell = false
-#clickable_url = true
-#dynamic_title = true
+audible_bell = false
+clickable_url = true
 font = Monospace 9
-#fullscreen = true
-#icon_name = terminal
-#mouse_autohide = false
-#scroll_on_output = false
-#scroll_on_keystroke = true
+scroll_on_output = true
+scroll_on_keystroke = true
 # Length of the scrollback buffer, 0 disabled the scrollback buffer
 # and setting it to a negative value means "infinite scrollback"
 scrollback_lines = 10000
 #search_wrap = true
-#urgent_on_bell = true
+urgent_on_bell = true
 #hyperlinks = false
 
 # $BROWSER is used by default if set, with xdg-open as a fallback
@@ -41,19 +38,15 @@ scrollback_lines = 10000
 [colors]
 # Copyright (c) 2016-present Arctic Ice Studio <development@arcticicestudio.com>
 # Copyright (c) 2016-present Sven Greb <code@svengreb.de>
-
 # Project:    Nord Termite
 # Repository: https://github.com/arcticicestudio/nord-termite
 # License:    MIT
 cursor = #d8dee9
 cursor_foreground = #2e3440
-
 foreground = #d8dee9
 foreground_bold = #d8dee9
 background = #2e3440
-
 highlight = #4c566a
-
 color0  = #3b4252
 color1  = #bf616a
 color2  = #a3be8c
@@ -70,15 +63,3 @@ color12 = #81a1c1
 color13 = #b48ead
 color14 = #8fbcbb
 color15 = #eceff4
-
-[hints]
-#font = Monospace 12
-#foreground = #dcdccc
-#background = #3f3f3f
-#active_foreground = #e68080
-#active_background = #3f3f3f
-#padding = 2
-#border = #3f3f3f
-#border_width = 0.5
-#roundness = 2.0
-
