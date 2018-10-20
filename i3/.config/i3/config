@@ -6,7 +6,7 @@
 
 set $scripts $XDG_CONFIG_HOME/i3/scripts
 set $locker $scripts/lock-screen.sh && sleep 1
-set $terminal i3-sensible-terminal
+set $terminal termite
 
 set $mod Mod4
 set $workspace1 "1: "
@@ -53,7 +53,7 @@ font pango:DejaVu Sans Mono 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal --working-directory "`cat ~/.sublime_project_path`"
+bindsym $mod+Return exec $terminal
 
 # kill focused window
 bindsym $mod+Shift+Q kill
