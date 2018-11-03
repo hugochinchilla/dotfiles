@@ -213,6 +213,7 @@ client.unfocused          #333333   #333333    #888888   #292d2e
 client.urgent             #2f343a   #900000    #ffffff   #900000
 
 
+# Use xprop to get information about a window
 # Criterias available
 #
 # class
@@ -253,6 +254,7 @@ for_window [class="Update-manager"] floating enable
 for_window [class="Gcr-prompter"] floating enable
 for_window [class="Gnome-keyring-prompt-3"] floating enable
 for_window [class="Gnome-system-monitor"] floating enable
+for_window [class="Gnome-calculator"] floating enable
 for_window [title="Preferencias"] floating enable
 for_window [title="Preferences"] floating enable
 for_window [class="Apport-gtk"] floating enable
