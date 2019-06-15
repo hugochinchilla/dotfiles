@@ -75,13 +75,18 @@
 	"highlight_line": true,
 	"ignored_packages":
 	[
+		"Emacs-like Modelines",
+		"Git Formats",
+		"Gutter Color",
 		"Markdown",
 		"Modelines",
 		"PHP",
+		"PHP Syntax Checker",
 		"PhpNamespace",
 		"PHPUnit",
 		"QuickPrint",
 		"SideBarEnhancements",
+		"SublimeCodeIntel",
 		"Vintage"
 	],
 	"mouse_wheel_tabswitch": false,

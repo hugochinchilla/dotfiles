@@ -94,6 +94,10 @@ alias pkg-update="pacman -Sy"
 alias pkg-upgrade="pacman -Syu"
 alias pkg-list="pacman -Q"
 
+# Kubectl aliases
 alias k=kubectl
+alias kg="kubectl get"
+alias kd="kubectl describe"
+alias ke="kubectl edit"
 alias kns=kubens
 alias kctx=kubectx
