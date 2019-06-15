@@ -9,6 +9,7 @@ if [ -f $HOME/.profile ]; then
   mv $HOME/.profile $HOME/.profile.bak
 fi
 ln -sf $dir/profile $HOME/.profile
+ln -sf $dir/zprofile $HOME/.zprofile
 
 source $HOME/.profile
 

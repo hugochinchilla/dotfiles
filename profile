@@ -53,6 +53,9 @@ fi
 if [[ -d "$HOME/.composer/vendor/bin" ]] ; then
   export PATH="$PATH:$HOME/.composer/vendor/bin"
 fi
+if [[ -d "$XDG_CONFIG_HOME/composer/vendor/bin" ]] ; then
+  export PATH="$PATH:$XDG_CONFIG_HOME/composer/vendor/bin"
+fi
 
 if [[ -f "$HOME/projects/stderred/build/libstderred.so" ]] ; then
   export LD_PRELOAD="$HOME/projects/stderred/build/libstderred.so${LD_PRELOAD:+:$LD_PRELOAD}"
