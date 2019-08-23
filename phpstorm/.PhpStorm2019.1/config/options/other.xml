@@ -2,22 +2,24 @@
   <component name="NodeJsLocalInterpreters">
     <local-interpreter path="/usr/bin/node" />
   </component>
+  <component name="NotRoamableUiSettings">
+    <option name="fontFace" value="Cantarell Regular" />
+  </component>
   <component name="PropertiesComponent">
-    <property name="CommitChangeListDialog.DETAILS_SPLITTER_PROPORTION_2" value="0.61045754" />
-    <property name="FileTemplates.CurrentTab" value="Code" />
-    <property name="FileTemplates.SelectedTemplate" value="React Functional Component" />
-    <property name="KEYMAP" value="move up&#10;move&#10;move caret&#10;tab&#10;show inte" />
+    <property name="CUSTOMIZE_ACTIONS" value="find&#10;popu&#10;contextual" />
+    <property name="Default.SavedEditorTheme" value="_@user_Default" />
+    <property name="FileTemplates.SelectedTemplate" value="HTML File" />
+    <property name="InstalledPluginsSearchHistory" value="find" />
+    <property name="KEYMAP" value="decrease&#10;increase&#10;duplica&#10;dupl&#10;scrat" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="PhpStorm.InitialConfiguration" value="true" />
     <property name="PluginConfigurable.selectionTab" value="1" />
-    <property name="SettingsSearchHistory" value="live te&#10;template&#10;keyma&#10;tab&#10;spaces" />
-    <property name="evlsprt3.183" value="13" />
-    <property name="evlsprt3.191" value="15" />
-    <property name="file.chooser.recent.files" value="$USER_HOME$/projects/habitissimo/Habitissimo/Application/Helpers&#10;/home/hchinchilla/projects/habitissimo/Habitissimo/Application/Actions/Customer/PhoneVerification/Method&#10;/home/hchinchilla/.PhpStorm2018.3/config/keymaps" />
-    <property name="file.gist.reindex.count" value="109223" />
-    <property name="fileTypeChangedCounter" value="1" />
-    <property name="lastTip" value="1" />
+    <property name="SettingsSearchHistory" value="code style&#10;rule&#10;template&#10;refa&#10;templa" />
+    <property name="TrendingPluginsSearchHistory" value="container&#10;find&#10;sdk" />
+    <property name="file.chooser.recent.files" value="$USER_HOME$/projects/habitissimo/apps/frontend/modules/payments_dev/forms&#10;/home/hchinchilla/projects/habitissimo/Habitissimo/Utils/Email&#10;/home/hchinchilla/projects/habitissimo/Habitissimo/Payments/Contracts&#10;/home/hchinchilla/projects/habitissimo/Habitissimo/Payments/Ogone" />
+    <property name="file.gist.reindex.count" value="401384" />
+    <property name="settings.code.style.selected.tab.PHP" value="Wrapping and Braces" />
     <property name="tasks.pass.word.conversion.enforced" value="true" />
     <property name="ts.lib.d.ts.version" value="3.4.1" />
   </component>

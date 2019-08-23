@@ -4,12 +4,20 @@
     <keyboard-shortcut first-keystroke="shift alt back_space" />
     <keyboard-shortcut first-keystroke="ctrl y" />
   </action>
+  <action id="ChangesView.Diff" />
   <action id="CheckinProject" />
   <action id="CloseContent">
     <keyboard-shortcut first-keystroke="ctrl w" />
   </action>
+  <action id="CollapseAll">
+    <keyboard-shortcut first-keystroke="ctrl subtract" />
+  </action>
   <action id="CollapseAllRegions">
     <keyboard-shortcut first-keystroke="ctrl k" second-keystroke="ctrl 1" />
+  </action>
+  <action id="CollapseExpandableComponent">
+    <keyboard-shortcut first-keystroke="shift enter" />
+    <keyboard-shortcut first-keystroke="ctrl subtract" />
   </action>
   <action id="CollapseRegion">
     <keyboard-shortcut first-keystroke="shift ctrl open_bracket" />
@@ -32,6 +40,7 @@
   <action id="DatabaseView.CopyTable" />
   <action id="DatabaseView.ShowDiff" />
   <action id="DecreaseColumnWidth" />
+  <action id="Diff.ShowDiff" />
   <action id="Diff.UpdatedFiles" />
   <action id="DirDiffMenu.SynchronizeDiff.All" />
   <action id="Editor Redo">
@@ -60,6 +69,9 @@
     <keyboard-shortcut first-keystroke="shift ctrl altGraph dead_abovering" />
   </action>
   <action id="EditorCompleteStatement" />
+  <action id="EditorDecreaseFontSize">
+    <keyboard-shortcut first-keystroke="ctrl minus" />
+  </action>
   <action id="EditorDeleteLine">
     <keyboard-shortcut first-keystroke="shift ctrl k" />
   </action>
@@ -71,6 +83,10 @@
   </action>
   <action id="EditorDuplicate">
     <keyboard-shortcut first-keystroke="shift ctrl d" />
+    <keyboard-shortcut first-keystroke="ctrl d" />
+  </action>
+  <action id="EditorIncreaseFontSize">
+    <keyboard-shortcut first-keystroke="ctrl plus" />
   </action>
   <action id="EditorIndentLineOrSelection">
     <keyboard-shortcut first-keystroke="ctrl close_bracket" />
@@ -105,6 +121,9 @@
     <keyboard-shortcut first-keystroke="shift ctrl close_bracket" />
   </action>
   <action id="FileChooser.GotoDesktop" />
+  <action id="FileChooser.NewFolder">
+    <keyboard-shortcut first-keystroke="alt insert" />
+  </action>
   <action id="FileChooser.TogglePathShowing" />
   <action id="FileStructurePopup">
     <keyboard-shortcut first-keystroke="ctrl r" />
@@ -118,10 +137,15 @@
   <action id="FindPrevious">
     <keyboard-shortcut first-keystroke="shift f3" />
   </action>
+  <action id="Generate">
+    <keyboard-shortcut first-keystroke="windows" />
+  </action>
   <action id="Git.Push" />
   <action id="GotoAction">
     <keyboard-shortcut first-keystroke="shift ctrl p" />
   </action>
+  <action id="GotoChangedFile" />
+  <action id="GotoClass" />
   <action id="GotoDeclaration">
     <mouse-shortcut keystroke="button2" />
     <keyboard-shortcut first-keystroke="f12" />
@@ -136,6 +160,9 @@
   <action id="GotoTest" />
   <action id="GotoTypeDeclaration">
     <keyboard-shortcut first-keystroke="shift ctrl b" />
+  </action>
+  <action id="Images.Editor.ZoomOut">
+    <keyboard-shortcut first-keystroke="ctrl subtract" />
   </action>
   <action id="Images.ShowThumbnails" />
   <action id="ImplementMethods" />
@@ -152,6 +179,10 @@
   </action>
   <action id="MissingInActions.PreviousWordEndWithSelection">
     <keyboard-shortcut first-keystroke="shift ctrl left" />
+  </action>
+  <action id="NewScratchFile">
+    <keyboard-shortcut first-keystroke="shift ctrl alt insert" />
+    <keyboard-shortcut first-keystroke="ctrl n" />
   </action>
   <action id="NextOccurence" />
   <action id="NextTab">
@@ -184,10 +215,6 @@
   <action id="SelectAllOccurrences">
     <keyboard-shortcut first-keystroke="shift ctrl alt j" />
     <keyboard-shortcut first-keystroke="alt f3" />
-  </action>
-  <action id="SelectNextOccurrence">
-    <keyboard-shortcut first-keystroke="alt j" />
-    <keyboard-shortcut first-keystroke="ctrl d" />
   </action>
   <action id="SendEOF" />
   <action id="ShowBookmarks" />

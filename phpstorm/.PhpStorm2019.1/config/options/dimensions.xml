@@ -1,40 +1,75 @@
 <application>
   <component name="DimensionService">
-    <location key="FileChooserDialogImpl.0.0.1920.1080" x="729" y="30" />
+    <location key="FileChooserDialogImpl.0.0.1920.1080" x="709" y="225" />
     <location key="WELCOME_SCREEN.0.0.1920.1080" x="958" y="404" />
     <location key="com.intellij.ide.util.TipDialog.0.0.1920.1080" x="1098" y="335" />
-    <location key="SettingsEditor.0.0.1920.1080" x="122" y="-21" />
+    <location key="SettingsEditor.0.0.1920.1080" x="163" y="109" />
     <location key="#CLI_Interpreters.0.0.1920.1080" x="593" y="102" />
     <location key="#Composer.0.0.1920.1080" x="696" y="265" />
     <location key="#Scopes.0.0.1920.1080" x="682" y="232" />
     <location key="search.everywhere.popup.0.0.1920.1080" x="623" y="234" />
-    <location key="#com.intellij.refactoring.rename.AutomaticRenamingDialog.0.0.1920.1080" x="704" y="4" />
-    <location key="#com.jetbrains.php.refactoring.move.PhpMoveClassDialog#1.0.0.1920.1080" x="615" y="118" />
-    <location key="#com.intellij.ide.util.MemberChooser.0.0.1920.1080" x="760" y="161" />
-    <location key="FileChooserDialogImpl.1920.0.1920.1080" x="2652" y="182" />
+    <location key="#com.intellij.refactoring.rename.AutomaticRenamingDialog.0.0.1920.1080" x="707" y="7" />
+    <location key="#com.jetbrains.php.refactoring.move.PhpMoveClassDialog#1.0.0.1920.1080" x="609" y="52" />
+    <location key="#com.intellij.ide.util.MemberChooser.0.0.1920.1080" x="728" y="142" />
+    <location key="FileChooserDialogImpl.1920.0.1920.1080" x="2642" y="72" />
     <location key="#com.jetbrains.php.refactoring.move.namespace.PhpMoveRelatedNamespacesDialog.0.0.1920.1080" x="591" y="133" />
     <location key="#com.jetbrains.php.refactoring.move.namespace.PhpMoveNamespaceDialog#.0.0.1920.1080" x="535" y="382" />
     <location key="StructurePopup.0.0.1920.1080" x="687" y="267" />
     <location key="#Code_Folding.0.0.1920.1080" x="764" y="233" />
     <location key="search.everywhere.popup.1920.0.1920.1080" x="2543" y="234" />
-    <location key="#com.jetbrains.php.refactoring.move.PhpMoveClassDialog#1.1920.0.1920.1080" x="2553" y="272" />
-    <location key="#com.intellij.refactoring.rename.AutomaticRenamingDialog.1920.0.1920.1080" x="2244" y="62" />
+    <location key="#com.jetbrains.php.refactoring.move.PhpMoveClassDialog#1.1920.0.1920.1080" x="2529" y="8" />
+    <location key="#com.intellij.refactoring.rename.AutomaticRenamingDialog.1920.0.1920.1080" x="2242" y="40" />
     <location key="#com.jetbrains.php.refactoring.extract.interface.PhpExtractInterfaceDialog#.1920.0.1920.1080" x="2563" y="189" />
     <location key="StructurePopup.1920.0.1920.1080" x="2607" y="267" />
     <location key="ProcessPopupWindow.1920.0.1920.1080" x="3077" y="930" />
-    <location key="refactoring.ChangeSignatureDialog.1920.0.1920.1080" x="2595" y="151" />
-    <location key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog.1920.0.1920.1080" x="2602" y="137" />
-    <location key="NewPhpClassDialog.1920.0.1920.1080" x="2398" y="126" />
-    <location key="SettingsEditor.1920.0.1920.1080" x="2125" y="118" />
+    <location key="refactoring.ChangeSignatureDialog.1920.0.1920.1080" x="2593" y="129" />
+    <location key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog.1920.0.1920.1080" x="2610" y="225" />
+    <location key="NewPhpClassDialog.1920.0.1920.1080" x="2403" y="145" />
+    <location key="SettingsEditor.1920.0.1920.1080" x="2118" y="-5" />
     <location key="run.anything.popup.1920.0.1920.1080" x="2542" y="243" />
-    <location key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0.0.0.1920.1080" x="702" y="116" />
+    <location key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0.0.0.1920.1080" x="703" y="97" />
     <location key="ReplaceDuplicatesPrompt.0.0.1920.1080" x="763" y="379" />
-    <location key="NewPhpClassDialog.0.0.1920.1080" x="631" y="211" />
+    <location key="NewPhpClassDialog.0.0.1920.1080" x="432" y="101" />
     <location key="#com.intellij.fileTypes.FileTypeChooser.0.0.1920.1080" x="671" y="288" />
     <location key="run.anything.popup.0.0.1920.1080" x="622" y="243" />
-    <location key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog.0.0.1920.1080" x="689" y="244" />
+    <location key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog.0.0.1920.1080" x="686" y="181" />
     <location key="CommitChangelistDialog2.1920.0.1920.1080" x="2450" y="69" />
-    <location key="#com.intellij.ide.util.MemberChooser.1920.0.1920.1080" x="2684" y="205" />
+    <location key="#com.intellij.ide.util.MemberChooser.1920.0.1920.1080" x="2646" y="126" />
+    <location key="com.jetbrains.php.test.PhpNewTestDialog.1920.0.1920.1080" x="2465" y="170" />
+    <location key="NewPhpClassDialog.1920.1080.1920.1080" x="2282" y="1345" />
+    <location key="#com.intellij.refactoring.rename.AutomaticRenamingDialog.1920.1080.1920.1080" x="2622" y="1174" />
+    <location key="#com.intellij.ide.util.MemberChooser.1920.1080.1920.1080" x="2674" y="1175" />
+    <location key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog.1920.1080.1920.1080" x="2593" y="1148" />
+    <location key="search.everywhere.popup.1920.1080.1920.1080" x="2543" y="1314" />
+    <location key="StructurePopup.1920.1080.1920.1080" x="2607" y="1347" />
+    <location key="run.anything.popup.1920.1080.1920.1080" x="2542" y="783" />
+    <location key="search.everywhere.popup.983.0.1920.1080" x="2542" y="190" />
+    <location key="NewPhpClassDialog.983.0.1920.1080" x="2138" y="237" />
+    <location key="#com.intellij.ide.util.MemberChooser.983.0.1920.1080" x="2489" y="117" />
+    <location key="#com.intellij.refactoring.rename.AutomaticRenamingDialog.983.0.1920.1080" x="2395" y="138" />
+    <location key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog.983.0.1920.1080" x="2351" y="112" />
+    <location key="FileChooserDialogImpl.983.0.1920.1080" x="2465" y="266" />
+    <location key="StructurePopup.983.0.1920.1080" x="2361" y="267" />
+    <location key="findTextDialog.1920.0.1920.1080" x="2348" y="66" />
+    <location key="NewPhpFileDialog.0.0.1920.1080" x="744" y="323" />
+    <location key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate.0.0.1920.1080" x="675" y="406" />
+    <location key="NewPhpFileDialog.1920.0.1920.1080" x="2672" y="411" />
+    <location key="VCS.ChangeListViewerDialog.1920.0.1920.1080" x="3321" y="369" />
+    <location key="#com.jetbrains.php.refactoring.move.namespace.PhpMoveRelatedNamespacesDialog.1920.0.1920.1080" x="2509" y="118" />
+    <location key="#com.jetbrains.php.refactoring.move.namespace.PhpMoveNamespaceDialog#.1920.0.1920.1080" x="2513" y="360" />
+    <location key="FileDocumentManager.FileCacheConflict.1920.0.1920.1080" x="2063" y="-22" />
+    <location key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0.1920.0.1920.1080" x="2614" y="38" />
+    <location key="refactoring.ChangeSignatureDialog.0.0.1920.1080" x="694" y="53" />
+    <location key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser.0.0.1920.1080" x="712" y="161" />
+    <location key="#com.intellij.fileTypes.FileTypeChooser.1920.0.1920.1080" x="2535" y="312" />
+    <location key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method1.1920.0.1920.1080" x="2620" y="35" />
+    <location key="#com.jetbrains.php.refactoring.move.member.instance.PhpMoveInstanceMethodDialog#.1920.0.1920.1080" x="2557" y="357" />
+    <location key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method1.0.0.1920.1080" x="705" y="60" />
+    <location key="#com.jetbrains.php.refactoring.move.member.instance.PhpMoveInstanceMethodDialog#.0.0.1920.1080" x="641" y="335" />
+    <location key="findTextDialog.0.0.1920.1080" x="715" y="229" />
+    <location key="recent.locations.popup.0.0.1920.1080" x="607" y="252" />
+    <location key="#com.jetbrains.php.refactoring.extract.interface.PhpExtractInterfaceDialog#.0.0.1920.1080" x="639" y="133" />
+    <location key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#function0.0.0.1920.1080" x="702" y="126" />
     <size key="FileChooserDialogImpl.0.0.1920.1080" width="490" height="478" />
     <size key="SettingsEditor.0.0.1920.1080" width="1589" height="797" />
     <size key="#CLI_Interpreters.0.0.1920.1080" width="828" height="678" />
@@ -50,22 +85,53 @@
     <size key="StructurePopup.0.0.1920.1080" width="603" height="524" />
     <size key="#Code_Folding.0.0.1920.1080" width="382" height="543" />
     <size key="search.everywhere.popup.1920.0.1920.1080" width="672" height="678" />
-    <size key="#com.jetbrains.php.refactoring.move.PhpMoveClassDialog#1.1920.0.1920.1080" width="712" height="245" />
+    <size key="#com.jetbrains.php.refactoring.move.PhpMoveClassDialog#1.1920.0.1920.1080" width="712" height="249" />
     <size key="#com.intellij.refactoring.rename.AutomaticRenamingDialog.1920.0.1920.1080" width="1268" height="891" />
     <size key="#com.jetbrains.php.refactoring.extract.interface.PhpExtractInterfaceDialog#.1920.0.1920.1080" width="624" height="632" />
     <size key="StructurePopup.1920.0.1920.1080" width="603" height="524" />
     <size key="ProcessPopupWindow.1920.0.1920.1080" width="400" height="125" />
     <size key="refactoring.ChangeSignatureDialog.1920.0.1920.1080" width="560" height="708" />
     <size key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog.1920.0.1920.1080" width="528" height="478" />
-    <size key="NewPhpClassDialog.1920.0.1920.1080" width="923" height="368" />
-    <size key="SettingsEditor.1920.0.1920.1080" width="1046" height="706" />
+    <size key="NewPhpClassDialog.1920.0.1920.1080" width="917" height="374" />
+    <size key="SettingsEditor.1920.0.1920.1080" width="1175" height="805" />
     <size key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0.0.0.1920.1080" width="505" height="777" />
     <size key="ReplaceDuplicatesPrompt.0.0.1920.1080" width="372" height="120" />
-    <size key="NewPhpClassDialog.0.0.1920.1080" width="819" height="368" />
+    <size key="NewPhpClassDialog.0.0.1920.1080" width="1011" height="374" />
     <size key="#com.intellij.fileTypes.FileTypeChooser.0.0.1920.1080" width="558" height="385" />
     <size key="run.anything.popup.0.0.1920.1080" width="672" height="677" />
     <size key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog.0.0.1920.1080" width="528" height="478" />
     <size key="CommitChangelistDialog2.1920.0.1920.1080" width="850" height="871" />
-    <size key="#com.intellij.ide.util.MemberChooser.1920.0.1920.1080" width="378" height="556" />
+    <size key="#com.intellij.ide.util.MemberChooser.1920.0.1920.1080" width="443" height="544" />
+    <size key="com.jetbrains.php.test.PhpNewTestDialog.1920.0.1920.1080" width="815" height="626" />
+    <size key="NewPhpClassDialog.1920.1080.1920.1080" width="819" height="374" />
+    <size key="#com.intellij.refactoring.rename.AutomaticRenamingDialog.1920.1080.1920.1080" width="498" height="733" />
+    <size key="#com.intellij.ide.util.MemberChooser.1920.1080.1920.1080" width="378" height="556" />
+    <size key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog.1920.1080.1920.1080" width="528" height="478" />
+    <size key="StructurePopup.1920.1080.1920.1080" width="603" height="524" />
+    <size key="search.everywhere.popup.1920.1080.1920.1080" width="672" height="678" />
+    <size key="search.everywhere.popup.983.0.1920.1080" width="672" height="676" />
+    <size key="NewPhpClassDialog.983.0.1920.1080" width="755" height="368" />
+    <size key="#com.intellij.ide.util.MemberChooser.983.0.1920.1080" width="410" height="556" />
+    <size key="#com.intellij.refactoring.rename.AutomaticRenamingDialog.983.0.1920.1080" width="498" height="733" />
+    <size key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog.983.0.1920.1080" width="528" height="478" />
+    <size key="FileChooserDialogImpl.983.0.1920.1080" width="428" height="478" />
+    <size key="StructurePopup.983.0.1920.1080" width="540" height="524" />
+    <size key="findTextDialog.1920.0.1920.1080" width="1205" height="705" />
+    <size key="NewPhpFileDialog.0.0.1920.1080" width="401" height="144" />
+    <size key="NewPhpFileDialog.1920.0.1920.1080" width="395" height="144" />
+    <size key="VCS.ChangeListViewerDialog.1920.0.1920.1080" width="407" height="656" />
+    <size key="#com.jetbrains.php.refactoring.move.namespace.PhpMoveRelatedNamespacesDialog.1920.0.1920.1080" width="728" height="729" />
+    <size key="#com.jetbrains.php.refactoring.move.namespace.PhpMoveNamespaceDialog#.1920.0.1920.1080" width="720" height="245" />
+    <size key="FileDocumentManager.FileCacheConflict.1920.0.1920.1080" width="1614" height="1074" />
+    <size key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0.1920.0.1920.1080" width="505" height="758" />
+    <size key="refactoring.ChangeSignatureDialog.0.0.1920.1080" width="505" height="727" />
+    <size key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser.0.0.1920.1080" width="486" height="687" />
+    <size key="#com.intellij.fileTypes.FileTypeChooser.1920.0.1920.1080" width="680" height="385" />
+    <size key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method1.1920.0.1920.1080" width="505" height="895" />
+    <size key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method1.0.0.1920.1080" width="505" height="895" />
+    <size key="findTextDialog.0.0.1920.1080" width="479" height="614" />
+    <size key="recent.locations.popup.0.0.1920.1080" width="700" height="530" />
+    <size key="#com.jetbrains.php.refactoring.extract.interface.PhpExtractInterfaceDialog#.0.0.1920.1080" width="624" height="656" />
+    <size key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#function0.0.0.1920.1080" width="505" height="758" />
   </component>
 </application>
