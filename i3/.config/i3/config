@@ -38,6 +38,7 @@ bindsym $mod+Control+Left workspace prev
 bindsym $mod+Control+Right workspace next
 bindsym $mod+z move workspace to output left
 bindsym $mod+x move workspace to output right
+bindsym $mod+b exec $scripts/brightness.sh
 
 bindsym Print exec xfce4-screenshooter
 bindsym $mod+c exec gnome-calculator
