@@ -250,6 +250,15 @@ assign [class="Slack"] $workspace4
 assign [class="spotify"] workspace $workspace4
 for_window [class="Spotify"] move to workspace $workspace4
 
+# Float windows by role
+for_window [window_role="pop-up"]       floating enable
+for_window [window_role="bubble"]       floating enable 
+for_window [window_role="task_dialog"]  floating enable
+for_window [window_role="Preferences"]  floating enable
+for_window [window_type="dialog"]       floating enable 
+for_window [window_type="menu"]         floating enable
+
+# Float specific apps or windows
 for_window [class="Gtkdialog"] floating enable
 for_window [class="Gnome-control-center"] floating enable
 for_window [class="Firefox" window_role="Preferences"] floating enable
