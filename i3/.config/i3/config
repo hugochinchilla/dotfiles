@@ -194,20 +194,19 @@ mode "Webcam control: 1 2 3 4 5" {
 bindsym $mod+p mode "Webcam control: 1 2 3 4 5"
 
 bar {
-    status_command $scripts/statusline.sh
-    font pango: Terminus 10, FontAwesome 10
-    position top
-    tray_output primary
-    colors {
-        background #000000
-        statusline #C2C092
+   colors {
+        background #2f343f
+        statusline #2f343f
+        separator #4b5262
 
-        #colourclass         border    bckgrnd    text
-        focused_workspace    #000000   #000000    #FFFFFF
-        active_workspace     #000000   #000000    #789048
-        inactive_workspace   #000000   #000000    #789048
-        urgent_workspace     #C21A01   #C21A01    #FFFFFF
-    }
+        # colour of border, background, and text
+        focused_workspace       #2f343f #9569cf #d8dee8
+        active_workspace        #2f343f #2f343f #d8dee8
+        inactive_workspace      #2f343f #2f343f #d8dee8
+        urgent_workspacei       #2f343f #ebcb8b #2f343f
+    }   
+    status_command i3status
+    position top
 }
 
 ## Colours
