@@ -6,7 +6,7 @@
 
 set $scripts $XDG_CONFIG_HOME/i3/scripts
 set $locker $scripts/lock-screen.sh && sleep 1
-set $terminal termite
+set $terminal terminator
 
 set $mod Mod4
 set $workspace1 "1: "
