@@ -314,4 +314,4 @@ exec --no-startup-id xiccd
 exec --no-startup-id setxkbmap -layout es -option altwin:swap_lalt_lwin -option caps:escape
 
 # Load per-machine custom settings
-exec --no-startup-id $scripts/custom-setup.shS
+exec --no-startup-id $scripts/custom-setup.sh
