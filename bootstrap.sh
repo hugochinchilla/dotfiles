@@ -29,6 +29,11 @@ for MODULE in $(find $dir -maxdepth 1 -type d ! -name '.*' -printf '%f\n'); do
     && stow --adopt $MODULE
 done
 
-source fonts/install.sh
+
+# Copy custom fonts
+mkdir -p $HOME/.fonts
+cp -r fonts/icomoon $HOME/.fonts
+# Install powerline patched fonts and reset fc-cache
+source fonts/powerline/install.sh
 
 echo "Success"

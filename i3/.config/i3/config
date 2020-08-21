@@ -48,7 +48,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
 # font for window titles. ISO 10646 = Unicode
-font pango:DejaVu Sans Mono 10
+font pango:DejaVu Sans Mono 12, icomoon 12
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
