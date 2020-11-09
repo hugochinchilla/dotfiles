@@ -279,6 +279,8 @@ for_window [class="Komodo edit" instance="Komodo_gotofile"] floating enable
 for_window [class="Nautilus" instance="file_progress"] floating enable
 for_window [class="Gstm"] floating enable
 for_window [class="Qpaeq"] floating enable
+for_window [class="qjackctl"] floating enable
+for_window [class="carla"] floating enable
 for_window [window_role="GtkFileChooserDialog"] floating enable
 
 # launch applications
