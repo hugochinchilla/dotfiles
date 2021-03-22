@@ -18,16 +18,16 @@ set $locker $scripts/lock-screen.sh && sleep 1
 set $terminal alacritty
 
 set $mod Mod4
-set $workspace1 "1: "
-set $workspace2 "2: "
-set $workspace3 "3: "
-set $workspace4 "4: "
+set $workspace1 "1"
+set $workspace2 "2"
+set $workspace3 "3"
+set $workspace4 "4"
 set $workspace5 "5"
 set $workspace6 "6"
 set $workspace7 "7"
 set $workspace8 "8"
 set $workspace9 "9"
-set $workspace0 "10"
+set $workspace0 "0"
 
 workspace $workspace1 output HDMI1
 workspace $workspace2 output HDMI1
@@ -40,14 +40,26 @@ workspace $workspace8 output HDMI2
 workspace $workspace9 output HDMI2
 workspace $workspace0 output HDMI1
 
+
+bindsym $mod+z move workspace to output left
+bindsym $mod+x move workspace to output right
+
+bindsym shift+$mod+1 move to workspace $workspace1
+bindsym shift+$mod+2 move to workspace $workspace2
+bindsym shift+$mod+3 move to workspace $workspace3
+bindsym shift+$mod+4 move to workspace $workspace4
+bindsym shift+$mod+5 move to workspace $workspace5
+bindsym shift+$mod+6 move to workspace $workspace6
+bindsym shift+$mod+7 move to workspace $workspace7
+bindsym shift+$mod+8 move to workspace $workspace8
+bindsym shift+$mod+9 move to workspace $workspace9
+bindsym shift+$mod+0 move to workspace $workspace0
+
 workspace_auto_back_and_forth yes
 
 bindsym $mod+q workspace back_and_forth
 bindsym $mod+Control+Left workspace prev
 bindsym $mod+Control+Right workspace next
-bindsym $mod+z move workspace to output left
-bindsym $mod+x move workspace to output right
-bindsym $mod+b exec $scripts/brightness.sh
 
 bindsym Print exec xfce4-screenshooter
 bindsym $mod+c exec gnome-calculator
