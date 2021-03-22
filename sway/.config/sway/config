@@ -11,7 +11,7 @@ input * {
 } 
 
 output DP-3 pos 0 0
-output DP-4 pos 2540 0
+output DP-4 pos 2560 0
 
 set $scripts $HOME/.config/i3/scripts
 set $locker $scripts/lock-screen.sh && sleep 1
