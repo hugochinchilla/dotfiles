@@ -12,6 +12,9 @@ input * {
 
 output DP-3 pos 0 0
 output DP-4 pos 2560 0
+output "*" background "~/dotfiles/sway/.config/sway/assets/mojave-night.jpg" fill
+
+focus_follows_mouse yes
 
 set $scripts $HOME/.config/i3/scripts
 set $locker $scripts/lock-screen.sh && sleep 1
