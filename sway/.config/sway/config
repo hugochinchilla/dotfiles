@@ -238,7 +238,7 @@ bar {
     binding_mode       #FF5555 #FF5555 #F8F8F2
   }
 
-  status_command i3status
+  status_command i3status -c ~/.config/i3status/config-desktop-home
   position top
 }
 
