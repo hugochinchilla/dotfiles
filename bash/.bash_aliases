@@ -101,3 +101,5 @@ alias kd="kubectl describe"
 alias ke="kubectl edit"
 alias kns=kubens
 alias kctx=kubectx
+
+alias yays=yay --answerclean=All --answerdiff=None --answeredit=None
