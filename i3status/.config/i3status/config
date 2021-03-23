@@ -1,11 +1,9 @@
 general {
-  colors = true
-  interval = 1
-  color_good = "#1DC12D"
-  color_bad = "#DD4821"
-  color_degraded = "#EDC130"
-  color_separator = "#c5c5c5"
   output_format = "i3bar"
+  colors = true
+  color_good = "#50FA7B"
+  color_degraded = "#F1FA8C"
+  color_bad = "#FF5555"
 }
 
 order =  "battery 0"

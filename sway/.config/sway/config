@@ -223,28 +223,32 @@ mode "Webcam control: 1 2 3 4 5" {
 bindsym $mod+p mode "Webcam control: 1 2 3 4 5"
 
 bar {
-   colors {
-        background #2f343f
-        statusline #2f343f
-        separator #4b5262
+  colors {
+    background #282A36
+    statusline #F8F8F2
+    separator  #44475A
 
-        # colour of border, background, and text
-        focused_workspace       #2f343f #9569cf #d8dee8
-        active_workspace        #2f343f #2f343f #d8dee8
-        inactive_workspace      #2f343f #2f343f #d8dee8
-        urgent_workspace        #2f343f #ebcb8b #2f343f
-    }   
-    status_command i3status
-    position top
+    focused_workspace  #44475A #44475A #F8F8F2
+    active_workspace   #282A36 #44475A #F8F8F2
+    inactive_workspace #282A36 #282A36 #BFBFBF
+    urgent_workspace   #FF5555 #FF5555 #F8F8F2
+    binding_mode       #FF5555 #FF5555 #F8F8F2
+  }
+
+  status_command i3status
+  position top
 }
 
 ## Colours
 ##---------
-#colourclass              border    bckgrnd    text
-client.focused            #0088CC   #0088CC    #ffffff   #dddddd
-client.focused_inactive   #333333   #333333    #888888   #292d2e
-client.unfocused          #333333   #333333    #888888   #292d2e
-client.urgent             #2f343a   #900000    #ffffff   #900000
+# class                 border  bground text    indicator child_border
+client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+
+client.background       #F8F8F2
 
 
 # Use xprop to get information about a window
