@@ -3,6 +3,7 @@ alias lla="ls -lha"
 
 # ssh aliases
 alias ssh-password='ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no'
+alias ssh="TERM=xterm-256color ssh"
 
 # system command aliases
 alias mkdir='mkdir -p'
