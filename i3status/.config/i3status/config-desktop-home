@@ -1,6 +1,7 @@
 general {
   output_format = "i3bar"
-  colors = true
+  colors = false
+  markup = pango
   color_good = "#50FA7B"
   color_degraded = "#F1FA8C"
   color_bad = "#FF5555"
@@ -10,12 +11,11 @@ order += "volume master"
 order += "ethernet enp34s0"
 order += "disk /"
 order += "load"
-order += "time"
+order += "tztime local"
 
 ethernet enp34s0 {
-  # if you use %speed, i3status requires root privileges
-  format_up = " E: %ip "
-  format_down = " E: down "
+  format_up = "<span>  %ip </span>"
+  format_down = "<span background='#E63946'>  Disconnected </span>"
 }
 
 wireless wlan0 {
@@ -35,24 +35,22 @@ battery 0 {
   low_threshold = 10
 }
 
-run_watch DHCP {
-  pidfile = "/var/run/dhcpcd*.pid"
-}
-
-time {
-  format = " %Y-%m-%d %H:%M:%S "
+tztime local {
+  format = "<span> %time </span>"
+  format_time = " %a %-d %b %H:%M"
 }
 
 load {
-  format = " %1min "
+  format = "<span>  %5min Load </span>"
 }
 
 disk "/" {
-  format = " %free "
+  format = "<span>  %free Free </span>"
 }
 
 volume master {
-    format = " ♪ %volume "
+    format = "<span>  %volume </span>"
+    format_muted = "<span background='#E63946'>  Muted </span>"
     device = "default"
     mixer = "Master"
     mixer_idx = 0
