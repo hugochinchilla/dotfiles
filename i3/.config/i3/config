@@ -113,8 +113,8 @@ bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +2%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -2%
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
-#bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
-#bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl set +5%
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
@@ -181,7 +181,7 @@ bar {
     binding_mode       #FF5555 #FF5555 #F8F8F2
   }
 
-  status_command i3status -c ~/.config/i3status/config-desktop-home
+  status_command i3status -c ~/.config/i3status/config-laptop
   position top
 }
 
@@ -288,3 +288,8 @@ exec --no-startup-id $scripts/custom-setup.sh
 
 # Set custom keymap
 exec --no-startup-id setxkbmap -layout es -option altwin:swap_lalt_lwin -option caps:escape
+
+
+# remap brightness function keys on XPS13
+exec --no-startup-id xmodmap -e 'keycode 224 = XF86MonBrightnessDown NoSymbol XF86MonBrightnessDown'
+exec --no-startup-id xmodmap -e 'keycode 225 = XF86MonBrightnessUp NoSymbol XF86MonBrightnessUp'
