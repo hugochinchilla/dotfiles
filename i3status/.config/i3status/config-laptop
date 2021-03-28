@@ -1,0 +1,60 @@
+general {
+  output_format = "i3bar"
+  colors = true
+  markup = pango
+  color_good = "#50FA7B"
+  color_degraded = "#F1FA8C"
+  color_bad = "#FF5555"
+}
+
+order += "volume master"
+order += "ethernet enp34s0"
+order += "wireless wlp58s0"
+order += "disk /"
+order += "load"
+order += "battery 0"
+order += "tztime local"
+
+ethernet enp34s0 {
+  format_up = "<span>  %ip </span>"
+  format_down = ""
+}
+
+wireless wlp58s0 {
+  format_up = "<span>  %essid %ip (%quality) </span>"
+  format_down = "<span  background='#E63946'>  Disconnected </span>"
+}
+
+battery 0 {
+  last_full_capacity = true
+  format = "<span>  %status (%remaining) </span>"
+  format_down = " No Battery "
+  status_chr = "Charging"
+  status_bat = "Battery"
+  status_unk = "Unknown"
+  status_full = "Charged"
+  path = "/sys/class/power_supply/BAT%d/uevent"
+  low_threshold = 60
+  threshold_type = time
+}
+
+tztime local {
+  format = "<span> %time </span>"
+  format_time = " %a %-d %b %H:%M"
+}
+
+load {
+  format = "<span>  %5min Load </span>"
+}
+
+disk "/" {
+  format = "<span>  %free Free </span>"
+}
+
+volume master {
+    format = "<span>  %volume </span>"
+    format_muted = "<span background='#E63946'>  Muted </span>"
+    device = "default"
+    mixer = "Master"
+    mixer_idx = 0
+}
