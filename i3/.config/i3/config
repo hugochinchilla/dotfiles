@@ -226,7 +226,7 @@ assign [class="Empathy"] $workspace4
 assign [class="Slack"] $workspace4
 
 # Spotify needs special case (https://github.com/i3/i3/issues/2060)
-assign [class="spotify"] workspace $workspace4
+assign [class="Spotify"] workspace $workspace4
 for_window [class="Spotify"] move to workspace $workspace4
 
 # Float windows by role
