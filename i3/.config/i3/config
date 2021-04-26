@@ -238,7 +238,7 @@ for_window [window_type="dialog"]       floating enable
 for_window [window_type="menu"]         floating enable
 
 # Float specific apps or windows
-for_window [class="Tandem"] floating enable
+for_window [class="Tandem"] floating enable sticky enable
 for_window [class="Gtkdialog"] floating enable
 for_window [class="Gnome-control-center"] floating enable
 for_window [class="Firefox" window_role="Preferences"] floating enable
