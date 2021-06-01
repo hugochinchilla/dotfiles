@@ -131,6 +131,9 @@ bindsym $mod+g exec gnome-control-center
 bindsym $mod+Control+l exec $locker
 bindsym $mod+m exec ~/.config/i3/scripts/emoji_rofi.sh
 
+# turn off and on monitors, fixes issues with DisplayPort hotplug
+bindsym $mod+BackSpace exec ~/.config/i3/scripts/monitor-hotplug.sh
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
