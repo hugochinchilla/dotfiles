@@ -67,3 +67,17 @@ export DOTFILES_PROFILE_LOADED=1
 if [[ -f $XDG_CONFIG_HOME/termite/termite.terminfo ]] ; then
     tic -x $XDG_CONFIG_HOME/termite/termite.terminfo
 fi
+
+
+if [ -f ~/.ssh/agent.env ] ; then
+    . ~/.ssh/agent.env > /dev/null
+    if ! kill -0 $SSH_AGENT_PID > /dev/null 2>&1; then
+        echo "Stale agent file found. Spawning a new agent. "
+        eval `ssh-agent | tee ~/.ssh/agent.env`
+        ssh-add
+    fi
+else
+    echo "Starting ssh-agent"
+    eval `ssh-agent | tee ~/.ssh/agent.env`
+    ssh-add
+fi
