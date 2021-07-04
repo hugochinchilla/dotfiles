@@ -21,7 +21,7 @@ ethernet enp34s0 {
 }
 
 wireless wlan0 {
-  format_up = "<span>  %essid %ip (%quality) </span>"
+  format_up = "<span>  %essid %ip </span>"
   format_down = "<span  background='#E63946'>  Disconnected </span>"
 }
 
