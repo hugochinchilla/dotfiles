@@ -9,7 +9,7 @@ general {
 
 order += "volume master"
 order += "ethernet enp34s0"
-order += "wireless wlp58s0"
+order += "wireless wlan0"
 order += "disk /"
 order += "load"
 order += "battery 0"
@@ -20,7 +20,7 @@ ethernet enp34s0 {
   format_down = ""
 }
 
-wireless wlp58s0 {
+wireless wlan0 {
   format_up = "<span>  %essid %ip (%quality) </span>"
   format_down = "<span  background='#E63946'>  Disconnected </span>"
 }
