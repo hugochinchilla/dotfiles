@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PROGRAMS="alacritty stow terminator xfce4-screenshooter xbindkeys xautolock scrot convert dbus-send i3lock compton nitrogen zsh amixer"
+PROGRAMS="alacritty stow terminator xfce4-screenshooter xbindkeys xautolock scrot convert dbus-send i3lock compton nitrogen zsh amixer xiccd colormgr"
 
 ERROR="✘"
 SUCCESS="✔"
