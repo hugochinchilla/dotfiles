@@ -1,0 +1,39 @@
+2021-07-22 15:47:07,730 --------------------------------------------------------------------------------
+2021-07-22 15:47:07,730 Working directory:
+2021-07-22 15:47:07,730   /
+2021-07-22 15:47:07,730    tmp/
+2021-07-22 15:47:07,730     DisplayCAL-fBNR5r/
+2021-07-22 15:47:07,731 
+2021-07-22 15:47:07,731 Command line:
+2021-07-22 15:47:07,731   /usr/bin/dispread
+2021-07-22 15:47:07,731     -v
+2021-07-22 15:47:07,731     -k
+2021-07-22 15:47:07,731     /usr/share/DisplayCAL/linear.cal
+2021-07-22 15:47:07,731     -d2
+2021-07-22 15:47:07,731     -c1
+2021-07-22 15:47:07,731     -yn
+2021-07-22 15:47:07,731     -P0.181943171402,0.500941619586,1.0
+2021-07-22 15:47:07,732     0_16
+2021-07-22 15:47:07,732 
+2021-07-22 15:47:07,736 DisplayCAL: Starting interaction with subprocess
+2021-07-22 15:47:11,344 Number of patches = 3
+2021-07-22 15:47:11,345 Setting up the instrument
+2021-07-22 15:47:12,195 Product Name:      Colormunki Display
+2021-07-22 15:47:12,195 Serial Number:     CM-16.A-02.174532.01
+2021-07-22 15:47:12,195 Firmware Version:  v1.03
+2021-07-22 15:47:12,196 Firmware Date:     05Jun12
+2021-07-22 15:47:12,197 dispread: Warning - new_dispwin: Expected VideoLUT depth 8 doesn't match actual 10
+2021-07-22 15:47:12,441 Place instrument on test window.
+2021-07-22 15:47:12,442 DisplayCAL: Waiting for send buffer
+2021-07-22 15:47:12,443 DisplayCAL: Detected instrument placement (screen/spot) message
+2021-07-22 15:47:13,943 DisplayCAL: Skipping place instrument on screen message...
+2021-07-22 15:47:13,945 DisplayCAL: Sending buffer: ' '
+2021-07-22 15:47:13,996 Hit Esc or Q to give up, any other key to continue:
+2021-07-22 15:47:25,455 Patch 3 of 3
+2021-07-22 15:47:25,456 The instrument can be removed from the screen.
+2021-07-22 15:47:25,853 Written '0_16.ti3'
+2021-07-22 15:47:25,854 DisplayCAL: Reached EOF (OK)
+2021-07-22 15:47:25,955 dispread exitcode: 0
+2021-07-22 15:47:25,972 RGB level 0 is 0.200072 cd/m2
+2021-07-22 15:47:25,973 RGB level 16 is 1.314197 cd/m2
+2021-07-22 15:47:25,973 Assuming full range output levels
