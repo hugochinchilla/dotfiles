@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 HOST=$(hostname)
 CUSTOM_CONF=$HOME/.config/i3/scripts/setup-$HOST.sh
