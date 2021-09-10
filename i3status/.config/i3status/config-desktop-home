@@ -8,19 +8,20 @@ general {
 }
 
 order += "volume master"
-order += "ethernet enp34s0"
+#order += "ethernet enp34s0"
+order += "wireless wlp38s0"
 order += "disk /"
 order += "load"
 order += "tztime local"
 
 ethernet enp34s0 {
-  format_up = "<span>  %ip </span>"
-  format_down = "<span background='#E63946'>  Disconnected </span>"
+  format_up = "<span> %ip</span>"
+  format_down = "<span color='#E63946'>  </span>"
 }
 
-wireless wlan0 {
-  format_up = " W: (%quality at %essid, %bitrate) %ip "
-  format_down = " W: down "
+wireless wlp38s0 {
+  format_up = "<span>  %essid [%ip] </span>"
+  format_down = "<span color='#E63946'>  </span>"
 }
 
 battery 0 {

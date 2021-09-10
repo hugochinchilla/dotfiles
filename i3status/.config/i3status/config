@@ -10,6 +10,7 @@ order =  "battery 0"
 order += "volume master"
 order += "ethernet eth0"
 order += "wireless wlan0"
+order += "wireless wlp38s0"
 order += "disk /"
 order += "load"
 order += "time"
@@ -24,6 +25,12 @@ wireless wlan0 {
   format_up = " W: (%quality at %essid, %bitrate) %ip "
   format_down = " W: down "
 }
+
+wireless wlp38s0 {
+  format_up = " W: (%quality at %essid, %bitrate) %ip "
+  format_down = " W: down "
+}
+
 
 battery 0 {
   #format = " %status %percentage %remaining %emptytime "
