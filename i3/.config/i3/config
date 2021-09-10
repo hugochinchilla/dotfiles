@@ -221,12 +221,14 @@ client.background       #F8F8F2
 #   Compares the i3-internal container ID, which you can get via the IPC interface. Handy for scripting.
 
 assign [class="Sublime_text"] $workspace1
-assign [class="google-chrome"] $workspace3
-assign [class="Firefox"] $workspace3
+assign [class="^jetbrains-"] $workspace1
+assign [class="Google-chrome"] $workspace3
+assign [class="firefox"] $workspace3
 assign [class="Wine" instance="SQLyog.exe"] $workspace5
 assign [class="empathy"] $workspace4
 assign [class="Empathy"] $workspace4
 assign [class="Slack"] $workspace4
+assign [class="Spotify"] $workspace4
 
 # Spotify needs special case (https://github.com/i3/i3/issues/2060)
 assign [class="Spotify"] workspace $workspace4
