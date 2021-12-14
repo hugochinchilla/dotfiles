@@ -274,6 +274,8 @@ input * {
     xkb_options "altwin:swap_lalt_lwin,caps:escape"
 }
 
+output eDP-1 scale 2
 output DP-3 pos 0 0
 output DP-4 pos 2560 0
 output "*" background "~/dotfiles/sway/.config/sway/assets/mojave-night.jpg" fill
+
