@@ -39,8 +39,7 @@ battery 0 {
 }
 
 tztime local {
-  format = "<span> %time </span>"
-  format_time = " %a %-d %b %H:%M"
+  format = "<span>  %a %-d %b %H:%M </span>"
 }
 
 load {
