@@ -18,7 +18,7 @@ if [ -f "$icon_alt" ]; then
     fi
 fi
 
-tmpbg="$XDG_CACHE_HOME/i3lock-background.png"
+tmpbg="${XDG_CACHE_HOME:-${HOME}/.cache}/i3lock-background.png"
 
 grimshot save screen "$tmpbg"
 convert "$tmpbg" -scale 10% -scale 1000% "$tmpbg"
