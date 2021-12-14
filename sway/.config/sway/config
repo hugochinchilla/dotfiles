@@ -1,5 +1,5 @@
 set $scripts $HOME/.config/i3/scripts
-set $locker $scripts/lock-screen.sh && sleep 1
+set $locker $HOME/.config/sway/scripts/lock-screen.sh && sleep 1
 set $terminal alacritty
 set $mod Mod4
 set $workspace1 "1"
