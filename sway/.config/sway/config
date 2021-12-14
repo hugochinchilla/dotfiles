@@ -272,6 +272,7 @@ input * {
     xkb_layout 'es'
     xkb_variant ""
     xkb_options "altwin:swap_lalt_lwin,caps:escape"
+    tap enabled
 }
 
 output eDP-1 scale 2
