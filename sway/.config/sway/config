@@ -118,6 +118,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86Tools exec ps aux | grep -q matebook && pkill matebook-applet || matebook-applet -w
 
 # Hotkeys for apps
 bindsym $mod+Return exec $terminal
@@ -195,7 +196,7 @@ client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 client.background       #F8F8F2
 
 
-# Use xprop to get information about a window
+# Use "swaymsg -t get_tree" to get information about a window
 # Criterias available
 #
 # class
@@ -234,6 +235,7 @@ for_window [window_role="task_dialog"]  floating enable
 for_window [window_role="Preferences"]  floating enable
 for_window [window_type="dialog"]       floating enable 
 for_window [window_type="menu"]         floating enable
+for_window [app_id="matebook-applet"]   floating enable
 
 # Float specific apps or windows
 for_window [class="Tandem"] floating enable
