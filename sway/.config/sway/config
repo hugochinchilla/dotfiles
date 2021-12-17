@@ -271,6 +271,7 @@ exec --no-startup-id nm-applet --indicator
 # Load per-machine custom settings
 exec --no-startup-id $scripts/custom-setup.sh
 
+exec --no-startup-id mako
 exec --no-startup-id oguri
 exec --no-startup-id $HOME/.config/sway/scripts/dynamic-wallpaper.sh
 

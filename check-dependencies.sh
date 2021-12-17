@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PROGRAMS="alacritty stow terminator xfce4-screenshooter xbindkeys xautolock scrot convert dbus-send i3lock i3status picom nitrogen networkmanager_dmenu zsh amixer xiccd colormgr clight xbacklight py3status"
+PROGRAMS="alacritty stow terminator xfce4-screenshooter xbindkeys xautolock scrot convert dbus-send i3lock i3status picom nitrogen networkmanager_dmenu zsh amixer xiccd colormgr clight xbacklight py3status mako"
 ERROR="✘"
 SUCCESS="✔"
 
