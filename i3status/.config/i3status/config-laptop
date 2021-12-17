@@ -1,4 +1,5 @@
 general {
+  interval = 3
   output_format = "i3bar"
   colors = true
   markup = pango
@@ -7,6 +8,7 @@ general {
   color_bad = "#FF5555"
 }
 
+order += "battery_level"
 order += "volume master"
 order += "ethernet enp34s0"
 order += "wireless wlan0"
@@ -14,6 +16,11 @@ order += "disk /"
 order += "load"
 order += "battery 0"
 order += "tztime local"
+
+battery_level {
+    format = '{power:.2f} Watts'
+    cache_timeout = 5
+}
 
 ethernet enp34s0 {
   format_up = "<span>  %ip </span>"
