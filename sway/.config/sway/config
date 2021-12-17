@@ -154,13 +154,15 @@ mode "resize" {
 bindsym $mod+t mode "resize"
 
 set $mode_system (l) lock, (e) logout, (s) suspend, (h) hibernate, (p) power off, (r) reboot
+set $sway_exit ~/.config/sway/scripts/sway-exit.sh
+
 mode "$mode_system" {
-    bindsym l exec --no-startup-id $locker, mode "default"
-    bindsym e exec --no-startup-id swaymsg exit, mode "default"
-    bindsym s exec --no-startup-id systemctl suspend-then-hibernate && $locker, mode "default"
-    bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym h exec --no-startup-id systemctl hibernate, mode "default"
-    bindsym p exec --no-startup-id systemctl poweroff -i, mode "default"
+    bindsym l exec --no-startup-id $sway_exit lock, mode "default"
+    bindsym e exec --no-startup-id $sway_exit logout, mode "default"
+    bindsym s exec --no-startup-id $sway_exit suspend, mode "default"
+    bindsym r exec --no-startup-id $sway_exit reboot, mode "default"
+    bindsym h exec --no-startup-id $sway_exit hibernate, mode "default"
+    bindsym p exec --no-startup-id $sway_exit shutdown, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
