@@ -279,7 +279,7 @@ exec --no-startup-id xsettingsd &
 exec --no-startup-id picom --config ~/.config/picom.conf
 
 # Turn off monitors after user is inactive for some time
-exec --no-startup-id xset +dpms dpms 0 300 0
+exec --no-startup-id xset +dpms dpms 0 900 0
 
 # For laptops, dim screen brightness on inactivity
 exec --no-startup-id brightd -w 200 -b 5 -f
