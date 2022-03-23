@@ -272,8 +272,8 @@ for_window [window_role="GtkFileChooserDialog"] floating enable
 # Xsettingsd is a lightweight xsettings daemon which provides settings to Xorg applications via the XSETTINGS specification when not running one (like when using KDE). Some applications like Java or Wine does not get the font settings through fontconfig so this is necessary to provide setting like anti-aliasing and font hinting.
 exec --no-startup-id xsettingsd &
 
-# Run compton for desktop composition
-exec --no-startup-id compton --config ~/.config/compton.conf
+# Run picom for desktop composition
+exec --no-startup-id picom --config ~/.config/picom.conf
 
 # Turn off monitors after user is inactive for some time
 exec --no-startup-id xset +dpms dpms 0 300 0
