@@ -13,6 +13,7 @@ order += "wireless wlp38s0"
 order += "disk /"
 order += "load"
 order += "tztime local"
+order += "time"
 
 ethernet enp34s0 {
   format_up = "<span> %ip</span>"
@@ -36,9 +37,8 @@ battery 0 {
   low_threshold = 10
 }
 
-tztime local {
-  format = "<span> %time </span>"
-  format_time = " %a %-d %b %H:%M"
+time {
+  format = "%Y-%m-%d %H:%M"
 }
 
 load {
