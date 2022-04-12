@@ -15,3 +15,10 @@ git clone https://github.com/hugochinchilla/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 ./bootstrap.sh
 ```
+
+
+## HiDPI settings with swayland and Xwayland
+
+Installed aur/sway-hidpi-git
+
+Followed instructions in https://github.com/swaywm/wlroots/pull/2064#issuecomment-622647075

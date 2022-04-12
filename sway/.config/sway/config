@@ -288,3 +288,5 @@ output DP-3 pos 0 0
 output DP-4 pos 2560 0
 output "*" background "~/dotfiles/sway/.config/sway/assets/mojave-night.jpg" fill
 
+xwayland force scale 2
+exec xsettingsd
