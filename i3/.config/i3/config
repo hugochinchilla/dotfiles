@@ -15,7 +15,7 @@ set $workspace0 "10"
 
 font pango:DejaVu Sans Mono 12, icomoon 12
 
-focus_follows_mouse yes
+focus_follows_mouse no
 
 # assign workspaces to outputs
 workspace $workspace1 output DP-3
