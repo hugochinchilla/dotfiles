@@ -131,7 +131,7 @@ bindsym Print exec xfce4-screenshooter
 bindsym $mod+c exec gnome-calculator
 bindsym $mod+g exec gnome-control-center
 bindsym $mod+Control+l exec $locker
-bindsym $mod+m exec ~/.config/i3/scripts/emoji_rofi.sh
+bindsym $mod+m exec rofimoji
 bindsym XF86Launch6 exec ~/dotfiles/scripts/focus-meet.sh
 
 # turn off and on monitors, fixes issues with DisplayPort hotplug
