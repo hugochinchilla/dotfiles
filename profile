@@ -57,4 +57,8 @@ else
     ssh-add
 fi
 
+
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
 export DOTFILES_PROFILE_LOADED=1
