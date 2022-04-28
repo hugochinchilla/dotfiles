@@ -35,6 +35,3 @@ dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPl
 
 
 i3lock -i "$tmpbg" -t -u $i3flags
-
-# Deactivate DPMS
-revert
