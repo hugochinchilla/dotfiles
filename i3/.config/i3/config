@@ -232,6 +232,7 @@ for_window [window_role="Preferences"]  floating enable
 for_window [window_type="dialog"]       floating enable 
 for_window [window_type="menu"]         floating enable
 for_window [class="Pavucontrol"]        floating enable
+for_window [class="pico8"]              floating enable
 
 # Float specific apps or windows
 for_window [class="Tandem"] floating enable sticky enable
@@ -257,6 +258,7 @@ for_window [class="Gstm"] floating enable
 for_window [class="Qpaeq"] floating enable
 for_window [class="qjackctl"] floating enable
 for_window [class="carla"] floating enable
+for_window [class="easyeffects"] floating enable
 for_window [window_role="GtkFileChooserDialog"] floating enable
 
 
