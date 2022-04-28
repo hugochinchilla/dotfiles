@@ -65,14 +65,13 @@ alias dl="dlogs"
 alias drun="docker-compose run --rm"
 
 function dup() {
-    docker-compose up -d $@
+    docker-compose up --build -d $@
 }
 
 function drestart() {
-    dstop $@
-    drm $@
+    dkill $@
+    docker-compose down $@
     dup $@
-    dnotify "Docker-compose restarted"
 }
 
 function dbash() {
@@ -103,4 +102,9 @@ alias ke="kubectl edit"
 alias kns=kubens
 alias kctx=kubectx
 
-alias yays=yay --answerclean=All --answerdiff=None --answeredit=None
+alias yay=yay --answerclean=All --answerdiff=None --answeredit=None
+
+alias clar="cd ~/workspace/clarity"
+alias de="cd ~/workspace/clarity/data_engineering"
+
+

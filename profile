@@ -30,44 +30,19 @@ export WORKON_HOME="$HOME/.virtualenvs"
 # Pulseaudio
 export PULSE_RUNTIME_PATH="/run/user/$UID/pulse/"
 
-# set PATH so it includes user's private bin if it exists
-if [[ -d "$HOME/.bin" ]] ; then
-  export PATH="$HOME/.bin:$PATH"
-fi
 
-if [[ -d "$HOME/.local/bin" ]] ; then
-  export PATH="$HOME/.local/bin:$PATH"
-fi
+export PATH="$HOME/.bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$PATH:$HOME/.npm-packages/bin"
+export PATH="$PATH:$HOME/.config/composer/vendor/bin"
 
-# Node global install without sudo
-if [[ -d "$HOME/.npm-packages" ]] ; then
-	export NPM_PACKAGES="${HOME}/.npm-packages"
-	export PATH="$PATH:$NPM_PACKAGES/bin"
-
-	# Unset manpath so we can inherit from /etc/manpath via the `manpath` command
-	unset MANPATH # delete if you already modified MANPATH elsewhere in your config
-	export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
-fi
-
-# Include composer packages in the path
-if [[ -d "$HOME/.composer/vendor/bin" ]] ; then
-  export PATH="$PATH:$HOME/.composer/vendor/bin"
-fi
-if [[ -d "$XDG_CONFIG_HOME/composer/vendor/bin" ]] ; then
-  export PATH="$PATH:$XDG_CONFIG_HOME/composer/vendor/bin"
-fi
+for gem_bin_dir in $HOME/.local/share/gem/ruby/*/bin; do
+  export PATH="$PATH:$gem_bin_dir"
+done
 
 if [[ -f "$HOME/projects/stderred/build/libstderred.so" ]] ; then
   export LD_PRELOAD="$HOME/projects/stderred/build/libstderred.so${LD_PRELOAD:+:$LD_PRELOAD}"
 fi
-
-export DOTFILES_PROFILE_LOADED=1
-
-# Load termite terminfo file
-if [[ -f $XDG_CONFIG_HOME/termite/termite.terminfo ]] ; then
-    tic -x $XDG_CONFIG_HOME/termite/termite.terminfo
-fi
-
 
 if [ -f ~/.ssh/agent.env ] ; then
     . ~/.ssh/agent.env > /dev/null
@@ -81,3 +56,5 @@ else
     eval `ssh-agent | tee ~/.ssh/agent.env`
     ssh-add
 fi
+
+export DOTFILES_PROFILE_LOADED=1
