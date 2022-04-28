@@ -132,6 +132,7 @@ bindsym $mod+c exec gnome-calculator
 bindsym $mod+g exec gnome-control-center
 bindsym $mod+Control+l exec $locker
 bindsym $mod+m exec ~/.config/i3/scripts/emoji_rofi.sh
+bindsym XF86Launch6 exec ~/dotfiles/scripts/focus-meet.sh
 
 # turn off and on monitors, fixes issues with DisplayPort hotplug
 bindsym $mod+BackSpace exec ~/.config/i3/scripts/monitor-hotplug.sh
