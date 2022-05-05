@@ -175,6 +175,9 @@ mode "$mode_system" {
 bindsym $mod+Escape mode "$mode_system"
 
 bar {
+  tray_output primary
+  tray_padding 2
+
   colors {
     background #282A36
     statusline #F8F8F2
