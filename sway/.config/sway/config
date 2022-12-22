@@ -239,6 +239,7 @@ for_window [window_role="Preferences"]  floating enable
 for_window [window_type="dialog"]       floating enable 
 for_window [window_type="menu"]         floating enable
 for_window [app_id="matebook-applet"]   floating enable
+for_window [app_id="pavucontrol"]   floating enable
 
 # Float specific apps or windows
 for_window [class="Tandem"] floating enable
