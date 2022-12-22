@@ -1,0 +1,9 @@
+profile standalone {
+    output eDP-1 enable scale 2 position 0,0
+    exec sh -c "swaymsg xwayland scale 2; echo Gdk/WindowScalingFactor 2 > ~/.config/xsettingsd/xsettingsd.conf; killall -HUP xsettingsd"
+}
+
+profile mirror {
+    output eDP-1 enable scale 1 position 0,0
+    exec sh -c "swaymsg xwayland scale 1; echo Gdk/WindowScalingFactor 1 > ~/.config/xsettingsd/xsettingsd.conf; killall -HUP xsettingsd"
+}
