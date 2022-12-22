@@ -15,6 +15,8 @@ order += "wireless wlan0"
 order += "disk /"
 order += "load"
 order += "battery 0"
+order += "tztime home"
+order += "tztime local_date"
 order += "tztime local"
 
 battery_level {
@@ -45,8 +47,17 @@ battery 0 {
   threshold_type = time
 }
 
+tztime local_date {
+  format = "<span> %a %-d %b </span>"
+}
+
 tztime local {
-  format = "<span>  %a %-d %b %H:%M </span>"
+  format = "<span>  %H:%M </span>"
+}
+
+tztime home {
+  format = "<span>  %H:%M </span>"
+  timezone = "Europe/Madrid"
 }
 
 load {
