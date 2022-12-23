@@ -1,8 +1,4 @@
 #!/bin/sh
-lock() {
-    ~/.config/sway/scripts/lock-screen.sh
-}
-
 case "$1" in
     lock)
         lock
@@ -11,10 +7,10 @@ case "$1" in
         swaymsg exit
         ;;
     suspend)
-        lock && systemctl suspend-then-hibernate
+        systemctl suspend-then-hibernate
         ;;
     hibernate)
-        lock && systemctl hibernate
+        systemctl hibernate
         ;;
     reboot)
         systemctl reboot

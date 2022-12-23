@@ -1,5 +1,5 @@
 set $scripts $HOME/.config/i3/scripts
-set $locker $HOME/.config/sway/scripts/lock-screen.sh && sleep 1
+set $locker $HOME/.config/sway/scripts/lock-screen.sh
 set $terminal alacritty
 set $mod Mod4
 set $workspace1 "1"
@@ -276,6 +276,18 @@ exec --no-startup-id $scripts/custom-setup.sh
 exec --no-startup-id mako
 exec --no-startup-id oguri
 exec --no-startup-id $HOME/.config/sway/scripts/dynamic-wallpaper.sh
+
+exec swayidle -w \
+    timeout 120 '$locker' \
+    timeout 300 'swaymsg "output * dpms off"' \
+    resume 'swaymsg "output * dpms on"' \
+    before-sleep '$locker' \
+
+
+
+
+
+
 
 
 input * {

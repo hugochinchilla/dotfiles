@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
-dir=$HOME/dotfiles/i3/.config/i3/screenlocker
-SWAYLOCK_FLAGS="--daemonize"
+LOCK_ICON=$HOME/dotfiles/i3/.config/i3/screenlocker/1.png
+
+# -e flag is added as workaround
+# https://github.com/swaywm/swaylock/issues/124#issuecomment-572369286
+SWAYLOCK_FLAGS="--daemonize -e"
 
 
 if pgrep swaylock > /dev/null; then
@@ -10,7 +13,6 @@ if pgrep swaylock > /dev/null; then
 fi
 
 
-LOCK_ICON=$(ls $dir/../screenlocker/*.png | shuf -n 1)
 
 tmpbg="${XDG_CACHE_HOME:-${HOME}/.cache}/i3lock-background.png"
 
