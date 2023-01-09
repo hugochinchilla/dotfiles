@@ -1,5 +1,6 @@
 alias ll="ls -lh"
 alias lla="ls -lha"
+alias rm="rm -I --preserve-root"
 
 # ssh aliases
 alias ssh-password='ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no'
