@@ -1,3 +1,5 @@
+#zmodload zsh/zprof
+
 if [ "$DOTFILES_PROFILE_LOADED" != "1" ]; then
     source $HOME/.profile
 fi
@@ -50,8 +52,8 @@ source $HOME/.bash_aliases
 source $ZSH/oh-my-zsh.sh
 
 HISTFILE=$XDG_DATA_HOME/zsh/history
-HISTSIZE=10000
-SAVEHIST=30000
+HISTSIZE=1000
+SAVEHIST=3000
 
 unsetopt correct_all
 setopt correct
@@ -63,4 +65,5 @@ complete -o nospace -C /usr/local/bin/vault vault
 
 source $HOME/.config/zsh/private/*
 
-source $HOME/.config/broot/launcher/bash/br
+#zprof
+
