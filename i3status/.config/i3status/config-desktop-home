@@ -9,8 +9,9 @@ general {
 
 order += "volume master"
 #order += "ethernet enp34s0"
-order += "wireless wlp38s0"
+#order += "wireless wlp38s0"
 order += "disk /"
+order += "disk /home"
 order += "load"
 order += "tztime local"
 order += "time"
@@ -46,7 +47,11 @@ load {
 }
 
 disk "/" {
-  format = "<span>  %free Free </span>"
+  format = "<span>   %free </span>"
+}
+
+disk "/home" {
+  format = "<span> /home  %free </span>"
 }
 
 volume master {
