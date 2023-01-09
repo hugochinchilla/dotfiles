@@ -291,3 +291,8 @@ exec --no-startup-id xiccd
 
 # Set custom keymap
 exec --no-startup-id setxkbmap -layout es -option altwin:swap_lalt_lwin -option caps:escape
+
+# Allows for gnome disks utility to perform privileged operations on disks
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+exec --no-startup-id dunst
