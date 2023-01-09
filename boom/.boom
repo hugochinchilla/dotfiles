@@ -3,11 +3,19 @@
     {
       "gifs": [
         {
-          "batman-bye": "https://media.giphy.com/media/YHvwPgwojjsFa/giphy.gif"
+          "golden-hammer": "https://media.giphy.com/media/Ve4t5hvx9oTMSqqXnc/giphy.gif"
         },
         {
-          "knowledge": "https://miro.medium.com/max/350/1*kD905dFJGIzg7DCjKIqwMw.gif"
+          "knowledge-is-power": "https://miro.medium.com/max/350/1*kD905dFJGIzg7DCjKIqwMw.gif"
+        },
+        {
+          "batman-eject": "https://media.giphy.com/media/YHvwPgwojjsFa/giphy.gif"
         }
+      ]
+    },
+    {
+      "gifsa": [
+
       ]
     }
   ]
