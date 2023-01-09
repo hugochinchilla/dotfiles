@@ -236,6 +236,7 @@ for_window [window_type="dialog"]       floating enable
 for_window [window_type="menu"]         floating enable
 for_window [class="Pavucontrol"]        floating enable
 for_window [class="pico8"]              floating enable
+for_window [class="Blueman-manager"]    floating enable
 
 # Float specific apps or windows
 for_window [class="Tandem"] floating enable sticky enable
