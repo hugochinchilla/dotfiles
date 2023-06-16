@@ -1,5 +1,4 @@
-set $scripts $XDG_CONFIG_HOME/i3/scripts
-set $locker $scripts/lock-screen.sh && sleep 1
+set $locker ~/dotfiles/scripts/lock-screen.sh
 set $terminal alacritty
 set $mod Mod4
 set $workspace1 "1"
@@ -135,7 +134,7 @@ bindsym $mod+m exec rofimoji
 bindsym XF86Launch6 exec ~/dotfiles/scripts/focus-meet.sh
 
 # turn off and on monitors, fixes issues with DisplayPort hotplug
-bindsym $mod+BackSpace exec ~/.config/i3/scripts/monitor-hotplug.sh
+bindsym $mod+BackSpace exec ~/dotfiles/scripts/monitor-hotplug.sh
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -159,14 +158,16 @@ mode "resize" {
 }
 bindsym $mod+t mode "resize"
 
-set $mode_system (l) lock, (e) logout, (s) suspend, (h) halt, (r) reboot
+set $i3_exit ~/dotfiles/scripts/session-exit.sh
+
+set $mode_system (l) lock, (e) logout, (s) suspend, (h) hibernate, (p) power off, (r) reboot
 mode "$mode_system" {
-    bindsym l exec --no-startup-id $locker, mode "default"
-    bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym s exec --no-startup-id systemctl suspend && $locker, mode "default"
-    bindsym $mod+Escape exec --no-startup-id systemctl suspend && $locker, mode "default"
-    bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym h exec --no-startup-id systemctl poweroff -i, mode "default"
+    bindsym l exec --no-startup-id $i3_exit lock, mode "default"
+    bindsym e exec --no-startup-id $i3_exit logout, mode "default"
+    bindsym s exec --no-startup-id $i3_exit suspend, mode "default"
+    bindsym r exec --no-startup-id $i3_exit reboot, mode "default"
+    bindsym h exec --no-startup-id $i3_exit hibernate, mode "default"
+    bindsym p exec --no-startup-id $i3_exit shutdown, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -269,7 +270,7 @@ for_window [window_role="GtkFileChooserDialog"] floating enable
 exec --no-startup-id xsettingsd &
 
 # Load per-machine custom settings
-exec --no-startup-id ~/.config/i3/scripts/custom-setup.sh
+exec --no-startup-id ~/dotfiles/scripts/setup-host-by-hostname.sh
 
 # Run picom for desktop composition
 exec --no-startup-id picom --config ~/.config/picom.conf

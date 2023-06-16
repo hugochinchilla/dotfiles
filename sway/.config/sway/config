@@ -1,5 +1,5 @@
-set $scripts $HOME/.config/i3/scripts
-set $locker $HOME/.config/sway/scripts/lock-screen.sh
+set $scripts $HOME/dotfiles/scripts
+set $locker $HOME/dotfiles/scripts/sway-scren-lock.sh
 set $terminal alacritty
 set $mod Mod4
 set $workspace1 "1"
@@ -155,7 +155,7 @@ mode "resize" {
 bindsym $mod+t mode "resize"
 
 set $mode_system (l) lock, (e) logout, (s) suspend, (h) hibernate, (p) power off, (r) reboot
-set $sway_exit ~/.config/sway/scripts/sway-exit.sh
+set $sway_exit ~/dotfiles/scripts/session-exit.sh
 
 mode "$mode_system" {
     bindsym l exec $sway_exit lock, mode "default"
@@ -271,7 +271,7 @@ for_window [window_role="GtkFileChooserDialog"] floating enable
 exec nm-applet --indicator
 
 # Load per-machine custom settings
-exec $scripts/custom-setup.sh
+exec $scripts/setup-host-by-hostname.sh
 
 # I don't remember why I added this
 exec dbus-update-activation-environment --systemd XDG_CURRENT_DESKTOP=sway
@@ -294,7 +294,7 @@ exec swayidle -w \
 # Wallpaper settings
 #exec oguri  # A daemon to set wallpapers using ogurictl (used by dwall)
 #exec dwall -s bigsur -k
-#exec $HOME/.config/sway/scripts/dynamic-wallpaper.sh
+#exec $HOME/dotfiles/scripts/dynamic-wallpaper.sh
 
 
 input * {

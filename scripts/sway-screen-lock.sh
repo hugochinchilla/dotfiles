@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-LOCK_ICON=$HOME/dotfiles/i3/.config/i3/screenlocker/1.png
+LOCK_ICON=$HOME/dotfiles/scripts/assets/screenlocker/1.png
 
 # -e flag is added as workaround
 # https://github.com/swaywm/swaylock/issues/124#issuecomment-572369286
