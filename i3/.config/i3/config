@@ -132,6 +132,7 @@ bindsym $mod+g exec gnome-control-center
 bindsym $mod+Control+l exec $locker
 bindsym $mod+m exec rofimoji
 bindsym XF86Launch6 exec ~/dotfiles/scripts/focus-meet.sh
+bindsym XF86Launch7 exec ~/dotfiles/scripts/toggle-spotlights.sh
 
 # turn off and on monitors, fixes issues with DisplayPort hotplug
 bindsym $mod+BackSpace exec ~/dotfiles/scripts/monitor-hotplug.sh
