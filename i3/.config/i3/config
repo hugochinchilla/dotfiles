@@ -277,13 +277,13 @@ exec --no-startup-id ~/dotfiles/scripts/setup-host-by-hostname.sh
 exec --no-startup-id picom --config ~/.config/picom.conf
 
 # Turn off monitors after user is inactive for some time
-exec --no-startup-id xset +dpms dpms 0 900 0
+exec --no-startup-id xset +dpms dpms 0 1800 0
 
 # For laptops, dim screen brightness on inactivity
 exec --no-startup-id brightd -w 200 -b 5 -f
 
 # Lock screen if user is inactive for some time
-exec --no-startup-id xautolock -time 10 -locker $locker
+exec --no-startup-id xautolock -time 15 -locker $locker
 
 # Load wallpapers
 exec --no-startup-id nitrogen --restore
