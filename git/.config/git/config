@@ -64,5 +64,3 @@
 [includeIf "gitdir:~/workspace/"]
 path = ~/workspace/.gitconfig
 
-[includeIf "gitdir:~/workspace/clarity/"]
-path = ~/workspace/clarity/.gitconfig
