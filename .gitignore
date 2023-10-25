@@ -2,3 +2,9 @@ dotfiles.sublime-*
 zsh/.config/zsh/.zcompdump*
 zsh/.config/zsh/private
 i3/.config/i3/scripts/current_brightness
+
+ssh/.ssh/*_rsa*
+ssh/.ssh/*_dsa*
+ssh/.ssh/*_ec*
+ssh/.ssh/*_ed*
+
