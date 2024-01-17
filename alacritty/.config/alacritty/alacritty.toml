@@ -1,0 +1,7 @@
+[font]
+size = 14.0
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "Return"
+mods = "Control|Shift"
