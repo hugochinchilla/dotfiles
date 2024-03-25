@@ -64,3 +64,5 @@
 [includeIf "gitdir:~/workspace/"]
 path = ~/workspace/.gitconfig
 
+[remote]
+	pushDefault = origin
