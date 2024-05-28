@@ -64,6 +64,8 @@ alias dps="docker-compose ps"
 alias dlogs="docker-compose logs -f -t --tail=1000"
 alias dl="dlogs"
 alias drun="docker-compose run --rm"
+alias docker-bridge-ip="docker network inspect bridge --format='{{(index .IPAM.Config 0).Gateway}}'"
+alias dip="docker-bridge-ip"
 
 function dup() {
     docker-compose up --build -d $@
