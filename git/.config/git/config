@@ -1,6 +1,6 @@
 [user]
-  name = Hugo Chinchilla
-  email = hugoasecas@gmail.com
+	name = Hugo Chinchilla
+	email = hugoasecas@gmail.com
 
 [alias]
   st = status
@@ -24,7 +24,7 @@
   symlinks = true
   pager = less --tabs=4 -RFX
 [push]
-  default = current
+	default = current
 [branch]
   # set rebase=true for every new branch
   autosetuprebase = always
