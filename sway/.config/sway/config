@@ -305,12 +305,16 @@ input * {
     tap enabled
 }
 
+# Toggle internal screen based on lid state
+bindswitch --reload --locked lid:on output eDP-1 disable
+bindswitch --reload --locked lid:off output eDP-1 enable
+
+# Internal Screen
 output eDP-1 scale 2
 
-# This settings should be replaced by kanshi profiles
-#output DP-3 pos 0 0
-#output DP-4 pos 2560 0
-
+# Home dual monitor setup
+output "Dell Inc. DELL U2721DE 8VWVQ83" res 2560x1440 scale 1 pos 0 500  # DP-8
+output "Dell Inc. DELL U2719D 1DWLX13"  res 2560x1440 scale 1 transform 270 pos 2560 0  # DP-9
 
 # This settings are for scaling properly apps running on xwayland
 exec_always 'xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 2'
