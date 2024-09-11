@@ -36,9 +36,11 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$PATH:$HOME/.npm-packages/bin"
 export PATH="$PATH:$HOME/.config/composer/vendor/bin"
 
-for gem_bin_dir in $HOME/.local/share/gem/ruby/*/bin; do
-  export PATH="$PATH:$gem_bin_dir"
-done
+if [[ -d $HOME/.local/share/gem/ruby ]]; then
+    for gem_bin_dir in $HOME/.local/share/gem/ruby/*/bin; do
+         export PATH="$PATH:$gem_bin_dir"
+    done
+fi
 
 if [[ -f "$HOME/projects/stderred/build/libstderred.so" ]] ; then
   export LD_PRELOAD="$HOME/projects/stderred/build/libstderred.so${LD_PRELOAD:+:$LD_PRELOAD}"
