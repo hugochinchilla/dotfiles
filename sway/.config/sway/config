@@ -317,7 +317,13 @@ output "Dell Inc. DELL U2721DE 8VWVQ83" res 2560x1440 scale 1 pos 0 500  # DP-8
 output "Dell Inc. DELL U2719D 1DWLX13"  res 2560x1440 scale 1 transform 270 pos 2560 0  # DP-9
 
 # This settings are for scaling properly apps running on xwayland
-exec_always 'xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 2'
-exec xrdb .Xresources.sway
+#exec_always 'xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 2'
+#exec xrdb .Xresources.sway
+
+# This provides a daemon for gnome apps to read gtk config
 exec xsettingsd
+
+# This enables the bluetooth tray, and privilege escalation to apps like gnome-disks
+exec lxsession
+
 
