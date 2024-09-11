@@ -1,5 +1,5 @@
 set $scripts $HOME/dotfiles/scripts
-set $locker $HOME/dotfiles/scripts/sway-scren-lock.sh
+set $locker $HOME/dotfiles/scripts/sway-screen-lock.sh
 #set $terminal alacritty
 set $terminal i3-sensible-terminal
 set $mod Mod4
