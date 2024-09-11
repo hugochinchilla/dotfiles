@@ -65,5 +65,9 @@ complete -o nospace -C /usr/local/bin/vault vault
 
 source $HOME/.config/zsh/private/*
 
+if [[ $HOST == "archbook" ]]; then
+    PS1="%{$fg[green]%}%n@%{$fg[green]%}%m%{$reset_color%} %{$fg[blue]%}%20<...<%~%<<%{$reset_color%}$"
+fi
+
 #zprof
 
