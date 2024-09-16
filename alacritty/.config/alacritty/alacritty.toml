@@ -5,3 +5,8 @@ size = 14.0
 action = "SpawnNewInstance"
 key = "Return"
 mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "Return"
+mods = "Control"
