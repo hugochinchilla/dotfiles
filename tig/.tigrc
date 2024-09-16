@@ -87,3 +87,7 @@ color   tree.directory         221     default
 #   LINE(PALETTE_4, "", COLOR_DEFAULT, COLOR_DEFAULT, 0), \
 #   LINE(PALETTE_5, "", COLOR_WHITE, COLOR_DEFAULT, 0), \
 #   LINE(PALETTE_6, "", COLOR_RED, )
+
+
+bind main c !git checkout %(commit)
+bind main H !git checkout %(branch)
