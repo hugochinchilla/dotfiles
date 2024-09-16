@@ -111,3 +111,7 @@ alias clar="cd ~/workspace/clarity"
 alias de="cd ~/workspace/clarity/data_engineering"
 
 
+alias dark-mode="gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
+alias light-mode="gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'"
+
+alias brillo="~/dotfiles/scripts/brillo.sh"
