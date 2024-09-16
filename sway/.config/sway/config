@@ -16,7 +16,7 @@ set $workspace8 "8"
 set $workspace9 "9"
 set $workspace0 "0"
 
-font pango:DejaVu Sans Mono 10, icomoon 10
+font pango:DejaVu Sans Mono 12, icomoon 12
 
 focus_follows_mouse yes
 
@@ -125,8 +125,8 @@ bindsym XF86Tools exec ps aux | grep -q matebook && pkill matebook-applet || mat
 
 # Hotkeys for apps
 bindsym $mod+Return exec $terminal
-bindsym $mod+d exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font 'Noto Sans 14' -m 1
-bindsym $mod+r exec rofi -lines 12 -padding 18 -width 60 -location 0 -show run -sidebar-mode -columns 3 -font 'Noto Sans 14' -m 1
+bindsym $mod+d exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font 'Noto Sans 14' -monitor 1
+bindsym $mod+r exec rofi -lines 12 -padding 18 -width 60 -location 0 -show run -sidebar-mode -columns 3 -font 'Noto Sans 14' -monitor 1
 bindsym $mod+n exec networkmanager_dmenu -fn 'Noto-14.0' -l 12
 bindsym $mod+shift+d exec dmenu_run -fn 'Noto-14.0'
 bindsym Print exec xfce4-screenshooter
