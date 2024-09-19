@@ -349,8 +349,5 @@ exec xsettingsd
 # This enables the bluetooth tray, and privilege escalation to apps like gnome-disks
 exec lxsession
 
-# Restore last config of huawei battery protection mode
-exec /usr/lib/huawei-wmi/reinstate
-
 # Run Logitech mouse widget
 exec solaar --window hide
