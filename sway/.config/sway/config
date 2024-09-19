@@ -351,3 +351,6 @@ exec lxsession
 
 # Run Logitech mouse widget
 exec solaar --window hide
+
+# Run eassyeffects as background process
+exec easyeffects --gapplication-service
