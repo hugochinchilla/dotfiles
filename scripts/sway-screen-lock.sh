@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
 
+export XDG_RUNTIME_DIR=/run/user/$(id -u)
+export WAYLAND_DISPLAY=wayland-1
+export SWAYSOCK=$XDG_RUNTIME_DIR/sway-ipc.$(id -u).$(pgrep -x sway).sock
+
 LOCK_ICON=$HOME/dotfiles/scripts/assets/screenlocker/1.png
 
 # -e flag is added as workaround
 # https://github.com/swaywm/swaylock/issues/124#issuecomment-572369286
-SWAYLOCK_FLAGS="--daemonize -e"
+SWAYLOCK_FLAGS="--daemonize -e -c 2E3436"
 
 
 if pgrep swaylock > /dev/null; then
