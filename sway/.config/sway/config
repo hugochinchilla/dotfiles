@@ -114,6 +114,8 @@ bindsym $mod+Shift+Q kill
 # Multimedia hotkeys
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +2%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -2%
+bindsym Ctrl+Shift+Page_Up   exec pactl set-sink-volume @DEFAULT_SINK@ +2%
+bindsym Ctrl+Shift+Page_Down exec pactl set-sink-volume @DEFAULT_SINK@ -2%
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 bindsym XF86MonBrightnessDown exec xbacklight -dec 6
