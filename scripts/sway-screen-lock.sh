@@ -11,6 +11,11 @@ LOCK_ICON=$HOME/dotfiles/scripts/assets/screenlocker/1.png
 SWAYLOCK_FLAGS="--daemonize -e -c 2E3436"
 
 
+if nmcli | grep -q "wlan0: conectado to faraday"; then
+    echo "At home, skipping locker"
+    exit 0
+fi
+
 if pgrep swaylock > /dev/null; then
     echo "An instance of swaylock is already running"
     exit 0
