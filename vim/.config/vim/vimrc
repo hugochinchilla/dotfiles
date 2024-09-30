@@ -56,3 +56,6 @@ autocmd BufRead,BufNewFile /etc/nginx/* set filetype=nginx syntax=nginx
 
 """" Makefile
 autocmd FileType make setlocal noexpandtab
+
+"""" SSH conf files
+au BufNewFile,BufRead */.ssh/config.d/*  setf sshconfig
