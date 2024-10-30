@@ -1,5 +1,5 @@
 [font]
-size = 14.0
+size = 14
 
 [[keyboard.bindings]]
 action = "SpawnNewInstance"
@@ -10,3 +10,6 @@ mods = "Control|Shift"
 action = "SpawnNewInstance"
 key = "Return"
 mods = "Control"
+
+[general]
+import = [ "/usr/lib/node_modules/alacritty-themes/themes/Wombat.toml" ]
