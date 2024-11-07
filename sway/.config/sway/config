@@ -131,7 +131,7 @@ bindsym $mod+d exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun 
 bindsym $mod+r exec rofi -lines 12 -padding 18 -width 60 -location 0 -show run -sidebar-mode -columns 3 -font 'Noto Sans 14' -monitor 1
 bindsym $mod+n exec networkmanager_dmenu -fn 'Noto-14.0' -l 12
 bindsym $mod+shift+d exec dmenu_run -fn 'Noto-14.0'
-bindsym Print exec xfce4-screenshooter
+bindsym Print exec env QT_QPA_PLATFORM=xcb XDG_CURRENT_DESKTOP=sway flameshot gui
 bindsym $mod+c exec gnome-calculator
 bindsym $mod+g exec gnome-control-center
 bindsym $mod+Control+l exec $locker
@@ -291,7 +291,8 @@ for_window [app_id="org.gnome.Calculator"] floating enable
 for_window [app_id="blueman-manager"] floating enable
 for_window [app_id="solaar"] floating enable
 for_window [title="Imagen en imagen"] floating enable
-for_window [title=".*Bitwarden - Free Password Manager.*"] floating enable
+for_window [app_id="^firefox$" title="^Extension: \(Bitwarden"] exec "sleep 0.1; swaymsg floating enable; swaymsg floating disable; swaymsg floating enable"
+for_window [title="Guardar captura de pantalla"] floating enable
 
 # network manager applet
 exec nm-applet --indicator
@@ -356,3 +357,7 @@ exec solaar --window hide
 
 # Run eassyeffects as background process
 exec easyeffects --gapplication-service
+
+# Run software to make screenshots
+exec env QT_QPA_PLATFORM=xcb XDG_CURRENT_DESKTOP=sway flameshot
+
