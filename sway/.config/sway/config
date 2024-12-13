@@ -293,6 +293,8 @@ for_window [app_id="solaar"] floating enable
 for_window [title="Imagen en imagen"] floating enable
 for_window [app_id="^firefox$" title="^Extension: \(Bitwarden"] exec "sleep 0.1; swaymsg floating enable; swaymsg floating disable; swaymsg floating enable"
 for_window [title="Guardar captura de pantalla"] floating enable
+for_window [app_id="wdisplays"] floating enable
+for_window [app_id="wdisplays"] resize set width 1100 px
 
 # network manager applet
 exec nm-applet --indicator
@@ -339,7 +341,7 @@ bindswitch --reload --locked lid:off output eDP-1 enable
 output eDP-1 scale 2
 
 # Home dual monitor setup
-output "Dell Inc. DELL U2721DE 8VWVQ83" res 2560x1440 scale 1 pos 0 500
+output "Dell Inc. DELL U2721DE 8VWVQ83" res 2560x1440 scale 1 pos 0 890
 output "Dell Inc. DELL U2719D 1DWLX13"  res 2560x1440 scale 1 transform 270 pos 2560 0
 
 # This settings are for scaling properly apps running on xwayland
