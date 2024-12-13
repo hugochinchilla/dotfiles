@@ -33,6 +33,7 @@
   rebase = true
 [rebase]
   autoStash = true
+  instructionFormat = (%an <%ae>) %s
 [diff]
 	algorithm = patience
 [color]
