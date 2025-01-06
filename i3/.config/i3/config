@@ -270,8 +270,19 @@ for_window [class="Arandr"] floating enable
 for_window [window_role="GtkFileChooserDialog"] floating enable
 
 
-# Xsettingsd is a lightweight xsettings daemon which provides settings to Xorg applications via the XSETTINGS specification when not running one (like when using KDE). Some applications like Java or Wine does not get the font settings through fontconfig so this is necessary to provide setting like anti-aliasing and font hinting.
-exec --no-startup-id xsettingsd &
+# > XSettings BEGIN
+# provides settings to Xorg applications via the XSETTINGS specification when not running one (like when using KDE).
+# Some applications like Java or Wine does not get the font settings through fontconfig so this is necessary to provide setting like anti-aliasing and font hinting.
+
+# Xsettingsd is a lightweight xsettings daemon 
+exec --no-startup-id xsettingsd
+
+# GSD-xsettings is the fully featured gnome xsettings implementation (I think)
+#exec --no-startup-id /usr/lib/gsd-xsettings
+# < Xsettings END
+
+# Allows for gnome disks utility to perform privileged operations on disks
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 # Load per-machine custom settings
 exec --no-startup-id ~/dotfiles/scripts/setup-host-by-hostname.sh
@@ -297,7 +308,5 @@ exec --no-startup-id xiccd
 # Set custom keymap
 exec --no-startup-id setxkbmap -layout es -option altwin:swap_lalt_lwin -option caps:escape
 
-# Allows for gnome disks utility to perform privileged operations on disks
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 exec --no-startup-id dunst
