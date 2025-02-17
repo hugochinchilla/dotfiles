@@ -130,6 +130,7 @@ bindsym $mod+Return exec $terminal
 bindsym $mod+d exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font 'Noto Sans 14' -monitor 1
 bindsym $mod+r exec rofi -lines 12 -padding 18 -width 60 -location 0 -show run -sidebar-mode -columns 3 -font 'Noto Sans 14' -monitor 1
 bindsym $mod+n exec networkmanager_dmenu -fn 'Noto-14.0' -l 12
+bindsym $mod+y exec nautilus
 bindsym $mod+shift+d exec dmenu_run -fn 'Noto-14.0'
 bindsym Print exec env QT_QPA_PLATFORM=xcb XDG_CURRENT_DESKTOP=sway flameshot gui
 bindsym $mod+c exec gnome-calculator
@@ -293,6 +294,8 @@ for_window [app_id="solaar"] floating enable
 for_window [title="Imagen en imagen"] floating enable
 for_window [app_id="^firefox$" title="^Extension: \(Bitwarden"] exec "sleep 0.1; swaymsg floating enable; swaymsg floating disable; swaymsg floating enable"
 for_window [title="Guardar captura de pantalla"] floating enable
+for_window [app_id="org.gnome.Nautilus"] floating enable
+
 for_window [app_id="wdisplays"] floating enable
 for_window [app_id="wdisplays"] resize set width 1100 px
 
