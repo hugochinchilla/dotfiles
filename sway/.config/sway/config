@@ -1,10 +1,191 @@
 set $scripts $HOME/dotfiles/scripts
 set $locker $HOME/dotfiles/scripts/sway-screen-lock.sh
-
 set $terminal TERMINAL=alacritty i3-sensible-terminal
-
-
 set $mod Mod4
+
+##
+# Launch apps
+##
+
+
+# network manager applet
+exec nm-applet --indicator
+
+# Load per-machine custom settings
+exec $scripts/setup-host-by-hostname.sh
+
+# I don't remember why I added this
+exec dbus-update-activation-environment --systemd XDG_CURRENT_DESKTOP=sway
+
+# Fix slow start of gtk+ applications
+# https://github.com/swaywm/sway/wiki#gtk-applications-take-20-seconds-to-start
+exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+
+# Dunst-like notification manager for wayland
+exec mako
+
+# Lock-screen
+exec swayidle -w \
+    timeout 250 '$locker' \
+    timeout 300 'swaymsg "output * dpms off"' \
+    resume 'swaymsg "output * dpms on"' \
+    before-sleep '$locker' \
+
+
+# This provides a daemon for gnome apps to read gtk config
+exec xsettingsd
+
+# This enables the bluetooth tray, and privilege escalation to apps like gnome-disks
+exec lxsession
+
+# Run Logitech mouse widget
+exec solaar --window hide
+
+# Run eassyeffects as background process
+exec easyeffects --gapplication-service
+
+# Run software to make screenshots
+exec env QT_QPA_PLATFORM=xcb XDG_CURRENT_DESKTOP=sway flameshot
+
+# Wallpaper settings
+#exec oguri  # A daemon to set wallpapers using ogurictl (used by dwall)
+#exec dwall -s bigsur -k
+#exec $HOME/dotfiles/scripts/dynamic-wallpaper.sh
+
+
+
+##
+# Screen setup
+##
+
+output eDP-1 scale 2
+output "Dell Inc. DELL U2721DE 8VWVQ83" res 2560x1440 scale 1 pos 0 890
+output "Dell Inc. DELL U2719D 1DWLX13"  res 2560x1440 scale 1 transform 270 pos 2560 0
+
+# Toggle internal screen based on lid state
+bindswitch --reload --locked lid:on output eDP-1 disable
+bindswitch --reload --locked lid:off output eDP-1 enable
+
+
+##
+# Input section
+##
+
+input * {
+    xkb_layout 'es'
+    xkb_variant ""
+    xkb_options "altwin:swap_lalt_lwin,caps:escape"
+    tap enabled
+}
+
+# Hotkeys for apps
+
+set $rofi_params "-lines 12 -padding 18 -width 60 -location 0 -sidebar-mode -columns 3 -font 'Noto Sans 14' -monitor 1"
+
+bindsym $mod+Return exec $terminal
+bindsym $mod+d exec rofi $rofi_params -show drun
+bindsym $mod+r exec rofi $rofi_params -show run
+bindsym $mod+m exec rofimoji
+bindsym $mod+n exec networkmanager_dmenu -fn 'Noto-14.0' -l 12
+bindsym $mod+y exec nautilus
+bindsym $mod+c exec gnome-calculator
+bindsym $mod+Control+l exec $locker
+bindsym Ctrl+Shift+Page_Up   exec pactl set-sink-volume @DEFAULT_SINK@ +2%
+bindsym Ctrl+Shift+Page_Down exec pactl set-sink-volume @DEFAULT_SINK@ -2%
+bindsym Print exec env QT_QPA_PLATFORM=xcb XDG_CURRENT_DESKTOP=sway flameshot gui
+
+
+# Sesion exit menu
+set $mode_system (l) lock, (e) logout, (s) suspend, (h) hibernate, (p) power off, (r) reboot
+set $sway_exit ~/dotfiles/scripts/session-exit.sh
+mode "$mode_system" {
+    bindsym l exec $sway_exit lock, mode "default"
+    bindsym e exec $sway_exit logout, mode "default"
+    bindsym s exec $sway_exit suspend, mode "default"
+    bindsym r exec $sway_exit reboot, mode "default"
+    bindsym h exec $sway_exit hibernate, mode "default"
+    bindsym p exec $sway_exit shutdown, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Escape mode "$mode_system"
+
+# Screen presenting menu
+set $mode_present "present (m)irror (o)utput (s)caling (r)region (Shift+r)unset region" 
+mode $mode_present {
+    # command starts mirroring
+    bindsym m mode "default"; exec wl-present mirror
+    # these commands modify an already running mirroring window
+    bindsym o mode "default"; exec wl-present set-output
+    bindsym r mode "default"; exec wl-present set-region
+    bindsym Shift+r mode "default"; exec wl-present unset-region
+    bindsym s mode "default"; exec wl-present set-scaling
+    bindsym f mode "default"; exec wl-present toggle-freeze
+    #bindsym c mode "default"; exec wl-present custom
+
+    # return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+p mode $mode_present
+
+
+
+##
+# Theme setup
+##
+
+font pango:DejaVu Sans Mono 12, icomoon 12
+
+# Gtk theme settings
+set $gnome-schema org.gnome.desktop.interface
+exec_always {
+    gsettings set $gnome-schema gtk-theme 'Arc'
+    gsettings set $gnome-schema icon-theme 'elementary'
+    gsettings set $gnome-schema cursor-theme 'Adawita'
+    gsettings set $gnome-schema font-name 'Cantarell 11'
+
+    gsettings set $gnome-schema gtk-xft-antialias 1
+    gsettings set $gnome-schema gtk-xft-hinting 1
+    gsettings set $gnome-schema gtk-xft-hintstyle hintmedium
+    gsettings set $gnome-schema gtk-xft-rgba none
+}
+
+bar {
+  colors {
+    background #282A36
+    statusline #F8F8F2
+    separator  #44475A
+
+    focused_workspace  #44475A #44475A #F8F8F2
+    active_workspace   #282A36 #44475A #F8F8F2
+    inactive_workspace #282A36 #282A36 #BFBFBF
+    urgent_workspace   #FF5555 #FF5555 #F8F8F2
+    binding_mode       #FF5555 #FF5555 #F8F8F2
+  }
+
+  status_command py3status -c ~/.config/i3status/config
+  position top
+}
+
+## Colours
+## -------
+# class                 border  bground text    indicator child_border
+client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+client.background       #F8F8F2
+
+
+
+##
+# Tiling behavior
+##
+
 set $workspace1 "1"
 set $workspace2 "2"
 set $workspace3 "3"
@@ -16,7 +197,6 @@ set $workspace8 "8"
 set $workspace9 "9"
 set $workspace0 "0"
 
-font pango:DejaVu Sans Mono 12, icomoon 12
 
 focus_follows_mouse yes
 
@@ -111,40 +291,11 @@ bindsym $mod+a focus parent
 # kill focused window
 bindsym $mod+Shift+Q kill
 
-# Multimedia hotkeys
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +2%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -2%
-bindsym Ctrl+Shift+Page_Up   exec pactl set-sink-volume @DEFAULT_SINK@ +2%
-bindsym Ctrl+Shift+Page_Down exec pactl set-sink-volume @DEFAULT_SINK@ -2%
-bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
-bindsym XF86MonBrightnessDown exec xbacklight -dec 1
-bindsym XF86MonBrightnessUp exec xbacklight -inc 1
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
-bindsym XF86Tools exec ps aux | grep -q matebook && pkill matebook-applet || matebook-applet -w
-
-# Hotkeys for apps
-bindsym $mod+Return exec $terminal
-bindsym $mod+d exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font 'Noto Sans 14' -monitor 1
-bindsym $mod+r exec rofi -lines 12 -padding 18 -width 60 -location 0 -show run -sidebar-mode -columns 3 -font 'Noto Sans 14' -monitor 1
-bindsym $mod+n exec networkmanager_dmenu -fn 'Noto-14.0' -l 12
-bindsym $mod+y exec nautilus
-bindsym $mod+shift+d exec dmenu_run -fn 'Noto-14.0'
-bindsym Print exec env QT_QPA_PLATFORM=xcb XDG_CURRENT_DESKTOP=sway flameshot gui
-bindsym $mod+c exec gnome-calculator
-bindsym $mod+g exec gnome-control-center
-bindsym $mod+Control+l exec $locker
-bindsym $mod+m exec rofimoji
-
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod normal
 
 # reload the configuration file
 bindsym $mod+Shift+C reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+R restart
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -160,96 +311,20 @@ mode "resize" {
 }
 bindsym $mod+t mode "resize"
 
-set $mode_system (l) lock, (e) logout, (s) suspend, (h) hibernate, (p) power off, (r) reboot
-set $sway_exit ~/dotfiles/scripts/session-exit.sh
-
-mode "$mode_system" {
-    bindsym l exec $sway_exit lock, mode "default"
-    bindsym e exec $sway_exit logout, mode "default"
-    bindsym s exec $sway_exit suspend, mode "default"
-    bindsym r exec $sway_exit reboot, mode "default"
-    bindsym h exec $sway_exit hibernate, mode "default"
-    bindsym p exec $sway_exit shutdown, mode "default"
-
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-bindsym $mod+Escape mode "$mode_system"
-
-set $mode_present "present (m)irror (o)utput (s)caling (r)region (Shift+r)unset region" 
-mode $mode_present {
-    # command starts mirroring
-    bindsym m mode "default"; exec wl-present mirror
-    # these commands modify an already running mirroring window
-    bindsym o mode "default"; exec wl-present set-output
-    bindsym r mode "default"; exec wl-present set-region
-    bindsym Shift+r mode "default"; exec wl-present unset-region
-    bindsym s mode "default"; exec wl-present set-scaling
-    bindsym f mode "default"; exec wl-present toggle-freeze
-    #bindsym c mode "default"; exec wl-present custom
-
-    # return to default mode
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-bindsym $mod+p mode $mode_present
-
-bar {
-  colors {
-    background #282A36
-    statusline #F8F8F2
-    separator  #44475A
-
-    focused_workspace  #44475A #44475A #F8F8F2
-    active_workspace   #282A36 #44475A #F8F8F2
-    inactive_workspace #282A36 #282A36 #BFBFBF
-    urgent_workspace   #FF5555 #FF5555 #F8F8F2
-    binding_mode       #FF5555 #FF5555 #F8F8F2
-  }
-
-  status_command py3status -c ~/.config/i3status/config
-  position top
-}
-
-## Colours
-## -------
-# class                 border  bground text    indicator child_border
-client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
-client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
-client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
-client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
-client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
-client.background       #F8F8F2
+# Multimedia hotkeys
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +2%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -2%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86MonBrightnessDown exec xbacklight -dec 1
+bindsym XF86MonBrightnessUp exec xbacklight -inc 1
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86Tools exec ps aux | grep -q matebook && pkill matebook-applet || matebook-applet -w
 
 
 # Use "swaymsg -t get_tree" to get information about a window
-# Criterias available
-#
-# class
-#   Compares the window class (the second part of WM_CLASS)
-# instance
-#   Compares the window instance (the first part of WM_CLASS)
-# window_role
-#   Compares the window role (WM_WINDOW_ROLE).
-# id
-#   Compares the X11 window ID, which you can get via xwininfo for example.
-# title
-#   Compares the X11 window title (_NET_WM_NAME or WM_NAME as fallback).
-# urgent
-#   Compares the urgent state of the window. Can be "latest" or "oldest". Matches the latest or oldest urgent window, respectively. (The following aliases are also available: newest, last, recent, first)
-# con_mark
-#   Compares the mark set for this container, see [vim_like_marks].
-# con_id
-#   Compares the i3-internal container ID, which you can get via the IPC interface. Handy for scripting.
-
-assign [class="Sublime_text"] $workspace1
-assign [class="google-chrome"] $workspace3
-assign [class="Firefox"] $workspace3
-assign [class="Wine" instance="SQLyog.exe"] $workspace5
-assign [class="empathy"] $workspace4
-assign [class="Empathy"] $workspace4
-assign [class="Slack"] $workspace4
 
 # Float windows by role
 for_window [window_role="pop-up"]       floating enable
@@ -301,71 +376,3 @@ for_window [app_id="^firefox$" title="^Extension: \(Bitwarden"] exec "sleep 0.1;
 # Inhibit idle while fullscreen media
 for_window [app_id="firefox"] inhibit_idle fullscreen
 for_window [class="Google-chrome"] inhibit_idle fullscreen
-
-# network manager applet
-exec nm-applet --indicator
-
-# Load per-machine custom settings
-exec $scripts/setup-host-by-hostname.sh
-
-# I don't remember why I added this
-exec dbus-update-activation-environment --systemd XDG_CURRENT_DESKTOP=sway
-
-# Fix slow start of gtk+ applications
-# https://github.com/swaywm/sway/wiki#gtk-applications-take-20-seconds-to-start
-exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
-
-# Dunst-like notification manager for wayland
-exec mako
-
-# Lock-screen
-exec swayidle -w \
-    timeout 250 '$locker' \
-    timeout 300 'swaymsg "output * dpms off"' \
-    resume 'swaymsg "output * dpms on"' \
-    before-sleep '$locker' \
-
-
-# Wallpaper settings
-#exec oguri  # A daemon to set wallpapers using ogurictl (used by dwall)
-#exec dwall -s bigsur -k
-#exec $HOME/dotfiles/scripts/dynamic-wallpaper.sh
-
-
-input * {
-    xkb_layout 'es'
-    xkb_variant ""
-    xkb_options "altwin:swap_lalt_lwin,caps:escape"
-    tap enabled
-}
-
-# Toggle internal screen based on lid state
-bindswitch --reload --locked lid:on output eDP-1 disable
-bindswitch --reload --locked lid:off output eDP-1 enable
-
-# Internal Screen
-output eDP-1 scale 2
-
-# Home dual monitor setup
-output "Dell Inc. DELL U2721DE 8VWVQ83" res 2560x1440 scale 1 pos 0 890
-output "Dell Inc. DELL U2719D 1DWLX13"  res 2560x1440 scale 1 transform 270 pos 2560 0
-
-# This settings are for scaling properly apps running on xwayland
-#exec_always 'xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 2'
-#exec xrdb .Xresources.sway
-
-# This provides a daemon for gnome apps to read gtk config
-exec xsettingsd
-
-# This enables the bluetooth tray, and privilege escalation to apps like gnome-disks
-exec lxsession
-
-# Run Logitech mouse widget
-exec solaar --window hide
-
-# Run eassyeffects as background process
-exec easyeffects --gapplication-service
-
-# Run software to make screenshots
-exec env QT_QPA_PLATFORM=xcb XDG_CURRENT_DESKTOP=sway flameshot
-
