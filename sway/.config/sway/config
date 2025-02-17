@@ -289,12 +289,14 @@ for_window [app_id="org.gnome.Calculator"] floating enable
 for_window [app_id="blueman-manager"] floating enable
 for_window [app_id="solaar"] floating enable
 for_window [title="Imagen en imagen"] floating enable
-for_window [app_id="^firefox$" title="^Extension: \(Bitwarden"] exec "sleep 0.1; swaymsg floating enable; swaymsg floating disable; swaymsg floating enable"
 for_window [title="Guardar captura de pantalla"] floating enable
 for_window [app_id="org.gnome.Nautilus"] floating enable
 
 for_window [app_id="wdisplays"] floating enable
 for_window [app_id="wdisplays"] resize set width 1100 px
+
+# Tricky case for forcing float on bitwarden popups, works most of the time, but not 100%
+for_window [app_id="^firefox$" title="^Extension: \(Bitwarden"] exec "sleep 0.1; swaymsg floating enable; swaymsg floating disable; swaymsg floating enable"
 
 # network manager applet
 exec nm-applet --indicator
