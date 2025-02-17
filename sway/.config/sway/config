@@ -262,7 +262,6 @@ for_window [app_id="matebook-applet"]   floating enable
 for_window [app_id="pavucontrol"]   floating enable
 
 # Float specific apps or windows
-for_window [class="Tandem"] floating enable
 for_window [class="Gtkdialog"] floating enable
 for_window [class="Gnome-control-center"] floating enable
 for_window [class="Firefox" window_role="Preferences"] floating enable
@@ -278,8 +277,6 @@ for_window [title="Preferences"] floating enable
 for_window [class="Apport-gtk"] floating enable
 for_window [class="Agave"] floating enable
 for_window [class="Gcalctool"] floating enable
-for_window [class="Komodo edit" instance="Update"] floating enable
-for_window [class="Komodo edit" instance="Komodo_gotofile"] floating enable
 for_window [class="Nautilus" instance="file_progress"] floating enable
 for_window [class="Gstm"] floating enable
 for_window [class="Qpaeq"] floating enable
