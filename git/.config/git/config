@@ -25,6 +25,7 @@
   pager = less --tabs=4 -RFX
 [push]
 	default = current
+    autoSetupRemote = true
 [branch]
   # set rebase=true for every new branch
   autosetuprebase = always
