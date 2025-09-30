@@ -67,5 +67,8 @@
 [includeIf "gitdir:~/workspace/"]
 path = ~/workspace/.gitconfig
 
+[includeIf "gitdir:~/workspace/anyformat/"]
+path = ~/workspace/anyformat/.gitconfig
+
 [remote]
 	pushDefault = origin
