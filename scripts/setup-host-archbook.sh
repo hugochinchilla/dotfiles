@@ -1,3 +1,3 @@
 #!/bin/sh
 
-clight > /dev/null &
+#clight > /dev/null &
