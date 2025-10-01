@@ -47,11 +47,11 @@ load {
 }
 
 disk "/" {
-  format = "<span>   %free </span>"
+  format = "<span>   %avail </span>"
 }
 
 disk "/home" {
-  format = "<span> /home  %free </span>"
+  format = "<span> /home  %avail </span>"
 }
 
 volume master {
