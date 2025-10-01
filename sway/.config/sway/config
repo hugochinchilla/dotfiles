@@ -96,9 +96,23 @@ bindsym $mod+n exec networkmanager_dmenu -fn 'Noto-14.0' -l 12
 bindsym $mod+y exec nautilus
 bindsym $mod+c exec gnome-calculator
 bindsym $mod+Control+l exec $locker
+bindsym Print exec env QT_QPA_PLATFORM=xcb XDG_CURRENT_DESKTOP=sway flameshot gui
+bindsym XF86Tools exec ps aux | grep -q matebook && pkill matebook-applet || matebook-applet -w
+bindsym XF86MonBrightnessDown exec xbacklight -dec 1
+bindsym XF86MonBrightnessUp exec xbacklight -inc 1
+
+# Multimedia hotkeys
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +2%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -2%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 bindsym Ctrl+Shift+Page_Up   exec pactl set-sink-volume @DEFAULT_SINK@ +2%
 bindsym Ctrl+Shift+Page_Down exec pactl set-sink-volume @DEFAULT_SINK@ -2%
-bindsym Print exec env QT_QPA_PLATFORM=xcb XDG_CURRENT_DESKTOP=sway flameshot gui
+bindsym Ctrl+Shift+End exec playerctl next
+bindsym Ctrl+Shift+Home exec playerctl play-pause
 
 
 # Sesion exit menu
@@ -317,17 +331,6 @@ mode "resize" {
 }
 bindsym $mod+t mode "resize"
 
-# Multimedia hotkeys
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +2%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -2%
-bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
-bindsym XF86MonBrightnessDown exec xbacklight -dec 1
-bindsym XF86MonBrightnessUp exec xbacklight -inc 1
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
-bindsym XF86Tools exec ps aux | grep -q matebook && pkill matebook-applet || matebook-applet -w
 
 
 # Use "swaymsg -t get_tree" to get information about a window
@@ -370,8 +373,11 @@ for_window [app_id="org.gnome.Calculator"] floating enable
 for_window [app_id="blueman-manager"] floating enable
 for_window [app_id="solaar"] floating enable
 for_window [title="Imagen en imagen"] floating enable
+for_window [title="Picture-in-Picture"] floating enable
 for_window [title="Guardar captura de pantalla"] floating enable
 for_window [app_id="org.gnome.Nautilus"] floating enable
+for_window [app_id="hu.irl.cameractrls"] floating enable
+for_window [app_id="org.gnome.Showtime"] floating enable
 
 for_window [app_id="wdisplays"] floating enable
 for_window [app_id="wdisplays"] resize set width 1100 px
