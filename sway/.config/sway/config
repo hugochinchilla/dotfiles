@@ -90,8 +90,8 @@ input * {
 set $rofi_params "-lines 12 -padding 18 -width 60 -location 0 -sidebar-mode -columns 3 -font 'Noto Sans 14' -monitor 1"
 
 bindsym $mod+Return exec $terminal
-bindsym $mod+d exec rofi $rofi_params -show drun
-bindsym $mod+r exec rofi $rofi_params -show run
+bindsym $mod+d exec wofi $rofi_params --show drun
+bindsym $mod+r exec wofi $rofi_params --show run
 bindsym $mod+m exec rofimoji
 bindsym $mod+n exec networkmanager_dmenu -fn 'Noto-14.0' -l 12
 bindsym $mod+y exec nautilus
