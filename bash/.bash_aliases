@@ -108,3 +108,8 @@ alias yay=yay --answerclean=All --answerdiff=None --answeredit=None
 alias dark-mode="gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
 alias light-mode="gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'"
 alias brillo="~/dotfiles/scripts/brillo.sh"
+
+# CPU power
+alias power-performance="sudo cpupower frequency-set -g performance"
+alias power-ondemand="sudo cpupower frequency-set -g ondemand"
+alias power-powersave="sudo cpupower frequency-set -g powersave"
