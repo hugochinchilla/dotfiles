@@ -25,7 +25,7 @@ fi
 
 tmpbg="${XDG_CACHE_HOME:-${HOME}/.cache}/i3lock-background.png"
 
-if grimshot save screen $tmpbg > /dev/null; then
+if grimshot save screen $tmpbg &> /dev/null; then
     convert "$tmpbg" -scale 10% -scale 1000% "$tmpbg"
     convert "$tmpbg" "$LOCK_ICON" -gravity center -composite -matte "$tmpbg"
     SWAYLOCK_FLAGS="${SWAYLOCK_FLAGS} -i $tmpbg"
