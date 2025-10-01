@@ -69,5 +69,7 @@ if [[ $HOST == "archbook" ]]; then
     PS1="%{$fg[green]%}%n@%{$fg[green]%}%m%{$reset_color%} %{$fg[blue]%}%20<...<%~%<<%{$reset_color%}$"
 fi
 
+[[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
+
 #zprof
 
