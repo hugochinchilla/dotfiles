@@ -53,7 +53,7 @@ exec swayidle -w \
 for_window [app_id="firefox"] inhibit_idle fullscreen
 for_window [class="Google-chrome"] inhibit_idle fullscreen
 for_window [title="Jitsi Meet"] inhibit_idle visible
-for_window [title="Google Meet"] inhibit_idle visible
+for_window [title="Meet -"] inhibit_idle visible
 
 
 
