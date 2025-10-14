@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #WEBCAM_USB_BUS=$(lsusb  | grep Webcam | awk -F'[^0-9]*' {'print "/dev/bus/usb/" $2 "/" $3'})
-WEBCAM_USB_BUS=$(lsusb  | grep Webcam | awk -F'[^0-9]*' {'print $2 "/" $3'})
+WEBCAM_USB_BUS=$(lsusb  | grep -e "\(Webcam\|StreamCam\)" | awk -F'[^0-9]*' {'print $2 "/" $3'})
 
 POLKIT_AGENT_PID=$(pidof polkit-gnome-authentication-agent-1)
 
