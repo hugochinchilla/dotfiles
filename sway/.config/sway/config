@@ -175,7 +175,7 @@ exec_always {
 }
 
 bar {
-  font pango:DejaVu Sans Mono 10, icomoon 10
+  font pango:DejaVu Sans Mono 11, icomoon 11
   colors {
     background #282A36
     statusline #F8F8F2
