@@ -13,7 +13,6 @@ order += "volume master"
 order += "disk /"
 order += "disk /home"
 order += "load"
-order += "tztime local"
 order += "time"
 
 ethernet enp34s0 {
@@ -39,7 +38,7 @@ battery 0 {
 }
 
 time {
-  format = "%Y-%m-%d %H:%M"
+  format = "%H:%M %e %b"
 }
 
 load {
