@@ -67,7 +67,7 @@ output "Dell Inc. DELL U2719D 1DWLX13"  res 2560x1440 scale 1 transform 270 pos 
 output HEADLESS-1 res 1920x1200 scale 1.5
 
 exec_always swaybg -o 'Dell Inc. DELL U2721DE 8VWVQ83' -m fill -i ~/dotfiles/wallpapers/arch_hero_wallpaper_by_rahremix_upscaled4x.png
-exec_always swaybg -o 'Dell Inc. DELL U2719D 1DWLX13'  -m fill -i ~/dotfiles/wallpapers/pexels-vladbagacian-1368382.jpg
+exec_always swaybg -o 'Dell Inc. DELL U2719D 1DWLX13'  -m fill -i ~/dotfiles/wallpapers/arch_vertical.png
 
 # Toggle internal screen based on lid state
 bindswitch --reload --locked lid:on output eDP-1 disable
