@@ -388,3 +388,6 @@ for_window [app_id="wdisplays"] resize set width 1100 px
 # Tricky case for forcing float on bitwarden popups, works most of the time, but not 100%
 for_window [app_id="^firefox$" title="^Extension: \(Bitwarden"] exec "sleep 0.1; swaymsg floating enable; swaymsg floating disable; swaymsg floating enable"
 
+
+# Remove window buttons from gtk title bars (close, maximize, etc)
+# gsettings set org.gnome.desktop.wm.preferences button-layout ''
