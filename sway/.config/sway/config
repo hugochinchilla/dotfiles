@@ -92,7 +92,7 @@ set $rofi_params "-lines 12 -padding 18 -width 60 -location 0 -sidebar-mode -col
 bindsym $mod+Return exec $terminal
 bindsym $mod+d exec wofi $rofi_params --show drun
 bindsym $mod+r exec wofi $rofi_params --show run
-bindsym $mod+m exec rofimoji
+bindsym $mod+m exec flatpak run it.mijorus.smile
 bindsym $mod+n exec networkmanager_dmenu -fn 'Noto-14.0' -l 12
 bindsym $mod+y exec nautilus
 bindsym $mod+c exec gnome-calculator
@@ -380,6 +380,7 @@ for_window [title="Guardar captura de pantalla"] floating enable
 for_window [app_id="org.gnome.Nautilus"] floating enable
 for_window [app_id="hu.irl.cameractrls"] floating enable
 for_window [app_id="org.gnome.Showtime"] floating enable
+for_window [app_id="it.mijorus.smile"] floating enable
 
 for_window [app_id="wdisplays"] floating enable
 for_window [app_id="wdisplays"] resize set width 1100 px
