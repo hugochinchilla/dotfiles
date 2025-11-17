@@ -26,6 +26,8 @@ mkdir -p $HOME/.npm-packages
 for MODULE in $(find $dir -maxdepth 1 -type d ! -name '.*' -printf '%f\n'); do
   [[ $MODULE != 'dotfiles' ]] \
     && [[ $MODULE != 'fonts' ]] \
+    && [[ $MODULE != 'assets' ]] \
+    && [[ $MODULE != 'scripts' ]] \
     && stow --adopt $MODULE
 done
 
