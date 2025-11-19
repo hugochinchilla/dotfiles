@@ -12,8 +12,8 @@ git submodule update
 if [ -f $HOME/.profile ]; then
   mv $HOME/.profile $HOME/.profile.bak
 fi
-ln -sf $dir/profile $HOME/.profile
-ln -sf $dir/zprofile $HOME/.zprofile
+ln -sf $dir/dotfiles/profile $HOME/.profile
+ln -sf $dir/dotfiles/zprofile $HOME/.zprofile
 
 source $HOME/.profile
 
@@ -23,13 +23,11 @@ mkdir -p $XDG_CACHE_HOME
 mkdir -p $XDG_CACHE_HOME/vim/{undo,swap,backup}
 mkdir -p $HOME/.npm-packages
 
-for MODULE in $(find $dir -maxdepth 1 -type d ! -name '.*' -printf '%f\n'); do
-  [[ $MODULE != 'dotfiles' ]] \
-    && [[ $MODULE != 'fonts' ]] \
-    && [[ $MODULE != 'assets' ]] \
-    && [[ $MODULE != 'scripts' ]] \
-    && stow --adopt $MODULE
+cd dotfiles/
+for MODULE in $(find . -maxdepth 1 -type d ! -name '.' -printf '%f\n'); do
+    stow --adopt --target=$HOME $MODULE
 done
+cd ..
 
 
 # Copy custom fonts
