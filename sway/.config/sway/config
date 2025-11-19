@@ -221,7 +221,7 @@ set $workspace9 "9"
 set $workspace0 "0"
 
 
-focus_follows_mouse yes
+focus_follows_mouse no
 
 # assign workspaces to outputs
 workspace $workspace1 output DP-3
