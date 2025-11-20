@@ -382,6 +382,7 @@ for_window [app_id="org.gnome.Nautilus"] floating enable
 for_window [app_id="hu.irl.cameractrls"] floating enable
 for_window [app_id="org.gnome.Showtime"] floating enable
 for_window [app_id="it.mijorus.smile"] floating enable
+for_window [app_id="ddcui"] floating enable
 
 for_window [app_id="wdisplays"] floating enable
 for_window [app_id="wdisplays"] resize set width 1100 px
