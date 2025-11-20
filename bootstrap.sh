@@ -20,17 +20,23 @@ mkdir -p $XDG_CACHE_HOME
 mkdir -p $XDG_CACHE_HOME/vim/{undo,swap,backup}
 mkdir -p $HOME/.npm-packages
 
+
+echo " - Installing modules..."
 cd dotfiles/
 for MODULE in $(find . -maxdepth 1 -type d ! -name '.' -printf '%f\n'); do
     stow --adopt --target=$HOME $MODULE
+    echo "  ⬤ $MODULE"
 done
 cd ..
 
 
 # Copy custom fonts
+echo " - Copying custom fonts"
 mkdir -p $HOME/.fonts
 cp -r fonts/icomoon $HOME/.fonts
 # Install powerline patched fonts and reset fc-cache
-source fonts/powerline/install.sh
+echo " - Installing powerline fonts..."
+source fonts/powerline/install.sh &> /dev/null
+echo " - Powerline fonts installed"
 
-echo "Success"
+echo " ✨ Success ✨"
