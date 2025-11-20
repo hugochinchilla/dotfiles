@@ -2,9 +2,6 @@
 
 dir=$(realpath $(dirname ${BASH_SOURCE}))
 
-# Install xterm-termite terminal support
-tic -x termite.terminfo
-
 git submodule init
 git submodule update
 
