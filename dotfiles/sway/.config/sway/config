@@ -203,6 +203,9 @@ client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
 client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 client.background       #F8F8F2
 
+# force floating windows to show borders
+for_window [app_id=".*"] border pixel 2
+
 
 
 ##
