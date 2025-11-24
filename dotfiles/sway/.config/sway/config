@@ -1,7 +1,12 @@
+include defaults
+include local_overrides
+
+
 set $scripts $HOME/dotfiles/scripts
 set $locker $HOME/dotfiles/scripts/sway-screen-lock.sh
 set $terminal TERMINAL=alacritty i3-sensible-terminal
 set $mod Mod4
+
 
 ##
 # Launch apps
@@ -44,8 +49,8 @@ exec env QT_QPA_PLATFORM=xcb XDG_CURRENT_DESKTOP=sway flameshot
 ##
 
 exec swayidle -w \
-    timeout 250 '$locker' \
-    timeout 300 'swaymsg "output * dpms off"' \
+    timeout $screenlock_timeout '$locker' \
+    timeout $dpms_timeout 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
     before-sleep '$locker' \
 
@@ -175,18 +180,22 @@ exec_always {
     gsettings set $gnome-schema gtk-xft-rgba none
 }
 
+
+include $colorscheme
+
 bar {
   font pango:DejaVu Sans Mono 11, icomoon 11
   colors {
-    background #282A36
-    statusline #F8F8F2
-    separator  #44475A
+    background $base00
+    separator  $base01
+    statusline $base05
 
-    focused_workspace  #44475A #44475A #F8F8F2
-    active_workspace   #282A36 #44475A #F8F8F2
-    inactive_workspace #282A36 #282A36 #BFBFBF
-    urgent_workspace   #FF5555 #FF5555 #F8F8F2
-    binding_mode       #FF5555 #FF5555 #F8F8F2
+    # State             Border  BG      Text
+    focused_workspace   $base05 $base0D $base00
+    active_workspace    $base05 $base03 $base00
+    inactive_workspace  $base01 $base01 $base05
+    urgent_workspace    $base08 $base08 $base00
+    binding_mode        $base00 $base0A $base00
   }
 
   status_command py3status -c ~/.config/i3status/config
@@ -196,12 +205,12 @@ bar {
 ## Colours
 ## -------
 # class                 border  bground text    indicator child_border
-client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
-client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
-client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
-client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
-client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
-client.background       #F8F8F2
+client.focused          $base05 $base0D $base00 $base0D $base0D
+client.focused_inactive $base01 $base01 $base05 $base03 $base01
+client.unfocused        $base01 $base00 $base05 $base01 $base01
+client.urgent           $base08 $base08 $base00 $base08 $base08
+client.placeholder      $base00 $base00 $base05 $base00 $base00
+client.background       $base07
 
 # force floating windows to show borders
 for_window [app_id=".*"] border pixel 2
