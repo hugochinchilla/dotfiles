@@ -1,64 +1,44 @@
 general {
-  interval = 3
   output_format = "i3bar"
-  colors = true
+  colors = false
   markup = pango
   color_good = "#50FA7B"
   color_degraded = "#F1FA8C"
   color_bad = "#FF5555"
 }
 
-order += "battery_level"
 order += "volume master"
-order += "ethernet enp34s0"
-order += "wireless wlan0"
+#order += "ethernet enp34s0"
+#order += "wireless wlp38s0"
 order += "disk /"
+order += "disk /home"
 order += "load"
-order += "battery 0"
-order += "tztime home"
-order += "tztime local_date"
-order += "tztime local"
-
-battery_level {
-    format = '{power:.2f} Watts'
-    cache_timeout = 5
-}
+order += "time"
 
 ethernet enp34s0 {
-  format_up = "<span>  %ip </span>"
-  format_down = ""
+  format_up = "<span> %ip</span>"
+  format_down = "<span color='#E63946'>  </span>"
 }
 
-wireless wlan0 {
-  #format_up = "<span>  %essid (%frequency) [%signal] %ip </span>"
-  format_up = "<small><span> %essid [%signal] %ip</span></small>"
-  format_down = "<span  background='#E63946'>  Disconnected </span>"
+wireless wlp38s0 {
+  format_up = "<span>  %essid [%ip] </span>"
+  format_down = "<span color='#E63946'>  </span>"
 }
 
 battery 0 {
-  last_full_capacity = true
-  format = "<span>  %status (%remaining) </span>"
-  format_down = " No Battery "
-  status_chr = "Charging"
-  status_bat = "Battery"
-  status_unk = "Unknown"
-  status_full = "Charged"
+  #format = " %status %percentage %remaining %emptytime "
+  format = " %status %percentage %remaining "
+  format_down = "No battery"
+  status_chr = "⚇ CHR"
+  status_bat = "⚡ BAT"
+  status_full = "☻ FULL"
+  hide_seconds=true
   path = "/sys/class/power_supply/BAT%d/uevent"
-  low_threshold = 60
-  threshold_type = time
+  low_threshold = 10
 }
 
-tztime local_date {
-  format = "<span> %a %-d %b </span>"
-}
-
-tztime local {
-  format = "<span>  %H:%M </span>"
-}
-
-tztime home {
-  format = "<span>  %H:%M </span>"
-  timezone = "Europe/Madrid"
+time {
+  format = "%H:%M %e %b"
 }
 
 load {
@@ -66,7 +46,11 @@ load {
 }
 
 disk "/" {
-  format = "<span>  %free Free </span>"
+  format = "<span>   %avail </span>"
+}
+
+disk "/home" {
+  format = "<span> /home  %avail </span>"
 }
 
 volume master {
