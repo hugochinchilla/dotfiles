@@ -1,6 +1,9 @@
 [font]
 size = 14
 
+[env]
+TERM = "xterm-256color"
+
 [[keyboard.bindings]]
 action = "SpawnNewInstance"
 key = "Return"
@@ -12,4 +15,8 @@ key = "Return"
 mods = "Control"
 
 [general]
-import = [ "/usr/lib/node_modules/alacritty-themes/themes/Wombat.toml" ]
+import = [
+    #"/usr/lib/node_modules/alacritty-themes/themes/Wombat.toml",
+    "~/.config/alacritty/catppuccin-mocha.toml",
+    #"~/.config/alacritty/catppuccin-latte.toml",
+]
