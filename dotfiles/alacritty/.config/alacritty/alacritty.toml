@@ -17,6 +17,7 @@ mods = "Control"
 [general]
 import = [
     #"/usr/lib/node_modules/alacritty-themes/themes/Wombat.toml",
-    "~/.config/alacritty/catppuccin-mocha.toml",
+    #"~/.config/alacritty/catppuccin-mocha.toml",
     #"~/.config/alacritty/catppuccin-latte.toml",
+    "~/.config/alacritty/omarchy-tokyoled-theme.toml",
 ]
