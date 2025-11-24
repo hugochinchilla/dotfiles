@@ -8,34 +8,10 @@ general {
 }
 
 order += "volume master"
-#order += "ethernet enp34s0"
-#order += "wireless wlp38s0"
 order += "disk /"
 order += "disk /home"
 order += "load"
 order += "time"
-
-ethernet enp34s0 {
-  format_up = "<span> %ip</span>"
-  format_down = "<span color='#E63946'>  </span>"
-}
-
-wireless wlp38s0 {
-  format_up = "<span>  %essid [%ip] </span>"
-  format_down = "<span color='#E63946'>  </span>"
-}
-
-battery 0 {
-  #format = " %status %percentage %remaining %emptytime "
-  format = " %status %percentage %remaining "
-  format_down = "No battery"
-  status_chr = "⚇ CHR"
-  status_bat = "⚡ BAT"
-  status_full = "☻ FULL"
-  hide_seconds=true
-  path = "/sys/class/power_supply/BAT%d/uevent"
-  low_threshold = 10
-}
 
 time {
   format = "%H:%M %e %b"
