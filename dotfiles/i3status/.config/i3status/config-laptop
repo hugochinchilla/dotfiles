@@ -7,30 +7,29 @@ general {
   color_bad = "#FF5555"
 }
 
+order += "battery 0"
 order += "volume master"
-#order += "ethernet enp34s0"
-#order += "wireless wlp38s0"
+order += "wireless wlan0"
 order += "disk /"
 order += "disk /home"
 order += "load"
 order += "time"
 
-ethernet enp34s0 {
-  format_up = "<span> %ip</span>"
-  format_down = "<span color='#E63946'>  </span>"
-}
 
-wireless wlp38s0 {
-  format_up = "<span>  %essid [%ip] </span>"
+wireless wlan0 {
+  format_up = "<span>  %essid [%signal] </span>"
   format_down = "<span color='#E63946'>  </span>"
 }
 
+battery_level {
+  format = "{power} %status %remaining "
+}
+
 battery 0 {
-  #format = " %status %percentage %remaining %emptytime "
-  format = " %status %percentage %remaining "
+  format = " %status %remaining "
   format_down = "No battery"
   status_chr = "⚇ CHR"
-  status_bat = "⚡ BAT"
+  status_bat = "BAT"
   status_full = "☻ FULL"
   hide_seconds=true
   path = "/sys/class/power_supply/BAT%d/uevent"
