@@ -1,0 +1,29 @@
+<application>
+  <component name="NodeJsLocalInterpreters">
+    <local-interpreter path="/usr/bin/node" />
+  </component>
+  <component name="NotRoamableUiSettings">
+    <option name="fontFace" value="Cantarell Regular" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="CUSTOMIZE_ACTIONS" value="find&#10;popu&#10;contextual" />
+    <property name="Default.SavedEditorTheme" value="_@user_Default" />
+    <property name="FileTemplates.SelectedTemplate" value="HTML File" />
+    <property name="InstalledPluginsSearchHistory" value="find" />
+    <property name="KEYMAP" value="decrease&#10;increase&#10;duplica&#10;dupl&#10;scrat" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="PhpStorm.InitialConfiguration" value="true" />
+    <property name="PluginConfigurable.selectionTab" value="1" />
+    <property name="SettingsSearchHistory" value="code style&#10;rule&#10;template&#10;refa&#10;templa" />
+    <property name="TrendingPluginsSearchHistory" value="container&#10;find&#10;sdk" />
+    <property name="evlsprt3.192" value="14" />
+    <property name="file.chooser.recent.files" value="$USER_HOME$/projects/habitissimo/apps/frontend/modules/payments_dev/forms&#10;/home/hchinchilla/projects/habitissimo/Habitissimo/Utils/Email&#10;/home/hchinchilla/projects/habitissimo/Habitissimo/Payments/Contracts&#10;/home/hchinchilla/projects/habitissimo/Habitissimo/Payments/Ogone" />
+    <property name="file.gist.reindex.count" value="448385" />
+    <property name="fileTypeChangedCounter" value="1" />
+    <property name="ide.memory.adjusted" value="true" />
+    <property name="settings.code.style.selected.tab.PHP" value="Wrapping and Braces" />
+    <property name="tasks.pass.word.conversion.enforced" value="true" />
+    <property name="ts.lib.d.ts.version" value="3.5.2" />
+  </component>
+</application>

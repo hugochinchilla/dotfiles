@@ -1,0 +1,6 @@
+[submodule "fonts"]
+	path = fonts/powerline
+	url = https://github.com/powerline/fonts.git
+[submodule "zsh/.oh-my-zsh"]
+	path = dotfiles/zsh/.oh-my-zsh
+	url = https://github.com/ohmyzsh/ohmyzsh.git

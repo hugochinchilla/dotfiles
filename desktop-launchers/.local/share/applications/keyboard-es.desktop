@@ -1,0 +1,7 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=Keyboard keymap ES
+Exec=setxkbmap -layout es -option altwin:swap_lalt_lwin -option caps:escape

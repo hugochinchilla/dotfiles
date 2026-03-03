@@ -1,0 +1,61 @@
+general {
+  output_format = "i3bar"
+  colors = false
+  markup = pango
+  color_good = "#50FA7B"
+  color_degraded = "#F1FA8C"
+  color_bad = "#FF5555"
+}
+
+order += "battery 0"
+order += "volume master"
+order += "wireless wlan0"
+order += "disk /"
+order += "disk /home"
+order += "load"
+order += "time"
+
+
+wireless wlan0 {
+  format_up = "<span>  %essid [%signal] </span>"
+  format_down = "<span color='#E63946'>  </span>"
+}
+
+battery_level {
+  format = "{power} %status %remaining "
+}
+
+battery 0 {
+  format = " %status %remaining "
+  format_down = "No battery"
+  status_chr = "⚇ CHR"
+  status_bat = "BAT"
+  status_full = "☻ FULL"
+  hide_seconds=true
+  path = "/sys/class/power_supply/BAT%d/uevent"
+  low_threshold = 10
+}
+
+time {
+  format = "%H:%M %e %b"
+}
+
+load {
+  format = "<span>  %5min Load </span>"
+}
+
+disk "/" {
+  format = "<span>   %avail </span>"
+}
+
+disk "/home" {
+  format = "<span> /home  %avail </span>"
+}
+
+volume master {
+    format = "<span>  %volume </span>"
+    format_muted = "<span background='#E63946'>  Muted </span>"
+    device = "default"
+    mixer = "Master"
+    mixer_idx = 0
+}

@@ -1,0 +1,5 @@
+[output eDP-1]
+image=~/.config/sway/assets/mojave-night.jpg
+filter=nearest
+scaling-mode=fill
+anchor=center

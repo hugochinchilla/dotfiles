@@ -1,0 +1,6 @@
+{
+  "codeintel_disabled_languages": ["css"],
+  "codeintel_live_disabled_languages": ["css"],
+  "codeintel_live": false,
+  "codeintel_tooltips": "popup",
+}
