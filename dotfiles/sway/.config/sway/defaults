@@ -1,3 +1,0 @@
-set $colorscheme colorschemes/zenburn
-set $screenlock_timeout 250
-set $dpms_timeout       300

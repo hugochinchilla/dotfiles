@@ -1,77 +1,95 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
+# If not running interactively, don't do anything (leave this at the top of this file)
+[[ $- != *i* ]] && return
 
-# If not running interactively, don't do anything
-[ -z "$PS1" ] && return
+# All the default Omarchy aliases and functions
+# (don't mess with these directly, just overwrite them here!)
+source ~/.local/share/omarchy/default/bash/rc
 
-# don't put duplicate lines in the history. See bash(1) for more options
-export HISTCONTROL=ignoredups
+# Add your own exports, aliases, and functions here.
+#
+# Make an alias for invoking commands you use constantly
+# alias p='python'
 
-# append to the history file, don't overwrite it
-shopt -s histappend
+alias rm="rm -I --preserve-root"
+alias ll="ls -lh"
+alias lla="ls -lha"
+alias tailscale-personal-server-2="tailscale up --exit-node-allow-lan-access --exit-node=personal-server-2 --operator=$USER"
+alias tailscale-reset="tailscale up --reset --operator=$USER"
+alias anyformat="uv run anyformat"
+alias h="uv run anyformat"
 
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
+# ssh aliases
+alias ssh-password='ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no'
+alias ssh="TERM=xterm-256color ssh"
 
-export HISTSIZE=10000
-export HISTFILESIZE=20000
+alias mkdir='mkdir -p'
+alias grep='grep --color=tty'
+alias egrep='egrep --color=tty'
+
+# Git
+alias git="LANGUAGE=C LC_ALL=en_US.utf-8 git"
+alias got="git "
+alias gp="git pull --rebase"
+alias gps="git push"
+alias gs="git status"
+alias gd="git diff"
+alias grc="git rebase --continue"
+alias grs="git rebase --skip"
+alias gra="git rebase --abort"
+alias ga="git commit --amend"
+
+# Docker compose
+alias dkill="docker compose kill"
+alias dstop="docker compose stop"
+alias drm="docker compose rm -f"
+alias dps="docker compose ps"
+alias dlogs="docker compose logs -f --tail=100"
+alias drun="docker compose run --rm"
+alias docker-bridge-ip="docker network inspect bridge --format='{{(index .IPAM.Config 0).Gateway}}'"
+alias dip="docker-bridge-ip"
+
+function dup() {
+    docker compose up -d $@
+}
+
+function drestart() {
+    dkill $@
+    docker compose down $@
+    dup $@
+}
+
+# Add an "alert" alias for long running commands. Use like so:
+# sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# Arch aliases
+alias pkg-install="pacman -S"
+alias pkg-search="pacman -Ss"
+alias pkg-remove="pacman -Rs"
+alias pkg-purge="pacman -Rsn"
+alias pkg-update="pacman -Sy"
+alias pkg-upgrade="pacman -Syu"
+alias pkg-list="pacman -Q"
+
+# Kubectl aliases
+alias k=kubectl
+alias kg="kubectl get"
+alias kd="kubectl describe"
+alias ke="kubectl edit"
+alias kns=kubens
+alias kctx=kubectx
+
+alias yay=yay --answerclean=All --answerdiff=None --answeredit=None
+alias dark-mode="gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
+alias light-mode="gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'"
 
 
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
-
-# set a fancy prompt (non-color, unless we know we "want" color)
-case "$TERM" in
-xterm-color)
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[00;32m\]\u@\h\[\033[00m\]:\w\$ '
-    ;;
-*)
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-    ;;
-esac
+# Autojump
+[[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
 
 
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
-    ;;
-*)
-    ;;
-esac
+# Load anyformat completion
+[ -f "/home/hchinchilla/.local/share/bash-completion/completions/anyformat" ] && . "/home/hchinchilla/.local/share/bash-completion/completions/anyformat"
 
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
-# enable color support of ls and also add handy aliases
-if [ "$TERM" != "dumb" ]; then
-    eval "`dircolors -b`"
-    alias ls='ls --color=auto'
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
-
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-fi
-
-if [[ -n "$BYOBU_TTY" ]]; then
-    # if already on a byobu window prevent new SSH connections from launching byobu if enabled by default on remote server
-    export LC_BYOBU=0
-fi
