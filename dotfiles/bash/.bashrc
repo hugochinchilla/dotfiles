@@ -5,6 +5,9 @@
 # (don't mess with these directly, just overwrite them here!)
 source ~/.local/share/omarchy/default/bash/rc
 
+
+export PATH="$PATH:/home/hchinchilla/.local/share/gem/ruby/3.4.0/bin"
+
 # Add your own exports, aliases, and functions here.
 #
 # Make an alias for invoking commands you use constantly
