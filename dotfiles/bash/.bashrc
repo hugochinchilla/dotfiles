@@ -96,3 +96,5 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 # Load anyformat completion
 [ -f "/home/hchinchilla/.local/share/bash-completion/completions/anyformat" ] && . "/home/hchinchilla/.local/share/bash-completion/completions/anyformat"
 
+# Fix crackling sound when CPU is bussy
+alias better-sound="pw-metadata -n settings 0 clock.force-quantum 2048"
