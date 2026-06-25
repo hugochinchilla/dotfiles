@@ -7,6 +7,7 @@ source ~/.local/share/omarchy/default/bash/rc
 
 
 export PATH="$PATH:/home/hchinchilla/.local/share/gem/ruby/3.4.0/bin"
+export PATH="$PATH:/home/hchinchilla/.cargo/bin"
 
 # Add your own exports, aliases, and functions here.
 #
