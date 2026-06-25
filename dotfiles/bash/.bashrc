@@ -18,7 +18,8 @@ alias ll="ls -lh"
 alias lla="ls -lha"
 alias tailscale-personal-server-2="tailscale up --exit-node-allow-lan-access --exit-node=personal-server-2 --operator=$USER"
 alias tailscale-reset="tailscale up --reset --operator=$USER"
-alias anyformat="uv run anyformat"
+alias anyformat="uv run af"
+alias af="uv run af"
 alias h="uv run anyformat"
 
 # ssh aliases
@@ -85,6 +86,7 @@ alias kctx=kubectx
 alias yay=yay --answerclean=All --answerdiff=None --answeredit=None
 alias dark-mode="gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
 alias light-mode="gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'"
+alias cocaine="systemd-inhibit --what=handle-lid-switch --who='me' --why='keep awake on lid close' --mode=block sleep infinity"
 
 
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
