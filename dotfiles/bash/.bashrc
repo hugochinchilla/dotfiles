@@ -101,6 +101,8 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 # Fix crackling sound when CPU is bussy
 alias better-sound="pw-metadata -n settings 0 clock.force-quantum 2048"
+# Load af completion
+[ -f "/home/hchinchilla/.local/share/bash-completion/completions/af" ] && . "/home/hchinchilla/.local/share/bash-completion/completions/af"
 # lean-ctx shell hook — begin
 export LEAN_CTX_SHELL_ACTIVATION=agents-only  # only wrap shells under an agent, not my interactive shells
 if [ -f "/home/hchinchilla/.config/lean-ctx/shell-hook.bash" ]; then
