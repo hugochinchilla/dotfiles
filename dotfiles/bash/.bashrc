@@ -25,7 +25,15 @@ alias h="uv run anyformat"
 
 # ssh aliases
 alias ssh-password='ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no'
-alias ssh="TERM=xterm-256color ssh"
+ssh() {
+  printf '\033]11;#3a2222\007'   # tint terminal background while on a remote
+  # -o options replicate ghostty's ssh-env integration (disabled in ghostty config
+  # so this function isn't clobbered by ghostty's own ssh() wrapper)
+  TERM=xterm-256color command ssh \
+    -o "SetEnv COLORTERM=truecolor" \
+    -o "SendEnv TERM_PROGRAM TERM_PROGRAM_VERSION" "$@"
+  printf '\033]111\007'          # reset to default background
+}
 
 alias mkdir='mkdir -p'
 alias grep='grep --color=tty'
