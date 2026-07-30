@@ -1,10 +1,20 @@
 set encoding=utf-8
 
-set undodir=$XDG_CACHE_HOME/vim/undo
-set directory=$XDG_CACHE_HOME/vim/swap
-set backupdir=$XDG_CACHE_HOME/vim/backup
-set viminfo+='1000,n$XDG_CACHE_HOME/vim/viminfo
-set runtimepath=$XDG_CONFIG_HOME/vim,$VIMRUNTIME,$XDG_CONFIG_HOME/vim/after
+" $XDG_*_HOME are often unset; vim leaves unset env vars literal in options,
+" so default them here per the XDG spec. Trailing // keeps the full path in
+" the swap/backup/undo file name, avoiding collisions between projects.
+let s:cache  = empty($XDG_CACHE_HOME)  ? expand('~/.cache')  : $XDG_CACHE_HOME
+let s:config = empty($XDG_CONFIG_HOME) ? expand('~/.config') : $XDG_CONFIG_HOME
+
+call mkdir(s:cache . '/vim/undo',   'p', 0700)
+call mkdir(s:cache . '/vim/swap',   'p', 0700)
+call mkdir(s:cache . '/vim/backup', 'p', 0700)
+
+let &undodir   = s:cache . '/vim/undo//'
+let &directory = s:cache . '/vim/swap//'
+let &backupdir = s:cache . '/vim/backup//'
+let &viminfo   = &viminfo . ",'1000,n" . s:cache . '/vim/viminfo'
+let &runtimepath = s:config . '/vim,' . $VIMRUNTIME . ',' . s:config . '/vim/after'
 
 syntax on
 set smartindent
