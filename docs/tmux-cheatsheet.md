@@ -65,6 +65,32 @@ tmux attach        # reattach to the last one
 tmux a -t work     # reattach to "work" by name
 ```
 
+Re-joining a *named* session is the common case, and `tmux ls` is how you find the name:
+
+```
+work: 3 windows (created Mon Aug  3 09:12:41 2026)
+scratch: 1 windows (created Mon Aug  3 11:02:07 2026) (attached)
+```
+
+| You want | Command |
+| --- | --- |
+| Attach to `work` | `tmux a -t work` |
+| Attach, or create it if it's gone | `tmux new -A -s work` |
+| Attach and kick off any other client | `tmux a -d -t work` |
+| Attach read-only (watch, don't type) | `tmux a -r -t work` |
+| Hop to another session from inside tmux | `C-b (` / `C-b )`, or `C-b s` for the picker |
+| Rename the session you're in | `C-b $` |
+
+Prefix matching works, so `tmux a -t wo` finds `work` as long as it's unambiguous.
+
+> **Note** — Attaching without `-d` leaves the old client connected too, and both clients get
+> squeezed to the size of the smallest screen. If a session comes back cramped, some forgotten
+> ssh window is still attached — `tmux a -d -t work` evicts it.
+
+> **Warning** — Sessions live in the tmux server on *that* machine, so `tmux ls` over ssh only
+> lists sessions on the remote host. Detached sessions survive a dropped connection or logout,
+> but not a reboot.
+
 ### Scrollback
 
 `C-b` `[` enters copy mode — scroll with arrows/PgUp, search with `/`, leave with `q`.
