@@ -1,6 +1,12 @@
 # If not running interactively, don't do anything (leave this at the top of this file)
 [[ $- != *i* ]] && return
 
+# Incoming ssh sessions on archer land straight in tmux (attach if one is running).
+# The interactive guard above keeps scp/rsync/git-over-ssh out of this.
+if [[ -n $SSH_TTY && -z $TMUX && ${HOSTNAME%%.*} == archer ]] && command -v tmux >/dev/null; then
+  exec tmux new -A -s main
+fi
+
 # All the default Omarchy aliases and functions
 # (don't mess with these directly, just overwrite them here!)
 source ~/.local/share/omarchy/default/bash/rc
@@ -26,13 +32,11 @@ alias h="uv run anyformat"
 # ssh aliases
 alias ssh-password='ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no'
 ssh() {
-  printf '\033]11;#3a2222\007'   # tint terminal background while on a remote
   # -o options replicate ghostty's ssh-env integration (disabled in ghostty config
   # so this function isn't clobbered by ghostty's own ssh() wrapper)
   TERM=xterm-256color command ssh \
     -o "SetEnv COLORTERM=truecolor" \
     -o "SendEnv TERM_PROGRAM TERM_PROGRAM_VERSION" "$@"
-  printf '\033]111\007'          # reset to default background
 }
 
 alias mkdir='mkdir -p'
@@ -124,3 +128,6 @@ alias codebuddy='LEAN_CTX_AGENT=1 BASH_ENV="$HOME/.bashenv" codebuddy'
 alias codex='LEAN_CTX_AGENT=1 BASH_ENV="$HOME/.bashenv" codex'
 alias gemini='LEAN_CTX_AGENT=1 BASH_ENV="$HOME/.bashenv" gemini'
 # <<< lean-ctx agent aliases <<<
+
+# Added by codebase-memory-mcp install
+export PATH="/home/hchinchilla/.local/bin:$PATH"
