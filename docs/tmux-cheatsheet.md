@@ -125,7 +125,10 @@ set -g renumber-windows on # no gaps after closing a tab
 set -g history-limit 50000
 
 # theme (gold|redwine|moon|forest|violet|snow|coral|sky|everforest, or a hex colour)
-set -g @tmux_power_theme 'gold'
+set -g @tmux_power_theme 'everforest'
+set -g @tmux_power_left_a ' #h'   # hostname only, no username
+set -g @tmux_power_right_y ''      # no time
+set -g @tmux_power_right_z ''      # no date
 run-shell ~/.tmux/plugins/tmux-power/tmux-power.tmux
 ```
 
@@ -137,7 +140,22 @@ next time.
 > exact same trade. If some app needs an F-key, delete that line and use the prefix binding
 > from the tables above.
 
-> **Note** — The last two lines pull in [tmux-power](https://github.com/wfxr/tmux-power) for
-> the status bar — it lives in this repo as a submodule at
-> `dotfiles/tmux/.tmux/plugins/tmux-power` and `bootstrap.sh` checks it out. Drop those two
-> lines and you get tmux's plain default status bar back.
+> **Note** — The `@tmux_power_*` block drives [tmux-power](https://github.com/wfxr/tmux-power),
+> which lives in this repo as a submodule at `dotfiles/tmux/.tmux/plugins/tmux-power` and is
+> checked out by `bootstrap.sh`. Drop the block and the `run-shell` line to get tmux's plain
+> default status bar back.
+
+The status bar is built from named sections — `left_a`, `left_b` on the left, `right_w`
+through `right_z` on the right — and **an empty section disappears entirely**, separator
+included. That's the whole hide mechanism; there are no separate show/hide toggles.
+
+| Section | Default | Shows |
+| --- | --- | --- |
+| `left_a` | `#{USER}@#h` | user @ hostname |
+| `left_b` | `#S` | session name |
+| `right_y` | `%T` | time |
+| `right_z` | `%F` | date |
+
+So `set -g @tmux_power_left_a ' #h'` keeps the hostname and drops the username, and setting
+`right_y`/`right_z` to `''` clears the right side. After changing any of them, reload with
+`F5` — the plugin only rebuilds the bar when the config is sourced.
