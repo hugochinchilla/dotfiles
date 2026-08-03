@@ -124,8 +124,10 @@ set -g base-index 1        # first tab is 1, matching the keyboard row
 set -g renumber-windows on # no gaps after closing a tab
 set -g history-limit 50000
 
-# theme (gold|redwine|moon|forest|violet|snow|coral|sky|everforest, or a hex colour)
-set -g @tmux_power_theme 'everforest'
+# theme per host (gold|redwine|moon|forest|violet|snow|coral|sky|everforest, or a hex colour)
+set -g @tmux_power_theme 'moon'
+if-shell -F '#{==:#{host_short},archer}'   "set -g @tmux_power_theme 'coral'"
+if-shell -F '#{==:#{host_short},thinkpad}' "set -g @tmux_power_theme 'everforest'"
 set -g @tmux_power_left_a ' #h'   # hostname only, no username
 set -g @tmux_power_right_y ''      # no time
 set -g @tmux_power_right_z ''      # no date
@@ -159,3 +161,19 @@ included. That's the whole hide mechanism; there are no separate show/hide toggl
 So `set -g @tmux_power_left_a ' #h'` keeps the hostname and drops the username, and setting
 `right_y`/`right_z` to `''` clears the right side. After changing any of them, reload with
 `F5` — the plugin only rebuilds the bar when the config is sourced.
+
+### Per-host theming
+
+This config is shared across machines, so the theme is picked by hostname — handy for telling
+at a glance which box a session is on:
+
+| Host | Theme |
+| --- | --- |
+| `archer` | coral |
+| `thinkpad` | everforest |
+| anything else | moon |
+
+`if-shell -F` evaluates a tmux *format* instead of forking a shell, and `#{host_short}` is
+tmux's own short hostname, so this doesn't depend on a `hostname` binary being present. Set
+the default first and let a matching host override it. To add a machine, copy a line and
+change the two names.
