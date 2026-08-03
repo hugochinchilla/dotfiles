@@ -19,6 +19,10 @@ tmux new -s work  # start a named one (nicer for attaching later)
 > learn. Learn the prefix versions once and any tmux on any server works for you, config or
 > not.
 
+> **Note** — On these machines omarchy sets the prefix to `C-Space`, keeping `C-b` as a
+> second prefix. Both work everywhere below; `C-b` is written where it's the stock binding
+> and `C-Space` where the key comes from omarchy's config.
+
 ## Tabs (tmux calls them windows)
 
 What byobu calls a tab, tmux calls a **window**. The bottom status bar lists them; the current
@@ -91,6 +95,31 @@ Prefix matching works, so `tmux a -t wo` finds `work` as long as it's unambiguou
 > lists sessions on the remote host. Detached sessions survive a dropped connection or logout,
 > but not a reboot.
 
+### Switching sessions without detaching
+
+Detaching (`C-b` `d`, or `F6`) tears down the *client*. To go from one session to another,
+**switch** the client instead — same connection, different session, nothing torn down:
+
+| Key | Does |
+| --- | --- |
+| `C-Space` `s` | session picker — tree of all sessions, Enter to jump. The one to use. |
+| `Alt-Up` / `Alt-Down` | previous / next session, no prefix needed |
+| `C-Space` `(` / `)` | previous / next session |
+| `C-Space` `P` / `N` | same, omarchy's letter aliases |
+| `C-Space` `C` | create a new session and switch to it |
+| `C-Space` `$` | rename the current session |
+
+`C-Space` `w` is often better still: it picks a *window* across every session, skipping the
+question of which session it lives in.
+
+> **Warning** — This matters on archer, where `.bashrc` runs `exec tmux new -A -s main`, so
+> tmux *is* the login shell. Detaching there ends the ssh connection — there's no shell left
+> behind to return to. Switch, don't detach. (Drop the `exec` if you'd rather land back in a
+> remote shell, at the cost of a stray login shell per connection.)
+
+> **Note** — `detach-on-destroy` is `off`, so killing a session drops you into another one
+> instead of disconnecting.
+
 ### Scrollback
 
 `C-b` `[` enters copy mode — scroll with arrows/PgUp, search with `/`, leave with `q`.
@@ -136,6 +165,13 @@ run-shell ~/.tmux/plugins/tmux-power/tmux-power.tmux
 
 Apply it to an already-running tmux with `tmux source-file ~/.tmux.conf` — or just press `F5`
 next time.
+
+> **Warning** — tmux reads `~/.tmux.conf` *first* and `~/.config/tmux/tmux.conf` *second*, and
+> omarchy seeds that second path with its own status bar. Anything you set here loses to it on
+> every new server. Hence [`dotfiles/tmux/.config/tmux/tmux.conf`](../dotfiles/tmux/.config/tmux/tmux.conf),
+> which sources omarchy's defaults from omarchy's own source and then re-sources `~/.tmux.conf`
+> so it lands last. If the theme ever looks stock again on a fresh server, that ordering is the
+> first thing to check.
 
 > **Warning** — `bind -n` means "no prefix needed" — tmux grabs the key globally, so apps
 > running inside (vim, htop, midnight commander) will no longer see F2–F8. Byobu made the
