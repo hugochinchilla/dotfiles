@@ -1,0 +1,3 @@
+[submodule "dotfiles/tmux/.tmux/plugins/tmux-power"]
+	path = dotfiles/tmux/.tmux/plugins/tmux-power
+	url = git@github.com:wfxr/tmux-power.git
