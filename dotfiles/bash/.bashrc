@@ -9,8 +9,9 @@ fi
 
 # All the default Omarchy aliases and functions
 # (don't mess with these directly, just overwrite them here!)
-source ~/.local/share/omarchy/default/bash/rc
-
+if [ -f "~/.local/share/omarchy/default/bash/rc" ]; then
+  source ~/.local/share/omarchy/default/bash/rc
+fi
 
 export PATH="/home/hchinchilla/.local/bin:$PATH"
 export PATH="$PATH:/home/hchinchilla/.local/share/gem/ruby/3.4.0/bin"
