@@ -1,6 +1,14 @@
 # If not running interactively, don't do anything (leave this at the top of this file)
 [[ $- != *i* ]] && return
 
+# ssh -A: park the forwarded agent at a stable path. The /tmp socket sshd hands us
+# changes every reconnect, so tmux panes that outlive a connection would keep a dead
+# one. Must run before the exec below, or the session-creating connection skips it.
+if [[ -S $SSH_AUTH_SOCK && $SSH_AUTH_SOCK != "$HOME/.ssh/agent.sock" ]]; then
+  ln -sf "$SSH_AUTH_SOCK" "$HOME/.ssh/agent.sock"
+fi
+[[ -S $HOME/.ssh/agent.sock ]] && export SSH_AUTH_SOCK="$HOME/.ssh/agent.sock"
+
 # Incoming ssh sessions on these hosts land straight in tmux (attach if one is running).
 # The interactive guard above keeps scp/rsync/git-over-ssh out of this.
 if [[ -n $SSH_TTY && -z $TMUX && ${HOSTNAME%%.*} =~ ^(archer|ip-10-0-0-10)$ ]] && command -v tmux >/dev/null; then
@@ -105,7 +113,8 @@ alias light-mode="gsettings set org.gnome.desktop.interface color-scheme 'prefer
 alias cocaine="systemd-inhibit --what=handle-lid-switch --who='me' --why='keep awake on lid close' --mode=block sleep infinity"
 
 
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+# local systemd agent — never clobber an agent forwarded in over ssh (see top of file)
+[[ $SSH_AUTH_SOCK == "$HOME/.ssh/agent.sock" ]] || export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 # Autojump
 [[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
