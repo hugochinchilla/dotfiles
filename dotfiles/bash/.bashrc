@@ -12,6 +12,7 @@ fi
 source ~/.local/share/omarchy/default/bash/rc
 
 
+export PATH="/home/hchinchilla/.local/bin:$PATH"
 export PATH="$PATH:/home/hchinchilla/.local/share/gem/ruby/3.4.0/bin"
 export PATH="$PATH:/home/hchinchilla/.cargo/bin"
 
@@ -93,8 +94,9 @@ alias k=kubectl
 alias kg="kubectl get"
 alias kd="kubectl describe"
 alias ke="kubectl edit"
-alias kns=kubens
-alias kctx=kubectx
+alias kctx="kubectx"
+alias kns="kubens"
+alias k="kubectl"
 
 alias yay=yay --answerclean=All --answerdiff=None --answeredit=None
 alias dark-mode="gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
@@ -129,5 +131,4 @@ alias codex='LEAN_CTX_AGENT=1 BASH_ENV="$HOME/.bashenv" codex'
 alias gemini='LEAN_CTX_AGENT=1 BASH_ENV="$HOME/.bashenv" gemini'
 # <<< lean-ctx agent aliases <<<
 
-# Added by codebase-memory-mcp install
-export PATH="/home/hchinchilla/.local/bin:$PATH"
+
