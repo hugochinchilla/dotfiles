@@ -1,9 +1,9 @@
 # If not running interactively, don't do anything (leave this at the top of this file)
 [[ $- != *i* ]] && return
 
-# Incoming ssh sessions on archer land straight in tmux (attach if one is running).
+# Incoming ssh sessions on these hosts land straight in tmux (attach if one is running).
 # The interactive guard above keeps scp/rsync/git-over-ssh out of this.
-if [[ -n $SSH_TTY && -z $TMUX && ${HOSTNAME%%.*} == archer ]] && command -v tmux >/dev/null; then
+if [[ -n $SSH_TTY && -z $TMUX && ${HOSTNAME%%.*} =~ ^(archer|ip-10-0-0-10)$ ]] && command -v tmux >/dev/null; then
   exec tmux new -A -s main
 fi
 
