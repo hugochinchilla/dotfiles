@@ -17,8 +17,22 @@ fi
 
 # All the default Omarchy aliases and functions
 # (don't mess with these directly, just overwrite them here!)
-if [ -f "~/.local/share/omarchy/default/bash/rc" ]; then
+if [ -f ~/.local/share/omarchy/default/bash/rc ]; then
   source ~/.local/share/omarchy/default/bash/rc
+fi
+
+# Prompt. Omarchy's rc above inits starship; hosts without omarchy (or without
+# starship at all) get it here instead. starship's init guards PROMPT_COMMAND, so
+# running it twice is harmless.
+if command -v starship >/dev/null; then
+  eval "$(starship init bash)"
+else
+  # ponytail: rev-parse over --show-current, works on git < 2.22 boxes
+  __ps1_branch() {
+    local b
+    b=$(git rev-parse --abbrev-ref HEAD 2>/dev/null) && printf '%s ' "$b"
+  }
+  PS1='\n\[\e[1;32m\]\u@\h\[\e[0m\] \[\e[1;34m\]\w\[\e[0m\] \[\e[1;33m\]$(__ps1_branch)\[\e[1;36m\]❯\[\e[0m\] '
 fi
 
 export PATH="/home/hchinchilla/.local/bin:$PATH"
