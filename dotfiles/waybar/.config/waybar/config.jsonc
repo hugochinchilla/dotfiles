@@ -5,14 +5,13 @@
   "spacing": 0,
   "height": 24,
   "modules-left": ["custom/omarchy", "hyprland/workspaces"],
-  "modules-center": ["clock", "custom/weather", "custom/update", "custom/voxtype", "custom/screenrecording-indicator", "custom/idle-indicator", "custom/notification-silencing-indicator"],
+  "modules-center": ["cpu", "memory", "clock", "custom/weather", "custom/update", "custom/voxtype", "custom/screenrecording-indicator", "custom/idle-indicator", "custom/notification-silencing-indicator"],
   "modules-right": [
     "group/tray-expander",
     "custom/claudebar",
     "bluetooth",
     "network",
     "pulseaudio",
-    "cpu",
     "battery"
   ],
   "hyprland/workspaces": {
@@ -65,9 +64,17 @@
 
   "cpu": {
     "interval": 5,
-    "format": "󰍛",
+    "format": "󰓅 {load}",
+    "tooltip-format": "{usage}% of {max_frequency}GHz",
     "on-click": "omarchy-launch-or-focus-tui btop",
     "on-click-right": "alacritty"
+  },
+  "memory": {
+    "interval": 5,
+    "format": "󰍛 {percentage}%",
+    "states": { "warning": 75, "critical": 88 },
+    "tooltip-format": "RAM {used:0.1f}G / {total:0.1f}G  ({avail:0.1f}G avail)\nSwap {swapUsed:0.1f}G / {swapTotal:0.1f}G",
+    "on-click": "omarchy-launch-or-focus-tui btop"
   },
   "clock": {
     "format": "{:L%A %H:%M}",

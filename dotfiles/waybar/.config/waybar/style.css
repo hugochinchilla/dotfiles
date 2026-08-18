@@ -31,6 +31,7 @@
 }
 
 #cpu,
+#memory,
 #battery,
 #pulseaudio,
 #custom-omarchy,
@@ -38,6 +39,21 @@
 #custom-update {
   min-width: 12px;
   margin: 0 7.5px;
+}
+
+/* literal colors: theme only defines @background/@foreground */
+#memory.warning {
+  color: #e5c07b;
+}
+
+#memory.critical {
+  color: #e06c75;
+}
+
+/* wide enough for "󰓅 12.34" so the centered clock doesn't shift as values change */
+#cpu,
+#memory {
+  min-width: 58px;
 }
 
 #tray {
