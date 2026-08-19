@@ -27,3 +27,14 @@ require("default.hypr.toggles")
 
 -- Add any other personal Hyprland configuration below.
 -- o.window("qemu", { workspace = "5" })
+
+-- Let SDL apps and games run natively on Wayland.
+hl.env("SDL_VIDEODRIVER", "wayland")
+
+-- JetBrains IDEs: native Wayland instead of XWayland, and let the IDE render at
+-- the monitor's real scale rather than applying its own Java-side scaling on top
+-- (monitors.lua already runs eDP-1 at 1.2).
+hl.env(
+  "JBR_JAVA_OPTIONS",
+  "-Dawt.toolkit.name=WLToolkit -Dsun.java2d.uiScale.enabled=false -Djb.wayland.enabled=true"
+)
