@@ -50,3 +50,16 @@ o.bind("SUPER + SPACE", "Toggle window floating/tiling", hl.dsp.window.float({ a
 -- is gone in quattro and the launcher is now the Quickshell apps menu, which
 -- quattro also keeps on SUPER + ALT + SPACE.
 o.bind("SUPER + D", "Application launcher", "omarchy-menu toggle apps")
+
+-- Move the active window to a workspace WITHOUT following it there.
+-- Quattro binds SUPER + SHIFT + <n> to the following variant and keeps the
+-- silent one on SUPER + SHIFT + ALT + <n>; swap the plain chord to silent.
+for workspace = 1, 10 do
+  local key = "SUPER + SHIFT + code:" .. tostring(workspace + 9)
+  hl.unbind(key)
+  o.bind(
+    key,
+    "Move window to workspace " .. workspace,
+    hl.dsp.window.move({ workspace = tostring(workspace), follow = false })
+  )
+end
