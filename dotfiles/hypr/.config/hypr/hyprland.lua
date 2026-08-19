@@ -40,13 +40,14 @@ o.window("hu.irl.cameractrls", { tag = "+floating-window" })
 local popup_rules = {
   -- Bitwarden vault prompt.
   { width = 30, height = 54, patterns = {
-    "%(Bitwarden.*Password Manager%) %- Bitwarden",
     "^Bitwarden$",
+    "%(Bitwarden.*Password Manager%) %- Bitwarden",
+    "%(Bitwarden.*Administrador de contraseñas%) %- Bitwarden",
   } },
   -- Google sign-in.
-  { width = 25, height = 54, patterns = { "^Sign [Ii]n %- Google Accounts" } },
+  -- { width = 25, height = 54, patterns = { "^Sign [Ii]n %- Google Accounts" } },
   -- MetaMask.
-  { width = 25, height = 54, patterns = { "^Extension: %(MetaMask%)" } },
+  -- { width = 25, height = 54, patterns = { "^Extension: %(MetaMask%)" } },
 }
 
 hl.on("window.title", function(window)
