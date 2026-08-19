@@ -40,3 +40,8 @@ o.bind("SUPER + Q", "Former workspace", hl.dsp.focus({ workspace = "previous" })
 
 -- Close window. Quattro's own SUPER + W stays bound alongside this.
 o.bind("SUPER + SHIFT + Q", "Close window", hl.dsp.window.close())
+
+-- SUPER + SPACE is the Omarchy menu in quattro's utilities bindings. The menu
+-- is still reachable from the bar's menu widget and SUPER + SHIFT + code:201.
+hl.unbind("SUPER + SPACE")
+o.bind("SUPER + SPACE", "Toggle window floating/tiling", hl.dsp.window.float({ action = "toggle" }))
