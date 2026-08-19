@@ -63,3 +63,8 @@ for workspace = 1, 10 do
     hl.dsp.window.move({ workspace = tostring(workspace), follow = false })
   )
 end
+
+-- Quattro claims SUPER + SHIFT + W for Omawrite, its own writing app.
+-- Omawrite is still installed and launchable from the apps menu.
+hl.unbind("SUPER + SHIFT + W")
+o.bind("SUPER + SHIFT + W", "Typora", { launch = "typora --enable-wayland-ime" })
