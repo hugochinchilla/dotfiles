@@ -28,6 +28,10 @@ require("default.hypr.toggles")
 -- Add any other personal Hyprland configuration below.
 -- o.window("qemu", { workspace = "5" })
 
+-- Float the webcam control panel. "floating-window" is quattro's own tag for
+-- this, applied in default/hypr/apps/system.lua (float + center + 875x600).
+o.window("hu.irl.cameractrls", { tag = "+floating-window" })
+
 -- Let SDL apps and games run natively on Wayland.
 hl.env("SDL_VIDEODRIVER", "wayland")
 
