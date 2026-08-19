@@ -45,3 +45,8 @@ o.bind("SUPER + SHIFT + Q", "Close window", hl.dsp.window.close())
 -- is still reachable from the bar's menu widget and SUPER + SHIFT + code:201.
 hl.unbind("SUPER + SPACE")
 o.bind("SUPER + SPACE", "Toggle window floating/tiling", hl.dsp.window.float({ action = "toggle" }))
+
+-- Application launcher. The legacy binding called omarchy-launch-walker; walker
+-- is gone in quattro and the launcher is now the Quickshell apps menu, which
+-- quattro also keeps on SUPER + ALT + SPACE.
+o.bind("SUPER + D", "Application launcher", "omarchy-menu toggle apps")
