@@ -7,7 +7,7 @@
   border: none;
   border-radius: 0;
   min-height: 0;
-  font-family: 'CaskaydiaMono Nerd Font';
+  font-family: 'JetBrainsMono Nerd Font';
   font-size: 12px;
 }
 
@@ -31,29 +31,12 @@
 }
 
 #cpu,
-#memory,
 #battery,
 #pulseaudio,
 #custom-omarchy,
-
 #custom-update {
   min-width: 12px;
   margin: 0 7.5px;
-}
-
-/* literal colors: theme only defines @background/@foreground */
-#memory.warning {
-  color: #e5c07b;
-}
-
-#memory.critical {
-  color: #e06c75;
-}
-
-/* wide enough for "󰓅 12.34" so the centered clock doesn't shift as values change */
-#cpu,
-#memory {
-  min-width: 58px;
 }
 
 #tray {
@@ -81,13 +64,23 @@ tooltip {
 }
 
 #clock {
-  margin-left: 5px;
+  margin-left: 8.75px;
+}
+
+#custom-weather {
+  margin-left: 7.5px;
+  margin-right: 7.5px;
+}
+
+#custom-weather.unavailable {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .hidden {
   opacity: 0;
 }
-
 
 #custom-screenrecording-indicator,
 #custom-idle-indicator,
@@ -103,6 +96,11 @@ tooltip {
   color: #a55555;
 }
 
+#custom-idle-indicator.active,
+#custom-notification-silencing-indicator.active {
+  color: #a55555;
+}
+
 #custom-voxtype {
   min-width: 12px;
   margin: 0 0 0 7.5px;
@@ -110,25 +108,4 @@ tooltip {
 
 #custom-voxtype.recording {
   color: #a55555;
-}
-
-#custom-idle-indicator.active,
-#custom-notification-silencing-indicator.active {
-  color: #a55555;
-}
-
-#custom-weather {
-  margin-left: 7.5px;
-  margin-right: 7.5px;
-}
-
-#custom-weather.unavailable {
-  min-width: 0;
-  margin: 0;
-  padding: 0;
-}
-
-#custom-claudebar {
-  padding: 0 8px;
-  margin: 0 4px;
 }

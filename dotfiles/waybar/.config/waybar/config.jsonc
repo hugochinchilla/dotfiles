@@ -5,13 +5,13 @@
   "spacing": 0,
   "height": 24,
   "modules-left": ["custom/omarchy", "hyprland/workspaces"],
-  "modules-center": ["cpu", "memory", "clock", "custom/weather", "custom/update", "custom/voxtype", "custom/screenrecording-indicator", "custom/idle-indicator", "custom/notification-silencing-indicator"],
+  "modules-center": ["clock", "custom/weather", "custom/update", "custom/voxtype", "custom/screenrecording-indicator", "custom/idle-indicator", "custom/notification-silencing-indicator"],
   "modules-right": [
     "group/tray-expander",
-    "custom/claudebar",
     "bluetooth",
     "network",
     "pulseaudio",
+    "cpu",
     "battery"
   ],
   "hyprland/workspaces": {
@@ -39,14 +39,6 @@
       "5": []
     }
   },
-  "custom/claudebar": {
-    "exec": "claudebar",
-    "return-type": "json",
-    "interval": 300,
-    "signal": 13,
-    "tooltip": true,
-    "on-click": "xdg-open https://claude.ai/settings/usage"
-  }, 
   "custom/omarchy": {
     "format": "<span font='omarchy'>\ue900</span>",
     "on-click": "omarchy-menu",
@@ -64,17 +56,9 @@
 
   "cpu": {
     "interval": 5,
-    "format": "󰓅 {load}",
-    "tooltip-format": "{usage}% of {max_frequency}GHz",
+    "format": "󰍛",
     "on-click": "omarchy-launch-or-focus-tui btop",
     "on-click-right": "alacritty"
-  },
-  "memory": {
-    "interval": 5,
-    "format": "󰍛 {percentage}%",
-    "states": { "warning": 75, "critical": 88 },
-    "tooltip-format": "RAM {used:0.1f}G / {total:0.1f}G  ({avail:0.1f}G avail)\nSwap {swapUsed:0.1f}G / {swapTotal:0.1f}G",
-    "on-click": "omarchy-launch-or-focus-tui btop"
   },
   "clock": {
     "format": "{:L%A %H:%M}",
@@ -124,6 +108,7 @@
   },
   "bluetooth": {
     "format": "",
+    "format-off": "󰂲",
     "format-disabled": "󰂲",
     "format-connected": "󰂱",
     "format-no-controller": "",
@@ -135,7 +120,7 @@
     "on-click": "omarchy-launch-audio",
     "on-click-right": "pamixer -t",
     "tooltip-format": "Playing at {volume}%",
-    "scroll-step": 2,
+    "scroll-step": 5,
     "format-muted": "",
     "format-icons": {
       "headphone": "",
@@ -153,12 +138,28 @@
   },
   "custom/expand-icon": {
     "format": "",
-    "tooltip": false
+    "tooltip": false,
+    "on-scroll-up": "",
+    "on-scroll-down": "",
+    "on-scroll-left": "",
+    "on-scroll-right": ""
   },
   "custom/screenrecording-indicator": {
     "on-click": "omarchy-capture-screenrecording",
     "exec": "$OMARCHY_PATH/default/waybar/indicators/screen-recording.sh",
     "signal": 8,
+    "return-type": "json"
+  },
+  "custom/idle-indicator": {
+    "on-click": "omarchy-toggle-idle",
+    "exec": "$OMARCHY_PATH/default/waybar/indicators/idle.sh",
+    "signal": 9,
+    "return-type": "json"
+  },
+  "custom/notification-silencing-indicator": {
+    "on-click": "omarchy-toggle-notification-silencing",
+    "exec": "$OMARCHY_PATH/default/waybar/indicators/notification-silencing.sh",
+    "signal": 10,
     "return-type": "json"
   },
   "custom/voxtype": {
@@ -173,18 +174,6 @@
     "tooltip": true,
     "on-click-right": "omarchy-voxtype-config",
     "on-click": "omarchy-voxtype-model"
-  },
-  "custom/idle-indicator": {
-    "on-click": "omarchy-toggle-idle",
-    "exec": "$OMARCHY_PATH/default/waybar/indicators/idle.sh",
-    "signal": 9,
-    "return-type": "json"
-  },
-  "custom/notification-silencing-indicator": {
-    "on-click": "omarchy-toggle-notification-silencing",
-    "exec": "$OMARCHY_PATH/default/waybar/indicators/notification-silencing.sh",
-    "signal": 10,
-    "return-type": "json"
   },
   "tray": {
     "icon-size": 12,
