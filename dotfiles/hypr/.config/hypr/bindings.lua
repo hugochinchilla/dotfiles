@@ -27,3 +27,16 @@
 -- o.bind("SUPER + SHIFT + S", nil, "omarchy-capture-screenshot")
 -- o.bind("SUPER + H", nil, "voxtype record toggle")
 -- o.bind("SUPER + PERIOD", nil, "omarchy-shell shell toggle omarchy.emojis")
+
+-- Throw the current workspace to the monitor on either side.
+o.bind("SUPER + Z", "Move workspace to previous monitor", hl.dsp.workspace.move({ monitor = "-1" }))
+
+-- SUPER + X is "Universal cut" in quattro's clipboard bindings.
+hl.unbind("SUPER + X")
+o.bind("SUPER + X", "Move workspace to next monitor", hl.dsp.workspace.move({ monitor = "+1" }))
+
+-- Jump back to the workspace you came from.
+o.bind("SUPER + Q", "Former workspace", hl.dsp.focus({ workspace = "previous" }))
+
+-- Close window. Quattro's own SUPER + W stays bound alongside this.
+o.bind("SUPER + SHIFT + Q", "Close window", hl.dsp.window.close())
