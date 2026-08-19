@@ -3,11 +3,15 @@
 
 -- Keyboard layout and options.
 -- See https://wiki.hypr.land/Configuring/Basics/Variables/#input
--- hl.config({
---   input = {
+hl.config({
+  input = {
 --     -- Use multiple keyboard layouts and switch between them with Left Alt + Right Alt.
 --     kb_layout = "us,dk,eu",
---     kb_options = "compose:caps,shift:both_capslock_cancel,grp:alts_toggle",
+    -- Swap Left Alt and Left Super so the Super-heavy Omarchy bindings sit
+    -- under the thumb. kb_layout above stays commented because Omarchy reads
+    -- it from /etc/vconsole.conf (XKBLAYOUT=es). Append
+    -- ",shift:both_capslock_cancel" to also reach Caps Lock with both Shifts.
+    kb_options = "compose:caps,altwin:swap_lalt_lwin",
 --
 --     -- Use a specific keyboard variant if needed (e.g. intl for international keyboards).
 --     kb_variant = "intl",
@@ -41,8 +45,8 @@
 --       -- Left-click-and-drag with three fingers.
 --       drag_3fg = 1,
 --     },
---   },
--- })
+  },
+})
 
 -- App-specific touchpad scroll speeds.
 -- o.window("(Alacritty|kitty|foot)", { scroll_touchpad = 1.5 })
