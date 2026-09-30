@@ -11,4 +11,7 @@ for MODULE in $(find . -maxdepth 1 -type d ! -name '.' -printf '%f\n'); do
 done
 cd ..
 
+echo " - Installing system files (sudo)..."
+sudo cp -r system/. /
+
 echo " ✨ Success ✨"

@@ -1,0 +1,7 @@
+#!/bin/bash
+# Reload the Logitech HID++ driver after resume. The MX Master drops its
+# hi-res scroll mode across suspend and the driver never re-enables it, so
+# each wheel notch is divided by the hi-res multiplier (very slow scrolling).
+# Re-probing runs the HID++ connect handshake again, which turns it back on.
+[[ $1 == post ]] || exit 0
+modprobe -r hid_logitech_hidpp && modprobe hid_logitech_hidpp
