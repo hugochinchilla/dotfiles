@@ -10,6 +10,12 @@ dofile((os.getenv("OMARCHY_PATH") or "/usr/share/omarchy") .. "/default/hypr/boo
 -- keeping core window-manager bindings:
 -- omarchy_preinstalled_bindings = false
 
+-- Keep Hyprland's global workspace numbers instead of Omarchy's per-monitor
+-- blocks of ten: see hypr/workspaces.lua. It must stand in for the default
+-- module before omarchy.lua requires it; helpers first, since it needs `o`.
+require("default.hypr.helpers")
+package.loaded["default.hypr.monitor-workspaces"] = require("hypr.workspaces")
+
 -- Load Omarchy defaults.
 require("default.hypr.omarchy")
 
