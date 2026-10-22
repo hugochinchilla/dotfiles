@@ -38,8 +38,9 @@ o.bind("SUPER + X", "Move workspace to next monitor", hl.dsp.workspace.move({ mo
 -- Jump back to the workspace you came from.
 o.bind("SUPER + Q", "Former workspace", hl.dsp.focus({ workspace = "previous" }))
 
--- Close window. Quattro's own SUPER + W stays bound alongside this.
-o.bind("SUPER + SHIFT + Q", "Close window", hl.dsp.window.close())
+-- Close window. Replaces the default SUPER + SHIFT + Q calculator bind
+-- (XF86Calculator still opens omacalc). Quattro's own SUPER + W stays bound.
+o.rebind("SUPER + SHIFT + Q", "Close window", hl.dsp.window.close())
 
 -- SUPER + SPACE is the Omarchy menu in quattro's utilities bindings. The menu
 -- is still reachable from the bar's menu widget and SUPER + SHIFT + code:201.
