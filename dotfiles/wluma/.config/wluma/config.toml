@@ -1,0 +1,31 @@
+# wluma 5.x format: als.time uses interpolated "levels" (0-100), manual predictor uses "points".
+# Synthetic ALS: 0 = night, 100 = day (day from 08:00 to 18:00, sharp edges).
+[als.time]
+levels = { 0 = 0, 7 = 0, 8 = 100, 17 = 100, 18 = 0 }
+
+[[output.backlight]]
+name = "eDP-1"
+path = "/sys/class/backlight/amdgpu_bl1"
+capturer = "wayland"
+
+# reduction = % by which the manually chosen brightness is lowered, by ALS and screen luma.
+[output.backlight.predictor.manual]
+[[output.backlight.predictor.manual.points]]
+als = 0
+luma = 0
+reduction = 0
+
+[[output.backlight.predictor.manual.points]]
+als = 0
+luma = 100
+reduction = 60
+
+[[output.backlight.predictor.manual.points]]
+als = 100
+luma = 0
+reduction = 0
+
+[[output.backlight.predictor.manual.points]]
+als = 100
+luma = 100
+reduction = 10
