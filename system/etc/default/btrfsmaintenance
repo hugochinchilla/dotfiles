@@ -1,0 +1,33 @@
+## btrfsmaintenance config (see docs/btrfs-maintenance.md)
+## btrfsmaintenance-refresh.path watches this file and rewrites the timer
+## schedules whenever it changes.
+
+## stdout goes to the unit journal: journalctl -u btrfs-balance
+BTRFS_LOG_OUTPUT="stdout"
+
+## Defrag: off. It breaks reflinks/snapshot sharing and duplicates data.
+BTRFS_DEFRAG_PATHS=""
+BTRFS_DEFRAG_PERIOD="none"
+BTRFS_DEFRAG_MIN_SIZE="+1M"
+
+## Balance: return half-empty chunks to the unallocated pool so the allocator
+## doesn't get starved (slowdowns / ENOSPC with plenty of "free" space).
+## Each value is a separate pass with an increasing usage filter, so early
+## passes are cheap.
+BTRFS_BALANCE_MOUNTPOINTS="/"
+BTRFS_BALANCE_PERIOD="weekly"
+BTRFS_BALANCE_DUSAGE="5 10 25 50"
+BTRFS_BALANCE_MUSAGE="5 10 25"
+
+## Scrub: verify checksums of all data/metadata once a month.
+BTRFS_SCRUB_MOUNTPOINTS="/"
+BTRFS_SCRUB_PERIOD="monthly"
+BTRFS_SCRUB_PRIORITY="idle"
+BTRFS_SCRUB_READ_ONLY="false"
+
+## Trim: off. Already covered by the discard=async mount option plus
+## systemd's fstrim.timer.
+BTRFS_TRIM_PERIOD="none"
+BTRFS_TRIM_MOUNTPOINTS="/"
+
+BTRFS_ALLOW_CONCURRENCY="false"
