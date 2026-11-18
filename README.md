@@ -14,3 +14,4 @@ cd ~/dotfiles
 ## Docs
 
 - [tmux cheatsheet](docs/tmux-cheatsheet.md) — prefix keys, tabs, panes, and the byobu-style F-key config
+- [Docker on a btrfs subvolume](docs/docker-btrfs-subvolume.md) — keep Docker out of snapper snapshots and wipe it instantly
