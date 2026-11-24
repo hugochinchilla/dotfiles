@@ -33,6 +33,37 @@ end
 
 function M.reconcile() end
 
+-- Each connected monitor's identity (its description), keyed by connector.
+-- default/hypr/monitor-settings.lua calls this to apply the monitor panel's
+-- saved choices; identical monitors get " #2", " #3" in connector order, as
+-- the default module names them.
+-- ponytail: no memory of who was #1, so unplugging one of an identical pair
+-- can swap their saved settings; copy the default's `current` table if it does.
+function M.identities()
+  local monitors = {}
+  for _, monitor in ipairs(hl.get_monitors()) do
+    if not monitor.is_mirror then
+      monitors[#monitors + 1] = monitor
+    end
+  end
+  table.sort(monitors, function(left, right) return left.name < right.name end)
+
+  local identities, taken = {}, {}
+  for _, monitor in ipairs(monitors) do
+    local described = monitor.description or ""
+    described = described ~= "" and described or monitor.name
+    local identity, count = described, 1
+    while taken[identity] do
+      count = count + 1
+      identity = described .. " #" .. count
+    end
+    identities[monitor.name] = identity
+    taken[identity] = true
+  end
+
+  return identities
+end
+
 o.workspaces = M
 
 return M
